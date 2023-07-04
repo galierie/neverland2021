@@ -1,0 +1,474 @@
+#credsSub{
+	text-align:center;
+}
+#title{
+	display:block;
+	margin:auto;
+	margin-top:14vh;
+}
+
+#subDesc{
+	margin-top:5vh;
+	margin-bottom:5vh;
+}
+
+#navButtons{
+	margin:auto;
+	text-align:center;
+}
+
+
+.navBtn{
+  background-color: #7543ad;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.navBtn:hover {
+  background-color: #2980B9;
+}
+
+/* css for dropdown button from from w3schools */
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+/* end of css dropdwon from w3schools  */
+
+/* allows the words on the button to be pressable as well */
+button i{
+	pointer-events: none;
+}
+
+#separator{
+	height: 5vh;
+	
+}
+
+#fairComm{
+	width:85vw;
+	margin:auto;
+	/* border: dotted black; */
+	/* min-height:100vh; */
+	margin-bottom:5vh;
+	display: grid;
+	grid-gap: 3vw;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+#sponsors{
+	width:75vw;
+	margin:auto;
+	/* border: dotted red; */
+	/* min-height:100vh; */
+	text-align:center;
+	margin-bottom: 5vh;
+
+	display: none;
+	grid-gap: 3vw;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr) );	
+}
+
+#ambas{
+	width:75vw;
+	margin:auto;
+	/* border: dotted red; */
+	/* min-height:100vh; */
+	text-align:center;
+	margin-bottom: 5vh;
+
+	display: none;
+	grid-gap: 3vw;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr) );	
+}
+
+#resources{
+	width:75vw;
+	margin:auto;
+	/* min-height:100vh; */
+	/* border: dotted yellow; */
+	padding:3vh;
+	text-align:center;
+	margin-bottom:5vh;
+	
+	display:none;
+	grid-gap: 3vw;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));	
+}
+
+.members{
+	margin:auto;
+	width:100%;
+	/* border: solid black; */
+	text-align:left;
+}
+
+td{
+	font: 24px "Source Serif Pro";
+}
+th{
+	font: 600 24px "Source Serif Pro";
+	border-bottom: solid black;
+	border-top: solid black;
+}
+
+.memberList{
+	background-color:white;
+	min-width: 50%;
+	max-width: 70%;
+	min-height:18vw;
+	text-align:center;
+	display: none;
+	box-shadow: 0 0 80px 0 rgba(0,0,0,0.06);
+	padding:2vw;
+}
+
+.credCard{
+	background-color:white;
+	width:16vw;
+	height:20vw;
+	text-align:center;
+	display: block;
+	margin:auto;
+	box-shadow: 0 0 80px 0 rgba(0,0,0,0.06);
+	padding: 1vw;
+}
+
+.person{
+	width:7vw;
+	border-radius:7vw;
+	border-width:3px;
+	border-style:solid;
+	border-color:white;
+	margin:2vh;
+	margin-top: -20%;
+	background-color:white;
+	
+	box-shadow: 0 2vh 18px -6px rgba(0,0,0,0.14);
+}
+
+.position{
+	color: rgba(31,31,31,0.6);
+}
+
+.sponCard{
+	display:block;
+	background-color:white;
+	box-shadow: 0 0 80px 0 rgba(0,0,0,0.06);
+	width:15vw;
+	height:21vw;
+	margin:auto;
+	text-align:center;
+	padding-top:15px;
+	padding-bottom: 15px;
+	position:relative;
+}
+
+.resCard{
+	display:block;
+	background-color:white;
+	box-shadow: 0 0 80px 0 rgba(0,0,0,0.06);
+	width:15vw;
+	height:10vw;
+	margin:auto;
+	text-align:center;
+	padding:15px;
+	border: groove gray;
+}
+
+.resCard p {
+	justify-content:center;
+}
+
+
+.sponsor{
+	max-width:90%;
+	max-height:50%;
+}
+.amba{
+	
+}
+
+.pixiedustspon{
+	color: #c17aff;
+}
+.goldspon{
+	color: #ffe782;
+}
+.silverspon{
+	color: #313131;
+}
+.bronzespon{
+	color: orange;
+}
+.spontitle{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	display:block;
+	border-top: solid black;
+	padding: 5%;
+	height:30%;
+}
+
+.spontitle p{
+	font-size: 24px;
+	margin:0;
+}
+
+.ambatitle{
+	font-size: 24px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	display:block;
+	border-top: solid black;
+	padding: 5%;
+	height:25%;
+}
+.amba{
+	max-width:90%;
+	max-height:50%;
+}
+.ambaCard{
+	display:block;
+	background-color:white;
+	box-shadow: 0 0 80px 0 rgba(0,0,0,0.06);
+	width:15vw;
+	height:21vw;
+	margin:auto;
+	text-align:center;
+	padding-top:15px;
+	padding-bottom: 15px;
+	position:relative;
+}
+
+/*Responsive settings*/ 
+
+@media screen and (min-width: 2548px){
+#fairComm{
+	grid-gap:5vw;
+}
+}
+@media screen and (max-width: 1800px){
+	.spontitle p{
+	font-size: 20px;
+	}
+	.ambatitle p{
+	font-size: 20px;
+	}
+}
+@media screen and (max-width: 1392px){
+	#fairComm{
+		width: 90%;
+	}
+	p, td, th {
+    font-size: 20px;
+	}
+	.spontitle p{
+	font-size: 15px;
+	}
+	.ambatitle p{
+	font-size: 15px;
+	}
+	.amba{
+	max-width:90%;
+	max-height:50%;
+	}
+}
+@media screen and (max-width: 1220px){
+	p{
+		font-size:18px;
+	}
+	.spontitle p{
+	font-size: 13px;
+	}
+}
+@media screen and (max-width: 1140px){
+	p{
+		font-size:17px;
+	}
+	.spontitle p{
+	font-size: 12px;
+	}
+}
+@media screen and (max-width: 1060px){
+	p{
+		font-size:16px;
+	}
+	.spontitle p{
+	font-size: 11px;
+	}
+}
+@media screen and (max-width: 1024px){
+	#fairComm{
+		width: 100%;
+		grid-gap: 6vw;
+	}
+	.credCard{
+		width: 20vw;
+		height:25vw;
+	}
+	p, td, th {
+    font-size: 16px;
+	}
+	.memberList{
+		min-width: 60%;
+	}
+	.sponsor{
+	max-height:15vh;	
+	}
+	.resCard{
+	width:20vw;
+	height:10vw;
+	margin:auto;
+	text-align:center;
+	padding:15px;
+	border: groove gray;
+	}
+}
+
+@media screen and (max-width: 769px){
+	#sponsors, #resources, #ambas{
+		width:100%
+	}
+	.memberList{
+		min-width: 75%; 
+	}
+	h2{
+		font-size: 35px;
+	}
+	#separator{
+		height: 10vh;
+	}
+	.sponCard, .ambaCard{
+		width: 25vw;
+	}
+	.resCard{
+		width:25vw;
+		height:15vh;
+	}
+	p{
+		font-size:14px;
+	}
+	.spontitle p{
+	font-size: 10px;
+	}
+	.ambatitle p{
+	font-size: 10px;	
+	}
+	.sponCard{
+		padding-top:5px;
+	}
+}
+
+
+@media screen and (max-width: 681px){
+	h2{
+		font-size: 20px;
+	}
+	#fairComm, #sponsors, #ambas{
+		grid-gap:3vw;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));	
+	}
+	
+	p, td, th, button, a{
+		font-size: 12px;
+	}
+	
+	.spontitle p{
+	font-size: 8px;
+	}
+	.ambatitle p{
+		font-size:8px;
+	}
+	.ambatitle{
+		height:35%;
+	}
+	.credCard{
+		width: 30vw;
+		height:22vh;
+		margin-bottom: 2vh;
+	}
+	.sponCard, .ambacard{
+		width: 25vw;
+		height:24vh;
+		margin-bottom: 2vh;
+	}
+	
+	.resCard{
+		width:80vw;
+		height:10vh;
+	}
+	
+	.memberList{
+		min-width:90%;
+	}
+	
+	.person{
+		width:10vw;
+		border-radius:7vw;
+		border-width:3px;
+		border-style:solid;
+		border-color:white;
+		margin:2vh;
+		margin-top: -20%;
+		background-color:white;
+		
+		box-shadow: 0 2vh 18px -6px rgba(0,0,0,0.14);
+	}
+	#title{
+		width:80%;
+	}
+	#navButtons{
+		width:90%;
+	}
+	button{
+		margin-bottom:1vh;
+	}
+
+}
+
+@media screen and (max-width: 376px){
+	h2{
+		font-size: 18px;
+	}
+	.ambatitle p{
+		font-size:6px;
+	}
+}
+
+

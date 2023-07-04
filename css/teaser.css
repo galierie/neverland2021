@@ -1,0 +1,204 @@
+@font-face {
+    font-family: "Source Serif Pro";
+    src: url(../fonts/SourceSerifPro-Regular.ttf);
+}
+
+html {
+	height: 100vh;
+	width: 100vw;
+}
+
+body {
+	margin: auto;
+	height: 100vh;
+	width: auto;
+	background: linear-gradient(135deg, rgb(193, 122, 255) 0%, rgb(193, 122, 255) 10%, rgb(148, 230, 198) 100%);
+	font-family: "Source Serif Pro";
+	overflow: hidden;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.titleContainer {
+	position: relative;
+}
+
+@media screen and (min-height: 800px) {
+	img {
+		display: block;
+	}
+	
+	.title {
+		margin: 7.5vh auto 0;
+		max-height: 25vh;
+	}
+	
+	.title > img {
+		height: 20vh;
+		width: auto;
+		margin: auto;
+	}
+	
+	.subtitle {
+		text-align: center;
+		font-size: 42px;
+		font-style: italic;
+	}
+	
+	.body {
+		margin: auto;
+	}
+	
+	#hourglass {
+		max-height: 37.5vh;
+		margin: 5vh auto;
+	}
+	
+	.body > div {
+		margin-top: 20px;
+	}
+}
+
+@media screen and (max-height: 799px) {
+	img {
+		display: block;
+	}
+	
+	.title {
+		margin: 7.5vh auto 0;
+		max-height: 15.5vh;
+	}
+	
+	.title > img {
+		height: 20vh;
+		width: auto;
+		margin: auto;
+	}
+	
+	.subtitle {
+		text-align: center;
+		font-size: 36px;
+		font-style: italic;
+	}
+	
+	.body {
+		margin: auto;
+	}
+	
+	#hourglass {
+		max-height: 27.5vh;
+		margin: 15vh auto 10vh;
+	}
+	
+	.body > div {
+		margin-top: 0px;
+	}
+}
+
+@media screen and (max-height: 600px) {
+	img {
+		display: block;
+	}
+	
+	.title {
+		margin: 7.5vh auto 0;
+		max-height: 20vh;
+	}
+	
+	.title > img {
+		height: 20vh;
+		width: auto;
+		margin: auto;
+	}
+	
+	.subtitle {
+		text-align: center;
+		font-size: 28px;
+		font-style: italic;
+	}
+	
+	.body {
+		margin: auto;
+	}
+	
+	#hourglass {
+		max-height: 27.5vh;
+		margin: 15vh auto 10vh;
+	}
+	
+	.body > div {
+		margin-top: 0px;
+	}
+}
+
+@media screen and (orientation:portrait) and (max-width: 767px) {
+	img {
+		display: block;
+	}
+	
+	.title {
+		margin: 12.5vh auto 10vh;
+		max-height: 20vh;
+	}
+	
+	.title > img {
+		height: auto;
+		width: 90vw;
+		margin: auto;
+	}
+	
+	.subtitle {
+		text-align: center;
+		font-size: 28px;
+		font-style: italic;
+	}
+	
+	.body {
+		margin: auto;
+	}
+	
+	#hourglass {
+		max-width: 90vw;
+		margin: 10vh auto;
+	}
+	
+	.body > div {
+		margin-top: 0px;
+	}
+}
+
+@media screen and (orientation:portrait) and (min-width: 768px) {
+	img {
+		display: block;
+	}
+	
+	.title {
+		margin: 10vh auto 10vh;
+		max-height: 20vh;
+	}
+	
+	.title > img {
+		height: auto;
+		width: 90vw;
+		margin: auto;
+	}
+	
+	.subtitle {
+		text-align: center;
+		font-size: 48px;
+		font-style: italic;
+	}
+	
+	.body {
+		margin: auto;
+	}
+	
+	#hourglass {
+		max-width: 90vw;
+		margin: 10vh auto;
+	}
+	
+	.body > div {
+		margin-top: 0px;
+	}
+}

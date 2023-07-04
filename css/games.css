@@ -1,0 +1,77 @@
+﻿.title {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.vn {
+    border: 5px solid #372449;
+    background: #372449;
+    text-align: center;
+    margin: auto;
+    width: 90%;
+    height: 500px;
+}
+
+.row {
+    width: 90%;
+    margin: auto;
+}
+.column {
+    float: left;
+    height: 500px;
+    margin: 0;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.left {
+    width: 70%;
+    background: #5a8392;
+}
+
+.right {
+    width: 30%;
+}
+
+.instructions {
+    background: #94a2ff;
+    height: 50%;
+}
+
+.gameSelect {
+    background: #94e6c6;
+    height: 50%;
+}
+
+.row h2 {
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+    font-family: "Source Serif Pro";
+}
+
+.iframe-container {
+    /* 16:9 aspect ratio */
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+}
+
+.iframe-container iframe {
+    border: none;
+    position: absolute;
+    left: 12.5%;
+    width: 75%;
+    height: 75%;
+ }
+
+ #Title {
+     width: 20%;
+     margin-top: 100px;
+     margin-bottom: 50px;
+ }

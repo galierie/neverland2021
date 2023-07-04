@@ -1,0 +1,1111 @@
+@font-face {
+    font-family: Coustard;
+    src: url("../fonts/Coustard-Regular.ttf");
+}
+
+body {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    background: #f1fdff;
+    font-family: "Source Serif Pro";
+    position: relative;
+}
+
+.freedomwall-title,
+#ihover {
+    /* extra margin for the header */
+    margin-top: 10vh;
+}
+
+footer {
+    /* extra space for the footer */
+    margin-top: 10vh;
+}
+
+.titleContainer {
+    position: relative;
+}
+
+#if_0 {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s;
+}
+
+#if {
+    background: rgba(193, 122, 255);
+    position: relative;
+    border-radius: 10px;
+    padding: 30px;
+
+    height: 0%;
+    top: 145px;
+    width: 75%;
+    left: calc(12.5% - 15px - 30px);
+    border: 15px solid #372449;
+    opacity: 0;
+    transition: 0.5s;
+
+    z-index: 1;
+}
+
+#if2 {
+    background: rgba(193, 122, 255);
+    position: relative;
+    border-radius: 10px;
+    padding: 30px;
+
+    height: 75%;
+    top: calc(17.5% - 15px - 30px);
+    width: 75%;
+    left: calc(12.5% - 15px - 30px);
+    border: 15px solid #372449;
+    opacity: 1;
+    transition: 0.5s;
+
+    z-index: 1;
+}
+
+#iform {
+    position: relative;
+    height: 95%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+#close {
+    position: relative;
+    cursor: pointer;
+
+    top: -10px;
+    left: 73vw;
+}
+
+#ihover {
+    z-index: 3;
+}
+
+#ihover img {
+    z-index: 3;
+}
+
+.choices {
+	transition: 0.8s;
+}
+
+.choices:hover {
+	background: #dece8c;
+	color: #fff;
+}
+
+.note {
+    box-shadow: 5px 5px #ffe782;
+}
+
+@media screen and (min-width: 1730px) {
+    .title {
+        margin: 30px auto 0px;
+        text-align: center;
+        width: 70vw;
+        padding: 35px 40px 10px;
+        background: #ffe782;
+        background: linear-gradient(135deg, rgba(255,231,130,1) 0%, rgba(255,213,130,1) 100%);
+        border-radius: 10px;
+    }
+	
+	.title > img {
+		width: 70%;
+		height: auto;
+	}
+
+    .container {
+        margin: auto 60px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .note {
+        margin: 30px 15px;
+        border: solid 10px #372449;
+        background: #372449;
+        color: #f1fdff;
+        position: relative;
+        border-radius: 10px;
+    }
+
+    .quote {
+        position: absolute;
+        font-family: Coustard;
+        color: #f0bc2c;
+    }
+
+    .scaleA > .quote {
+        font-size: 80px;
+        top: -10px;
+        left: 5px;
+        margin: 0;
+    }
+
+    .scaleAB > .quote {
+        font-size: 110px;
+        top: -20px;
+        left: 5px;
+        margin: 0;
+    }
+
+    .scaleB > .quote {
+        font-size: 110px;
+        top: -20px;
+        left: 5px;
+        margin: 0;
+    }
+
+    .scaleA > .text {
+        font-size: 25px;
+    }
+
+    .scaleAB .text {
+        font-size: 36px;
+    }
+
+    .scaleB > .text {
+        font-size: 42px;
+    }
+
+    .note > * {
+        margin: 10px;
+    }
+
+    .scaleA > .image {
+        margin-top: 50px;
+    }
+
+    .scaleAB > .image {
+        margin-top: 60px;
+    }
+
+    .scaleB > .image {
+        margin-top: 60px;
+    }
+
+    .bar {
+        width: 69%; /* Nice */
+        height: 3px;
+        background: #ffe782;
+        margin-left: 15px;
+    }
+
+    .text {
+        text-align: left;
+        margin-top: 50px;
+        margin-left: 13px;
+    }
+
+    .image + .text {
+        margin-top: 0;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    #cancelSearch {
+        width: auto;
+    }
+
+    #upload {
+        height: 100px;
+        width: 100px;
+        position: fixed;
+        bottom: 40px;
+        right: 30px;
+        z-index: 100;
+        background: rgba(255, 231, 130, 1);
+        vertical-align: top;
+        border-radius: 45px;
+    }
+	
+    .sort {
+		margin: 40px 0 15px 40px;
+		font-family: "Source Serif Pro";
+		font-size: 37px;
+		z-index: 3;
+		display: grid;
+		grid-template-columns: 2fr 5fr;
+	}
+
+    #info {
+        z-index: 3;
+        position: absolute;
+        right: 0px;
+        top: 30px;
+        padding: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        overflow: visible;
+    }
+
+    #ihover {
+        height: 75px;
+        width: auto;
+        border-radius: 45px;
+    }
+
+    #ihover img {
+        height: 100%;
+        width: auto;
+		border: 4px black solid;
+		border-radius: 45px;
+    }
+
+    #iinfo {
+        position: relative;
+        height: auto;
+        max-width: 50%;
+        right: 30px;
+		top: 100px;
+        padding: 30px;
+        overflow: visible;
+
+        font-family: "Source Serif Pro";
+        font-size: 20px;
+        color: #f1fdff;
+        background: #372449;
+        border-radius: 10px;
+
+        display: none;
+    }
+
+    #close {
+        height: 30px;
+        width: 30px;
+    }
+	
+	.sortcontainer {
+		background: #ffe782;
+		cursor: pointer;
+		z-index: 3;
+		position: absolute;
+		left: calc(21vw - 10px);
+	}
+	
+	.sortcontainer > div {
+		padding: 10px 20px;
+		border: #ffe782 1px solid;
+		font-size: 30px;
+	}
+	
+	#mainsort {
+		text-align: center;
+		width: calc(17vw + 2px);
+	}
+	
+	#arrow {
+		font-size: 20px;
+	}
+	
+	.hidden {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1729px) {
+    .title {
+        margin: 30px auto 0px;
+        text-align: center;
+        width: 70vw;
+        padding: 25px 40px 0px;
+        background: #ffe782;
+        background: linear-gradient(135deg, rgba(255,231,130,1) 0%, rgba(255,213,130,1) 100%);
+        border-radius: 10px;
+    }
+	
+	.title > img {
+		width: 90%;
+		height: auto;
+	}
+
+    .container {
+        margin: auto 60px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .note {
+        margin: 30px 15px;
+        border: solid 10px #372449;
+        background: #372449;
+        color: #f1fdff;
+        position: relative;
+        border-radius: 10px;
+    }
+
+    .quote {
+        position: absolute;
+        font-family: Coustard;
+        color: #f0bc2c;
+    }
+
+    .scaleA > .quote {
+        font-size: 70px;
+        top: -10px;
+        left: 5px;
+        margin: 0;
+    }
+
+    .scaleAB > .quote {
+        font-size: 95px;
+        top: -20px;
+        left: 5px;
+        margin: 0;
+    }
+
+    .scaleB > .quote {
+        font-size: 95px;
+        top: -20px;
+        left: 5px;
+        margin: 0;
+    }
+
+    .scaleA > .text {
+        font-size: 20px;
+    }
+
+    .scaleAB .text {
+        font-size: 25px;
+    }
+
+    .scaleB > .text {
+        font-size: 32px;
+    }
+
+    .note > * {
+        margin: 10px;
+    }
+
+    .scaleA > .image {
+        margin-top: 50px;
+    }
+
+    .scaleAB > .image {
+        margin-top: 60px;
+    }
+
+    .scaleB > .image {
+        margin-top: 60px;
+    }
+
+    .bar {
+        width: 69%; /* Nice */
+        height: 3px;
+        background: #ffe782;
+        margin-left: 15px;
+    }
+
+    .text {
+        text-align: left;
+        margin-top: 42px;
+        margin-left: 13px;
+    }
+
+    .image + .text {
+        margin-top: 0;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    #cancelSearch {
+        width: auto;
+    }
+
+    #upload {
+        height: 80px;
+        width: 80px;
+        position: fixed;
+        bottom: 40px;
+        right: 30px;
+        z-index: 100;
+        background: rgba(255, 231, 130, 0.4);
+        vertical-align: top;
+        border-radius: 45px;
+    }
+	
+    .sort {
+		margin: 40px 0 15px 40px;
+		font-family: "Source Serif Pro";
+		font-size: 30px;
+		z-index: 3;
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+	}
+
+    #info {
+        z-index: 3;
+        position: absolute;
+        right: 0px;
+        top: 35px;
+        padding: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        overflow: visible;
+    }
+
+    #ihover {
+        height: 57px;
+        width: auto;
+        border-radius: 45px;
+    }
+
+    #ihover img {
+        height: 100%;
+        width: auto;
+		border: 4px black solid;
+		border-radius: 45px;
+    }
+
+    #iinfo {
+        position: relative;
+        height: auto;
+        max-width: 50%;
+        right: 30px;
+        padding: 30px;
+        overflow: visible;
+
+        font-family: "Source Serif Pro";
+        font-size: 18px;
+        color: #f1fdff;
+        background: #372449;
+        border-radius: 10px;
+
+        display: none;
+    }
+
+    #close {
+        height: 23px;
+        width: 23px;
+    }
+	
+	.sortcontainer {
+		background: #ffe782;
+		cursor: pointer;
+		z-index: 3;
+		position: absolute;
+		left: 28vw;
+	}
+	
+	.sortcontainer > div {
+		padding: 10px 20px;
+		border: #ffe782 1px solid;
+		font-size: 21px;
+	}
+	
+	#mainsort {
+		text-align: center;
+		width: calc(18vw + 2px);
+	}
+	
+	#arrow {
+		font-size: 15px;
+	}
+	
+	.hidden {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 800px) and (max-width: 1099px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 999px) {
+    .title {
+        margin: 30px auto 0px;
+        text-align: center;
+        width: 70vw;
+        padding: 15px 40px 0px;
+        background: #ffe782;
+        background: linear-gradient(135deg, rgba(255,231,130,1) 0%, rgba(255,213,130,1) 100%);
+        border-radius: 10px;
+    }
+	
+	.title > img {
+		width: 100%;
+		height: auto;
+	}
+
+    #cancelSearch {
+        width: auto;
+    }
+
+    .container {
+        margin: auto 50px;
+        display: grid;
+    }
+
+    .note {
+        margin: 30px 15px;
+        border: solid 10px #372449;
+        background: #372449;
+        color: #f1fdff;
+        position: relative;
+        border-radius: 10px;
+    }
+
+    .quote {
+        position: absolute;
+        font-family: Coustard;
+        color: #f0bc2c;
+    }
+
+    .scaleA > .quote {
+        font-size: 70px;
+        top: -10px;
+        left: 5px;
+        margin: 0;
+    }
+
+    .scaleAB > .quote {
+        font-size: 95px;
+        top: -20px;
+        left: 5px;
+        margin: 0;
+    }
+
+    .scaleB > .quote {
+        font-size: 95px;
+        top: -20px;
+        left: 5px;
+        margin: 0;
+    }
+
+    .scaleA > .text {
+        font-size: 20px;
+    }
+
+    .scaleAB .text {
+        font-size: 25px;
+    }
+
+    .scaleB > .text {
+        font-size: 32px;
+    }
+
+    .note > * {
+        margin: 10px;
+    }
+
+    .scaleA > .image {
+        margin-top: 50px;
+    }
+
+    .scaleAB > .image {
+        margin-top: 60px;
+    }
+
+    .scaleB > .image {
+        margin-top: 60px;
+    }
+
+    .bar {
+        width: 69%; /* Nice */
+        height: 3px;
+        background: #ffe782;
+        margin-left: 15px;
+    }
+
+    .text {
+        text-align: left;
+        margin-top: 42px;
+        margin-left: 13px;
+    }
+
+    .image + .text {
+        margin-top: 0;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    #cancelSearch {
+        width: auto;
+    }
+
+    #upload {
+        height: 60px;
+        width: 60px;
+        position: fixed;
+        bottom: 40px;
+        right: 30px;
+        z-index: 100;
+        background: rgba(255, 231, 130, 0.4);
+        vertical-align: top;
+        border-radius: 45px;
+    }
+
+    .sort {
+		margin: 40px 0 15px 40px;
+		font-family: "Source Serif Pro";
+		font-size: 28px;
+		z-index: 2;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+    #info {
+        z-index: 3;
+        position: absolute;
+        right: 0px;
+        top: 45px;
+        padding: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        overflow: visible;
+    }
+
+    #ihover {
+        height: 57px;
+        width: auto;
+        border-radius: 45px;
+		margin-top: 65px;
+    }
+
+    #ihover img {
+        height: 100%;
+        width: auto;
+		border: 4px black solid;
+		border-radius: 45px;
+    }
+
+    #iinfo {
+        position: relative;
+        height: auto;
+        max-width: 65%;
+        right: 30px;
+        padding: 30px;
+        overflow: visible;
+
+        font-family: "Source Serif Pro";
+        font-size: 16px;
+        color: #f1fdff;
+        background: #372449;
+        border-radius: 10px;
+
+        display: none;
+    }
+
+    #close {
+        height: 15px;
+        width: 15px;
+    }
+	
+	.sortcontainer {
+		background: #ffe782;
+		cursor: pointer;
+		z-index: 3;
+		position: absolute;
+		left: calc(37vw - 15px);
+	}
+	
+	.sortcontainer > div {
+		padding: 10px 20px;
+		border: #ffe782 1px solid;
+		font-size: 24px;
+	}
+	
+	#mainsort {
+		text-align: center;
+		width: calc(26vw + 2px);
+	}
+	
+	#arrow {
+		font-size: 20px;
+	}
+	
+	.hidden {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 799px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .title {
+        margin: 30px auto 0px;
+        text-align: center;
+        width: 72vw;
+		padding: 9px 15px 10px;
+        background: #ffe782;
+        background: linear-gradient(135deg, rgba(255,231,130,1) 0%, rgba(255,213,130,1) 100%);
+        border-radius: 10px;
+		height: 78px;
+    }
+	
+	.title > img {
+		width: 90%;
+		height: auto;
+	}
+
+    .container {
+        margin: auto 25px;
+        display: grid;
+    }
+
+    .note {
+        margin: 30px 15px;
+        border: solid 10px #372449;
+        background: #372449;
+        color: #f1fdff;
+        position: relative;
+        border-radius: 10px;
+    }
+
+    .quote {
+        position: absolute;
+        font-family: Coustard;
+        color: #f0bc2c;
+    }
+
+    .scaleA > .quote {
+        font-size: 60px;
+        top: -10px;
+        left: 5px;
+        margin: 0;
+    }
+
+    .scaleAB > .quote {
+        font-size: 85px;
+        top: -16px;
+        left: 5px;
+        margin: 0;
+    }
+
+    .scaleB > .quote {
+        font-size: 85px;
+        top: -16px;
+        left: 5px;
+        margin: 0;
+    }
+
+    .scaleA > .text {
+        font-size: 17px;
+    }
+
+    .scaleAB .text {
+        font-size: 20px;
+    }
+
+    .scaleB > .text {
+        font-size: 26px;
+    }
+
+    .note > * {
+        margin: 10px;
+    }
+
+    .scaleA > .image {
+        margin-top: 40px;
+    }
+
+    .scaleAB > .image {
+        margin-top: 50px;
+    }
+
+    .scaleB > .image {
+        margin-top: 50px;
+    }
+
+    .bar {
+        width: 69%; /* Nice */
+        height: 3px;
+        background: #ffe782;
+        margin-left: 15px;
+    }
+
+    .text {
+        text-align: left;
+        margin-top: 34px;
+        margin-left: 13px;
+    }
+
+    .image + .text {
+        margin-top: 0;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    #cancelSearch {
+        width: auto;
+    }
+
+    #upload {
+        height: 45px;
+        width: 45px;
+        position: fixed;
+        bottom: 20px;
+        right: 10px;
+        z-index: 100;
+        background: rgba(255, 231, 130, 0.4);
+        vertical-align: top;
+        border-radius: 45px;
+    }
+
+    .sort {
+		margin: 40px 0 15px 40px;
+		font-family: "Source Serif Pro";
+		font-size: 16px;
+		z-index: 2;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+    #info {
+        z-index: 3;
+        position: absolute;
+        right: 8px;
+        top: 72px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        overflow: visible;
+    }
+
+    #ihover {
+        height: 37px;
+        width: auto;
+        border-radius: 45px;
+		margin-top: 40px;
+    }
+
+    #ihover img {
+        height: 100%;
+        width: auto;
+		border: 4px black solid;
+		border-radius: 45px;
+    }
+
+    #iinfo {
+        position: relative;
+        height: auto;
+        max-width: 65%;
+        right: 30px;
+        padding: 30px;
+        overflow: visible;
+
+        font-family: "Source Serif Pro";
+        font-size: 15px;
+        color: #f1fdff;
+        background: #372449;
+        border-radius: 10px;
+
+        display: none;
+    }
+
+    #close {
+        height: 15px;
+        width: 15px;
+    }
+	
+	.sortcontainer {
+		background: #ffe782;
+		cursor: pointer;
+		z-index: 3;
+		position: absolute;
+		left: calc(50vw - 10px);
+	}
+	
+	.sortcontainer > div {
+		padding: 0px 20px;
+		border: #ffe782 1px solid;
+		font-size: 18px;
+	}
+	
+	#mainsort {
+		text-align: center;
+		width: calc(42vw + 4px);
+	}
+	
+	#arrow {
+		font-size: 17px;
+	}
+	
+	.hidden {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 320px) {
+	.sort {
+		margin: 40px 0 15px 40px;
+		font-family: "Source Serif Pro";
+		font-size: 16px;
+		z-index: 2;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	
+	.sortcontainer {
+		background: #ffe782;
+		cursor: pointer;
+		z-index: 3;
+		position: absolute;
+		left: calc(57vw - 10px);
+	}
+	
+	.sortcontainer > div {
+		padding: 0px 7px;
+		border: #ffe782 1px solid;
+		font-size: 15px;
+	}
+	
+	#mainsort {
+		text-align: center;
+		width: calc(36vw + 4px);
+	}
+	
+	#ihover {
+        height: 30px;
+        width: auto;
+        border-radius: 45px;
+		margin-top: 22px;
+    }
+}
+
+@media screen and (min-width: 411px) and (max-width: 411px) {
+	.sort {
+		margin: 40px 0 15px 40px;
+		font-family: "Source Serif Pro";
+		font-size: 16px;
+		z-index: 2;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	
+	.sortcontainer {
+		background: #ffe782;
+		cursor: pointer;
+		z-index: 3;
+		position: absolute;
+		left: calc(57vw - 10px);
+	}
+	
+	.sortcontainer > div {
+		padding: 0px 7px;
+		border: #ffe782 1px solid;
+		font-size: 15px;
+	}
+	
+	#mainsort {
+		text-align: center;
+		width: calc(36vw + 4px);
+	}
+	
+	#ihover {
+        height: 30px;
+        width: auto;
+        border-radius: 45px;
+		margin-top: 22px;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 360px) {
+	.sort {
+		margin: 40px 0 15px 40px;
+		font-family: "Source Serif Pro";
+		font-size: 16px;
+		z-index: 2;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	
+	.sortcontainer {
+		background: #ffe782;
+		cursor: pointer;
+		z-index: 3;
+		position: absolute;
+		left: calc(57vw - 10px);
+	}
+	
+	.sortcontainer > div {
+		padding: 0px 7px;
+		border: #ffe782 1px solid;
+		font-size: 15px;
+	}
+	
+	#mainsort {
+		text-align: center;
+		width: calc(36vw + 4px);
+	}
+	
+	#ihover {
+        height: 30px;
+        width: auto;
+        border-radius: 45px;
+		margin-top: 22px;
+    }
+}
+
+@media screen and (min-width: 1385px) and (max-width: 1729px) {
+	.sort {
+		margin: 40px 0 15px 40px;
+		font-family: "Source Serif Pro";
+		font-size: 37px;
+		z-index: 3;
+		display: grid;
+		grid-template-columns: 2fr 5fr;
+	}
+	
+	.sortcontainer {
+		background: #ffe782;
+		cursor: pointer;
+		z-index: 3;
+		position: absolute;
+		left: calc(26vw - 10px);
+	}
+	
+	.sortcontainer > div {
+		padding: 10px 20px;
+		border: #ffe782 1px solid;
+		font-size: 30px;
+	}
+	
+	#mainsort {
+		text-align: center;
+		width: calc(17vw + 2px);
+	}
+	
+	#ihover {
+        height: 30px;
+        width: auto;
+        border-radius: 45px;
+		margin-top: 22px;
+    }
+}

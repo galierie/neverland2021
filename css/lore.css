@@ -1,0 +1,312 @@
+/*
+PURE RESPONSIVE CSS3 SLIDESHOW GALLERY by Roko C. buljan
+http://stackoverflow.com/a/34696029/383904
+*/
+
+*{box-sizing: border-box; -webkit-box-sizing: border-box; }
+html, main { height: 100%; }
+
+:root {
+    /* colors */
+    --dark-text: #000;
+    /* spacing */
+    /* this is what defines the global scale */
+    --baseline: 12px;
+    /* fonts */
+    --book-title: "Pirates";
+    --title: "Quincy";
+    --body: "Quincy";
+    --base-size: var(--baseline) * 1.2;
+
+    --color1: #322a20;
+    --color2: #4e1661;
+    --color3: #5f3461;
+    --color4: #268568;
+    --color5: #3c4373;
+    --color6: #c4a357;
+    --color7: #da719b;
+    --color8: #654d46;
+    --color9: #de3124;
+
+    --gradient1: -webkit-linear-gradient(left, var(--color1) 40%, #1b1308 100%);
+    --gradient2: -webkit-linear-gradient(left, var(--color2) 40%, #2f1844 100%);
+    --gradient3: -webkit-linear-gradient(left, var(--color3) 40%, #461c48 100%);
+    --gradient4: -webkit-linear-gradient(left, var(--color4) 40%, #007451 100%);
+    --gradient5: -webkit-linear-gradient(left, var(--color5) 40%, #18236a 100%);
+    --gradient6: -webkit-linear-gradient(left, var(--color6) 40%, #bf9943 100%);
+    --gradient7: -webkit-linear-gradient(left, var(--color7) 40%, #e14a86 100%);
+    --gradient8: -webkit-linear-gradient(left, var(--color8) 40%, #5a413a 100%);
+    --gradient9: -webkit-linear-gradient(left, var(--color9) 40%, #cd180b 100%);
+}
+
+main {
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: 200%;
+}
+
+@media screen and (min-width: 800px) {
+    .container {
+        display: block;
+    }
+    .container-mobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        display: none;
+    }
+    .container-mobile {
+        display: block;
+    }
+}
+
+.open-btn {
+    height: 40px;
+    width: 155px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Quincy";
+    position: relative;
+    transition: 0.8s;
+    margin-bottom: 5px;
+}
+
+.bk-content img {
+    height: 15px;
+}
+
+.locked:hover {
+    box-shadow: 0px 1px 18px #c17aff;
+    /*animation: shake 0.8s;*/ /* Transferred to JS */ 
+}
+
+.unlocked:hover, .no-lock:hover {
+    box-shadow: 0px 1px 18px #c17aff;
+    transform: scale(1.05);
+}
+
+.hide {
+  display: none;
+  transition: 0.8s;
+}
+
+#open-btn-art1:hover + .hide,
+#open-btn-doll1:hover + .hide,
+#open-btn-march1:hover + .hide,
+#open-btn-may1:hover + .hide,
+#open-btn-sam1:hover + .hide,
+#open-btn-art2:hover + .hide,
+#open-btn-doll2:hover + .hide,
+#open-btn-march2:hover + .hide,
+#open-btn-may2:hover + .hide,
+#open-btn-sam2:hover + .hide,
+#open-btn-art3:hover + .hide,
+#open-btn-doll3:hover + .hide,
+#open-btn-march3:hover + .hide,
+#open-btn-may3:hover + .hide,
+#open-btn-sam3:hover + .hide
+{
+    display: block;
+}
+
+.info-no-lock {
+    margin-bottom: 20px;
+}
+
+#open-btn-art-mobile1:hover + .hide,
+#open-btn-doll-mobile1:hover + .hide,
+#open-btn-march-mobile1:hover + .hide,
+#open-btn-may-mobile1:hover + .hide,
+#open-btn-sam-mobile1:hover + .hide,
+#open-btn-art-mobile2:hover + .hide,
+#open-btn-doll-mobile2:hover + .hide,
+#open-btn-march-mobile2:hover + .hide,
+#open-btn-may-mobile2:hover + .hide,
+#open-btn-sam-mobile2:hover + .hide,
+#open-btn-art-mobile3:hover + .hide,
+#open-btn-doll-mobile3:hover + .hide,
+#open-btn-march-mobile3:hover + .hide,
+#open-btn-may-mobile3:hover + .hide,
+#open-btn-sam-mobile3:hover + .hide
+{
+    display: block;
+}
+
+.amount-message {
+    font-size: 9px !important;
+    font-weight: bold;
+}
+
+.amount-message-mobile {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+/* Individual book colors */
+
+#bk-list li:nth-child(1) .bk-front > div,
+#bk-list li:nth-child(1) .bk-back,
+#bk-list li:nth-child(1) .bk-left,
+#bk-list li:nth-child(1) .bk-front:after {
+    background-color: var(--color1);
+}
+
+#bk-list li:nth-child(2) .bk-front > div,
+#bk-list li:nth-child(2) .bk-back,
+#bk-list li:nth-child(2) .bk-left,
+#bk-list li:nth-child(2) .bk-front:after {
+    background-color: var(--color2);
+}
+
+#bk-list li:nth-child(3) .bk-front > div,
+#bk-list li:nth-child(3) .bk-back,
+#bk-list li:nth-child(3) .bk-left,
+#bk-list li:nth-child(3) .bk-front:after {
+    background-color: var(--color3);
+}
+
+#bk-list li:nth-child(4) .bk-front > div,
+#bk-list li:nth-child(4) .bk-back,
+#bk-list li:nth-child(4) .bk-left,
+#bk-list li:nth-child(4) .bk-front:after {
+    background-color: var(--color4);
+}
+
+#bk-list li:nth-child(5) .bk-front > div,
+#bk-list li:nth-child(5) .bk-back,
+#bk-list li:nth-child(5) .bk-left,
+#bk-list li:nth-child(5) .bk-front:after {
+    background-color: var(--color5);
+}
+
+#bk-list li:nth-child(6) .bk-front > div,
+#bk-list li:nth-child(6) .bk-back,
+#bk-list li:nth-child(6) .bk-left,
+#bk-list li:nth-child(6) .bk-front:after {
+    background-color: var(--color6);
+}
+
+#bk-list li:nth-child(7) .bk-front > div,
+#bk-list li:nth-child(7) .bk-back,
+#bk-list li:nth-child(7) .bk-left,
+#bk-list li:nth-child(7) .bk-front:after {
+    background-color: var(--color7);
+}
+
+#bk-list li:nth-child(8) .bk-front > div,
+#bk-list li:nth-child(8) .bk-back,
+#bk-list li:nth-child(8) .bk-left,
+#bk-list li:nth-child(8) .bk-front:after {
+    background-color: var(--color8);
+}
+
+#bk-list li:nth-child(9) .bk-front > div,
+#bk-list li:nth-child(9) .bk-back,
+#bk-list li:nth-child(9) .bk-left,
+#bk-list li:nth-child(9) .bk-front:after {
+    background-color: var(--color9);
+}
+
+/* Individual style & artwork */
+
+#bk-list li:nth-child(1) .bk-cover {
+    background-image: url(../img/book/book_cover1.png);
+}
+#bk-list li:nth-child(1) .bk-left {
+    background-image: url(../img/book/book_spine1.png);
+}
+
+#bk-list li:nth-child(2) .bk-cover {
+    background-image: url(../img/book/book_cover2.png);
+}
+#bk-list li:nth-child(2) .bk-left {
+    background-image: url(../img/book/book_spine2.png);
+}
+
+#bk-list li:nth-child(3) .bk-cover {
+    background-image: url(../img/book/book_cover3.png);
+}
+#bk-list li:nth-child(3) .bk-left {
+    background-image: url(../img/book/book_spine3.png);
+}
+
+#bk-list li:nth-child(4) .bk-cover {
+    background-image: url(../img/book/book_cover4.png);
+}
+#bk-list li:nth-child(4) .bk-left {
+    background-image: url(../img/book/book_spine4.png);
+}
+
+#bk-list li:nth-child(5) .bk-cover {
+    background-image: url(../img/book/book_cover5.png);
+}
+#bk-list li:nth-child(5) .bk-left {
+    background-image: url(../img/book/book_spine5.png);
+}
+
+#bk-list li:nth-child(6) .bk-cover {
+    background-image: url(../img/book/book_cover6.png);
+}
+#bk-list li:nth-child(6) .bk-left {
+    background-image: url(../img/book/book_spine6.png);
+}
+
+#bk-list li:nth-child(7) .bk-cover {
+    background-image: url(../img/book/book_cover7.png);
+}
+#bk-list li:nth-child(7) .bk-left {
+    background-image: url(../img/book/book_spine7.png);
+}
+
+#bk-list li:nth-child(8) .bk-cover {
+    background-image: url(../img/book/book_cover8.png);
+}
+#bk-list li:nth-child(8) .bk-left {
+    background-image: url(../img/book/book_spine8.png);
+}
+
+#bk-list li:nth-child(9) .bk-cover {
+    background-image: url(../img/book/book_cover9.png);
+}
+#bk-list li:nth-child(9) .bk-left {
+    background-image: url(../img/book/book_spine9.png);
+}
+
+/* Individual button colors */
+
+#bk-list li:nth-child(1) .open-btn {background: var(--gradient1); box-shadow: 0px 1px 8px var(--color1); color: white;}
+#bk-list li:nth-child(2) .open-btn {background: var(--gradient2); box-shadow: 0px 1px 8px var(--color2); color: white;}
+#bk-list li:nth-child(3) .open-btn {background: var(--gradient3); box-shadow: 0px 1px 8px var(--color3); color: white;}
+#bk-list li:nth-child(4) .open-btn {background: var(--gradient4); box-shadow: 0px 1px 8px var(--color4); color: white;}
+#bk-list li:nth-child(5) .open-btn {background: var(--gradient5); box-shadow: 0px 1px 8px var(--color5); color: white;}
+#bk-list li:nth-child(6) .open-btn {background: var(--gradient6); box-shadow: 0px 1px 8px var(--color6); color: white;}
+#bk-list li:nth-child(7) .open-btn {background: var(--gradient7); box-shadow: 0px 1px 8px var(--color7); color: white;}
+#bk-list li:nth-child(8) .open-btn {background: var(--gradient8); box-shadow: 0px 1px 8px var(--color8); color: white;}
+#bk-list li:nth-child(9) .open-btn {background: var(--gradient9); box-shadow: 0px 1px 8px var(--color9); color: white;}
+

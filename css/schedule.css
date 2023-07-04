@@ -1,0 +1,456 @@
+/* Standardized Things */
+body {
+	margin: 0;
+	background: #f1fdff;
+	color: #F1FDFF;
+    font-family: "Source Serif Pro";
+}
+
+main h2,
+main h3,
+main p {
+    word-wrap: break-word;
+	margin: 5px 0;
+}
+
+main h1 {
+    font: 600 42px "Source Serif Pro";
+}
+
+main h2 {
+    font-size: 30px;
+}
+
+main h3 {
+	font-size: 24px;
+}
+
+main p {
+	font-size: 18px;
+}
+
+main a {
+	color: #F1FDFF;
+	text-decoration: underline;
+}
+
+main a:hover {
+	color: #372449;
+	cursor: pointer;
+}
+
+/* Marquee */
+#marquee {
+    height: 89vh;
+    position: relative;
+}
+
+.marqArrow {
+    position: absolute;
+    top: 0;
+    height: 87.5vh;
+    width: 7.5%;
+    background-color: rgba(31, 22, 39, 0.5);
+    transition: 0.8s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.marqArrow:hover {
+    cursor: pointer;
+    background-color: rgba(31, 22, 39, 1);
+}
+#mLArr {
+    left: 0;
+}
+#mRArr {
+    right: 0;
+}
+
+.marqArrow img {
+    height: auto;
+    width: 80%;
+    transition: 0.8s ease-in-out;
+}
+.marqArrow img:hover {
+    transform: scale(150%);
+}
+
+#marqueeRoad {
+    position: relative;
+    height: 87.5vh;
+}
+
+.marqueeContainer {
+    position: absolute;
+    top: 10%;
+    height: 80%;
+    width: 30%;
+    background-color: #372449;
+    box-shadow: 5px 5px 3px 2px #1F1627;
+    transition: 0.8s ease-in-out;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    justify-items: center;
+    align-items: center;
+    z-index: -1;
+}
+.marqueeContainer:hover {
+    cursor: pointer;
+    transform: scale(110%);
+}
+
+.farLeftMarq {
+    left: -30%;
+}
+
+.farRightMarq {
+    left: 100%;
+}
+.leftMarq {
+    left: 2.5%;
+    z-index: 0;
+}
+.rightMarq {
+    left: 67.5%;
+    z-index: 0;
+}
+.turnMarq {
+    left: 35%;
+    z-index: 0;
+}
+
+.marqBorder {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.mOBorder {
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+.mIBorder {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.marqBorder > div {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #FFE782;
+    box-shadow: 0 0 5px 2px #FFE782;
+}
+
+.innerMarq {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 10% 80% 10%;
+    justify-items: center;
+    align-items: center;
+}
+
+.marqProper {
+    height: 100%;
+    width: 100%;
+    box-shadow: inset 0 0 8px 2px #1F1627;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.status {
+    text-align: center;
+}
+
+.marqDisplay {
+    height: 100%;
+    width: 100%;
+    /*border-radius: 10px;*/
+    /*border: 5px solid #FFE782;*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    box-shadow: inset 0 0 8px 2px #1F1627;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#marqueeIndicator {
+    height: 1.5vh;
+    width: 100%;
+    background-color: rgba(55, 36, 73, 0.25);
+    display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.marqOrder {
+    height: 6px;
+    width: 6px;
+    margin: 0px 3px;
+    border-radius: 50%;
+    background-color: #1F1627;
+    transition: 0.8s ease-in-out;
+	cursor: pointer;
+}
+.turnOrder {
+    background-color: #F1FDFF;
+}
+
+/* Schedule */
+#schedule {
+	height: fit-content;
+	width: 100%;
+    border-top: 2px solid rgba(31, 22, 39, 0.5);
+}
+
+.scheduleContainer {
+	height: fit-content;
+	width: 100%;
+	border-bottom: 2px solid rgba(31, 22, 39, 0.5);
+	transition: 0.8s ease-in-out;
+	z-index: 0;
+}
+
+.dayLabel {
+	margin: 20px 0 60px 0;
+	height: 50px;
+	color: #1F1627;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.eventContainer {
+	position: relative;
+	margin: 50px 5%;
+	min-height: 100px;
+	height: auto;
+	width: 90%;
+	border: 0;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.top, .bottom, .left, .right {
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	background-color: #F1FDFF;
+	border-radius: 50%;
+	z-index: 1;
+}
+.top {
+	top: -10px;
+}
+.bottom {
+	bottom: -10px;
+}
+.left {
+	left: -10px;
+}
+.right {
+	right: -10px;
+}
+
+.middleHori {
+	left: 25%;
+	display: block;
+	height: 0;
+}
+
+.middleVert {
+	position: relative;
+	top: -10px;
+	height: fit-content;
+	width: 102.5%;
+	display: none;
+	justify-content: space-between;
+}
+
+.middleVert > div {
+	height: 0;
+	width: 20px;
+	background-color: #F1FDFF;
+	border-radius: 50%;
+}
+
+.ePContainer {
+	position: relative;
+	min-height: 35%;
+	max-height: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform-origin: left;
+	transition: 0.8s ease-in-out;
+}
+.ePHidden {
+	height: auto;
+	width: 0;
+}
+.ePShown {
+	height: auto;
+	width: 35%;
+}
+
+.eventPub {
+	height: auto;
+	width: 100%;
+}
+
+.eventInfo {
+	height: auto;
+	width: 100%;
+	padding: 10px;
+}
+
+.eventDetails {
+	border: 2px solid #F1FDFF;
+	padding: 10px;
+}
+
+.eventDetails > div {
+	height: auto;
+	width: 100%;
+}
+
+.timeLeft {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.timeLeft img {
+	height: 24px;
+	width: auto;
+}
+
+.dropdown, .collapse {
+	height: 18px;
+	width: auto;
+	transition: 0.8s ease-in-out;
+}
+.dropdown:hover, .collapse:hover {
+	cursor: pointer;
+	transform: scale(150%);
+}
+
+.eventDescription {
+	display: none;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	transition: 0.8s ease-in-out;
+	transform-origin: top;
+}
+.eventDescription p {
+	text-align: left;
+}
+
+/* Responsive CSS */
+@media only screen and (max-width: 1190px) {
+    /* Schedule */
+	.eventContainer {
+		flex-direction: column;
+	}
+
+	.ePShown {
+		width: 50%;
+	}
+
+	.middleVert {
+		display: flex;
+	}
+
+	.middleHori {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 850px) {
+    /* Marquee */
+    .marqueeContainer {
+        width: 45%;
+    }
+    .farLeftMarq {
+        left: -97.5%;
+    }
+    .farRightMarq {
+        left: 102.5%;
+    }
+    .leftMarq {
+        left: -47.5%;
+    }
+    .rightMarq {
+        left: 52.5%;
+    }
+    .turnMarq {
+        left: 2.5%;
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    /* Marquee */
+    .marqArrow {
+        display: none;
+    }
+
+    /* Schedule */
+	.ePShown {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 460px){
+    /* Marquee */
+    .marqueeContainer {
+        width: 75%;
+    }
+    .farLeftMarq {
+        left: -157.5%;
+    }
+    .farRightMarq {
+        left: 182.5%;
+    }
+    .leftMarq {
+        left: -72.5%;
+    }
+    .rightMarq {
+        left: 97.5%;
+    }
+    .turnMarq {
+        left: 12.5%;
+    }
+}
+
+@media only screen and (max-width: 300px){
+    /* Marquee */
+    .marqueeContainer {
+        width: 100%;
+    }
+    .farLeftMarq {
+        left: -200%;
+    }
+    .farRightMarq {
+        left: 200%;
+    }
+    .leftMarq {
+        left: -100%;
+    }
+    .rightMarq {
+        left: 100%;
+    }
+    .turnMarq {
+        left: 0;
+    }
+}

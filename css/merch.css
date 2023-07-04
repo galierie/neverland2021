@@ -1,0 +1,644 @@
+.MerchHTML, .MerchBody {
+	overflow-x: initial;
+}
+
+/* Background */
+body {
+	background-color: #f1fdff;
+}
+
+/* Title 
+#Trinkets {
+	height: 300px;
+	margin-left: 450px;
+	margin-top: 50px;
+} */
+
+/* General */
+.fheading {
+	color: white;
+}
+
+.dArrow {
+	margin-left: 40px;
+	width: 10px;
+	height: auto;
+}
+
+#ProductBoxContainer > .hide {
+	display: none;
+}
+
+/* Main Body */
+#MerchBody {
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	padding: 2.5% 2.5% 2.5% 2.5%;
+}
+
+/* Purple Box */
+#FilterBox {
+	display: inline-block;
+	width: 100%;
+	min-width: 210px;
+	height: 100%;
+	border-radius: 20px;
+	background-color: #493d79;
+	text-align: center;
+	user-select: none;
+	overflow: initial;
+}
+
+.filterToggle {
+	display: none;
+}
+
+.MorePages1, .MorePages2{
+	display: none;
+}
+
+.StickyFilter {
+	top: 60px;
+	position: sticky;
+}
+
+/* Search Bar */
+
+main input[type=text] {
+	margin: 25px 10px 20px 10px;
+	width: 75%;
+	border-radius: 10px;
+	padding: 5px;
+	display: inline-block;
+}
+
+::placeholder {
+	vertical-align: middle;
+	font-size: 26;
+}
+
+#NoResults {
+	width: 75%;
+	text-align: center;
+	padding: 150px 0;
+	font-size: 30px;
+}
+
+/* "Go to Page: Section */
+#GoTo {
+	display: inline-block;
+	width: 30%;
+	text-align: left;
+	margin: 0px 10px 15px 10px;
+	/* border: 1px solid white; */
+}
+
+#PageNav {
+	display: inline-block;
+	margin: 0px 15px 15px 0px;
+}
+
+#ChoosePage  {
+	width: 100%;
+	font-size: 24;
+	padding: 2.5px 5px 3px 5px;
+	cursor: pointer;
+}
+
+#Page1, #Page2, #Page3, #Page4 {
+	display: none;
+}
+
+/* Filters Section */
+#Filter {
+	display: block;
+	text-align: left;
+	margin-left: 45px;
+	margin-bottom: 10px;
+}
+
+.FCategory {
+	display: block;
+	text-align: left;
+	margin-left: 60px;
+	cursor: pointer;
+}
+
+.fcategory {
+	display: inline-block;
+	width: 55%;
+	color: white;
+	font-size: 25;
+	margin-bottom: 10px;
+}
+
+.fsort {
+	display: inline-block;
+	width: calc(100% - 55px);
+	color: white;
+	font-size: 22;
+	vertical-align: middle;
+}
+
+input[type=checkbox] {
+	vertical-align: middle;
+}
+
+.FSort {
+	width: webkit-fill-available;
+	display: none;
+	margin-bottom: 15px;
+	text-align: left;
+	margin-left: 75px;
+}
+
+/* Reset Button */
+#ResetButton {
+	margin: 30px 20px 15px 20px;
+	background-color: #94a2ff;
+	font-size: 20px;
+	border-radius: 10px;
+	padding-top: 10px;
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+#ResetButton:hover {
+	padding: 20px 0px 10px 0px;
+}
+
+/* Order Form Button */
+#OrderFormButton, #OrderFormButton-Link {
+	background-color: #94a2ff;
+	color: #493d79;
+	font-size: 20px;
+	margin: 20px;
+	padding: 10px 0px;
+	border-radius: 10px;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+#OrderFormButton:hover, #OrderFormButton-Link:hover {
+	padding: 20px 0px;
+}
+
+#OrderFormButton text, #OrderFormButton-Link text  {
+	margin: 0px;
+}
+
+#OrderFormButton-Link {
+	display: none;
+}
+
+.Filler {
+	height: 30px;
+}
+
+/* Page Navigation */
+.PageNavigation {
+	font-size: 25px;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.P1, .P2, .P3, .P4, .P5 {
+	display: none;
+}
+
+.nav {
+	display: inline-block;
+	border-radius: 10px;
+	height: 45px;
+	padding: 5px 20px;
+	user-select: none;
+}
+
+.nav:hover {
+	font-weight: bolder;
+	font-size: 28px;
+	cursor: pointer;
+}
+
+/* Product Boxes */
+#ProductBoxContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding-left: 0px 10px;
+}
+
+/* Hide Template (Temporary)*/
+#ProductBoxTemplate {
+	display: none;
+}
+
+.ProductBox {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 25%;
+	min-width: 380px;
+	height: 200px;
+	background-color: #493d79;
+	margin: 20px 10px 20px 10px;
+	border-radius: 20px;
+	padding: 30px;
+	transition: 0s;
+	color: white;
+	box-sizing: content-box;
+	cursor: pointer;
+	user-select: none;
+}
+
+.ProdImg {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	/* border: 1px solid black; */
+}
+
+.ProdDeets, .EnlargedProdDeets {
+	display: inline-block;
+	text-align: center;
+    /* border: 1px solid black; */
+	margin-left: 40px;
+}
+
+.prodimg {
+	object-fit: cover;
+	width: 100%;
+	max-height: 100%;
+}
+
+.ProdDeets text, .EnlargedProdDeets text{
+	display: block;
+}
+
+.ProdDeets :nth-child(1), .EnlargedProdDeets :nth-child(2) {
+	margin-bottom: 5px; 
+	font-weight: bolder;
+}
+
+.ProdDeets :nth-child(2), .EnlargedProdDeets :nth-child(3){ 
+	margin-bottom: 10px;
+}
+
+.ProdDeets :nth-child(2) {
+	height: 100px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 5; /* number of lines to show */
+	-webkit-box-orient: vertical;
+}
+
+.ProdDeets :nth-child(3), .EnlargedProdDeets :nth-child(4) {
+	display: block;
+	font-weight: bolder;
+	margin-bottom: 30px;
+}
+
+#EnlargedName {
+	margin-top: 25px;
+}
+
+/* Enlarged OrderForm */
+.OrderFormBox {
+	width: 360px;
+	height: 80px;
+	transition: 0s;
+	background-color: #493d79;
+	margin: 0px 10px 20px 10px;
+	border-radius: 20px;
+	padding: 30px;
+	box-sizing: content-box;
+	color: white;
+	text-align: center;
+	overflow: hidden;
+}
+
+.OrderFormBox iframe {
+	border-radius: 10px;
+	background-color: white;
+}
+
+/* Enlarged ProductBox */
+#EnlargedProductBox, #EnlargedOrderForm {
+	position: fixed;
+	z-index: 20;
+	transition: 0.5s;
+}
+
+
+#EnlargedProductBox.enlarged {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 85%;
+	height: 65%;
+	font-size: 150%;
+	cursor: default;
+}
+
+#EnlargedOrderForm.enlarged {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 85%;
+	height: 80%;
+	font-size: 150%;
+	cursor: default;
+}
+
+.enlarged .prodimg {
+	transition: 0.5s;
+	width: 65%;
+}
+
+.enlarged .prodimg.vertical {
+	width: 50%;
+}
+
+#BlackBG, #BlackBG-Filter {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	opacity: 50%;
+	top: 0px;
+	left: 0px;
+	background-color: black;
+	z-index: 10;
+	transition: 0.5s;
+}
+
+#BlackBG-Filter {
+	z-index: 3;
+}
+
+#BlackBG.transparent, #BlackBG-Filter.transparent {
+	display: none;
+	opacity: 0%;
+}
+
+.close {
+	height: 25px;
+	margin-left: -105px;
+	float: right;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+/* Img Gallery*/ 
+ .arrowContainer {
+	display: grid;
+	grid-template-columns: 40px 1fr 40px;
+}
+
+.ImgGalleryContainer {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	/* border: 1px solid white; */
+}
+
+.arrow {
+	display: flex;
+	align-items: center;
+}
+
+/* rotating some arrow imgs */
+
+.aLeft img, .aRight img{
+	width: 40px;
+	height: 40px;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+.aLeft img {
+	transform: rotate(90deg);
+	filter: invert(100%);
+}
+
+.aRight img {
+	transform: rotate(270deg);
+	filter: invert(100%);
+}
+
+/* Image Gallery Core */
+
+#OtherImages {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+#OtherImages img {
+	float: left;
+	height: 20px;
+	margin-right: 25px;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+#OtherImages :last-child {
+	margin-right: 0px;
+}
+
+.enlarged #OtherImages img {
+	height: 40px;
+}
+
+/* Image Gallery Hovers */
+#OtherImages img:hover {
+	filter: brightness(120%);
+	height: 50px;
+}
+
+.aLeft img:hover, .aRight img:hover {
+	height: 60px;
+}
+
+.close:hover {
+	height: 40px;
+}
+
+/* Image Change Transition */
+
+#EnlargedImage.transparent {
+	transition: 0s;
+	visibility: hidden;
+}
+
+.transitionimg {
+	position: absolute;
+	width: 300px;
+	opacity: 0%;
+}
+
+.transitionimg.hide {
+	visibility: hidden;
+}
+
+/* Responsiveness */
+
+@media only screen and (max-width: 768px), (max-height: 768px) and (max-width: 1024px) {
+	#FilterBox {
+		display: none;
+		position: fixed;
+		z-index: 5;
+		top: 0px;
+		left: 0px;
+		width: 50%;
+		border-radius: 0px;
+	}
+	
+	#OrderFormButton {
+		display: none;
+	}
+	
+	#OrderFormButton-Link {
+		display: block;
+	}
+	
+	.StickyFilter {
+		position: relative;
+		top: 0;
+		margin-top: 9vh;
+	}
+	
+
+	.filterToggle {
+		display: block;
+		width: 25%;
+	}
+
+	.MorePages1 {
+		display: inline-block;
+		margin-right: 7.5px;
+	}
+
+	.MorePages2 {
+		display: inline-block;
+		margin-left: 7.5px;
+	}
+
+	.top {
+		/* Used to adjust top page nav */
+		margin-top: 20px;
+	}
+
+	.bottom {
+		margin-bottom: 10px;
+	}
+	
+	#MerchBody {
+		grid-template-columns: 1fr;
+	}
+	
+	#EnlargedProductBox.enlarged {
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: space-evenly;
+		width: 60%;
+	}
+	
+	.ProdDeets :nth-child(3), .EnlargedProdDeets :nth-child(4) {
+    margin-bottom: 0px;
+	}
+	
+	.ProdDeets :nth-child(2) {
+		-webkit-line-clamp: 4;
+		height: 20vw;
+	}
+	
+	.ProdDeets {
+		margin-left: 0px;
+		font-size: 4vw;
+	}
+	
+	.EnlargedProdDeets {
+		font-size: max(2vh, 14px);
+		margin-left: 0px;
+	}
+	
+	.aLeft, .aRight {
+		display: none;
+	}
+	
+	.arrowContainer {
+		grid-template-columns: 1fr;
+		max-width: 240px;
+	}
+	
+	.ProductBox {
+		width: 70vw;
+		height: 40vw;
+		min-width: 0px;
+	}
+	
+	.swiper-wrapper {
+		width: 40vw;
+		height: 40vw;
+	}
+
+	
+	.transitionimg {
+		display: none;
+	}
+	
+	#OtherImages {
+		display: none;
+	}
+	
+	.enlarged .prodimg {
+		height: 100%;
+		max-height: 240px;
+		transition: 0s;
+	}
+}
+
+@media screen and (max-width: 1024px) and (min-aspect-ratio: 100/99) {
+	#EnlargedProductBox.enlarged {
+		flex-direction: row-reverse;
+	}
+	
+	.close {
+		margin-top: -10px;
+		margin-left: 0px;
+		float: left;
+	}
+
+}
+
+@media screen and (min-width: 400px) and (max-width: 768px) {
+	.ImgGalleryContainer {
+		flex-direction: row;
+	}
+
+}
+
+@media screen and (min-width: 1750px) {
+	#EnlargedName {
+		font-size: 50px;
+		font-weight: bolder;
+	}
+
+	#EnlargedDesc {
+		font-size: 30px;
+		font-weight: normal;
+		height: 375px;
+		margin-left: 85px;
+		width: 600px;
+	}
+
+	#EnlargedPrice {
+		font-size: 40px;
+	}
+}

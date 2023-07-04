@@ -1,0 +1,1046 @@
+/* LAYOUT */
+
+main {
+    display: grid;
+    width: 100vw;
+    gap: 1% 2.5%;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100vh 1.25fr 1.25fr 1fr;
+    margin-top: 0;
+}
+
+#intro {
+    display: grid;
+    place-items: center;
+    padding: 8% 0 4% 0;
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+}
+
+#activities {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+    margin: 1% 0 1% 5%;
+}
+
+#schedule,
+#shop {
+    grid-column: 2 / 3;
+    margin: 1% 9% 1% 0;
+}
+
+#schedule {
+    grid-row: 2 / 3;
+}
+
+#shop {
+    grid-row: 3 / 4;
+}
+
+#ad {
+    margin: 1% 0 1% 5%;
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+}
+
+#sponsors {
+    margin: 1% 9% 1% 0;
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+}
+
+h2,
+h3 {
+    margin: 2.5% 0;
+    font-style: italic;
+}
+
+/* INTRO */
+
+#intro {
+    text-align: center;
+    background: rgb(148,162,255);
+}
+
+#hourglass-logo-landing {
+    width: 128px;
+}
+
+#intro-scroll img {
+    width: 48px;
+    cursor: pointer;
+    transition: 0.8s;
+    margin-top: 12vh;
+}
+
+#intro-scroll img:hover {
+    transform: rotate(180deg);
+}
+
+#neverland-title {
+    width: 500px;
+    margin: 0;
+    margin-top: 1.5%;
+    color: #1f1627;
+}
+
+#neverland-subtitle {
+    font: 600 italic 30px "Source Serif Pro";
+    margin: 0;
+    color: #1f1627;
+}
+
+/* EVENTS */
+
+h2 {
+    font-size: 40px;
+}
+
+#activities-slideshow {
+    overflow: hidden;
+    position: relative;
+}
+
+#activity-slides {
+    display: flex;
+    width: 500%;
+    position: relative;
+}
+
+.activity-slide {
+    width: 20%;
+    transition: 0.8s;
+}
+
+.activity-slide img {
+    width: 100%;
+}
+
+#activity-slides input {
+    display: none;
+}
+
+.activity-caption {
+    margin: 5% 0;
+    padding: 0 2.5%;
+    text-align: justify;
+    font-size: 22px;
+    font-style: italic;
+}
+
+.activity-nav {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 1% 0;
+}
+
+.activity-manualbtn {
+    border: 2px solid #1f1627;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.8s;
+    margin: 0 2%;
+}
+
+.activity-manualbtn:hover {
+    background-color: #1f1627;
+}
+
+.activity-currentbtn {
+    background-color: #1f1627;
+}
+
+#activity-btn1:checked ~ .activity-first {
+    margin-left: 0;
+}
+
+#activity-btn2:checked ~ .activity-first {
+    margin-left: -20%;
+}
+
+#activity-btn3:checked ~ .activity-first {
+    margin-left: -40%;
+}
+
+#activity-btn4:checked ~ .activity-first {
+    margin-left: -60%;
+}
+
+#activity-btn5:checked ~ .activity-first {
+    margin-left: -80%;
+}
+
+#activities-prev,
+#activities-next {
+    position: absolute;
+    top: 32%;
+    font-size: 40px;
+    cursor: pointer;
+    color: #ffe782;
+    transition: 0.8s;
+}
+
+#activities-prev:hover,
+#activities-next:hover {
+    transform: scale(1.1);
+}
+
+#activities-prev {
+    left: 1%;
+}
+
+#activities-next {
+    right: 1%;
+}
+
+/* SCHEDULE */
+
+h3 {
+    font-size: 30px;
+}
+
+#schedule-proper {
+    display: grid;
+    width: 95%;
+    grid-template-columns: 22.5% 77.5%;
+    grid-template-rows: 0.75fr repeat(8, 1fr);
+    border-radius: 10px;
+    background-color: #372449;
+    background: linear-gradient(135deg, rgba(90,56,122,1) 0%, rgba(55,36,73,1) 100%);
+    padding: 3% 3% 2% 3%;
+}
+
+#schedule-date {
+    grid-column: 1 / -1;
+    font-size: 21px;
+    font-weight: 600;
+    padding: 1.5% 0;
+    text-align: center;
+}
+
+#schedule-proper p {
+    margin: 0;
+    color: #f1fdff;
+}
+
+#schedule-proper .event-time {
+    color: #ffe782;
+}
+
+.event {
+    padding: 1%;
+    margin-left: 5%;
+}
+
+.event-time {
+    margin-left: 2%;
+    font-size: 19px;
+    align-self: center;
+    justify-self: end;
+}
+
+.event-name {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.event-details {
+    font-size: 11px;
+    padding: 0.5% 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#full-schedule,
+#full-shop {
+    display: inline-block;
+    color: #1f1627;
+    text-decoration: underline;
+    font: italic 600 18px "Source Serif Pro";
+    margin-top: 1%;
+}
+
+#full-schedule:hover,
+#full-shop:hover {
+    color: #493d79;
+}
+
+/* SHOP */
+
+#merch-slides input {
+    display: none;
+}
+
+#merch-slideshow {
+    overflow: hidden;
+    position: relative;
+}
+
+#merch-slides {
+    display: flex;
+    padding-bottom: 5%;
+    width: 500%;
+    position: relative;
+}
+
+.merch-slide {
+    width: 20%;
+    transition: 0.8s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.merch-slide img {
+    width: 40%;
+    margin: 0 2.5%;
+}
+
+.merch-nav {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.merch-manualbtn {
+    border: 2px solid #1f1627;
+    padding: 4px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.8s;
+    margin: 0 1.5%;
+}
+
+.merch-manualbtn:hover {
+    background-color: #1f1627;
+}
+
+.merch-currentbtn {
+    background-color: #1f1627;
+}
+
+#merch-btn1:checked ~ .merch-first {
+    margin-left: 0;
+}
+
+#merch-btn2:checked ~ .merch-first {
+    margin-left: -20%;
+}
+
+#merch-btn3:checked ~ .merch-first {
+    margin-left: -40%;
+}
+
+#merch-btn4:checked ~ .merch-first {
+    margin-left: -60%;
+}
+
+#merch-btn5:checked ~ .merch-first {
+    margin-left: -80%;
+}
+
+#merch-prev,
+#merch-next {
+    position: absolute;
+    top: 33%;
+    font-size: 40px;
+    cursor: pointer;
+    border-radius: 50%;
+    color: #ffe782;
+    transition: 0.8s;
+}
+
+#merch-prev:hover,
+#merch-next:hover {
+    transform: scale(1.1);
+}
+
+#merch-prev {
+    left: 2.5%;
+}
+
+#merch-next {
+    right: 2.5%;
+}
+
+/* AD */
+
+#ad {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
+
+#ad h2 {
+    font-size: 32px;
+}
+
+#ad iframe {
+    display: block;
+    height: auto;
+    margin-right: 5%;
+    aspect-ratio: 16 / 9;
+}
+
+#sponsors h3 {
+    font-size: 28px;
+}
+
+#sponsors img {
+    width: 100%;
+}
+
+/* HOMEPAGE RESPONSIVENESS: SMALLER DEVICES */
+
+@media screen and (max-width: 1150px) {
+    #activities-prev,
+    #activities-next {
+        top: 30%;
+    }
+} 
+
+@media screen and (max-width: 1000px) {
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    #activities-prev,
+    #activities-next {
+        top: 25%;
+    }
+
+    .activity-caption {
+        font-size: 18px;
+    }
+
+    #schedule-date {
+        font-size: 18px;
+    }
+
+    .event {
+        padding: 1.25% 1%;
+    }
+
+    .event-time {
+        font-size: 15px;
+    }
+
+    .event-name {
+        font-size: 13px;
+    }
+
+    #full-schedule,
+    #full-shop {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    main {
+        grid-template-columns: 50% 50%;
+    }
+
+    #intro {
+        padding-top: 12%
+    }
+
+    #neverland-title {
+        width: 400px;
+    }
+
+    #neverland-subtitle {
+        font-size: 28px;
+    }
+
+    h2,
+    h3 {
+        margin: 1.5% 0;
+    }
+    
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .activity-manualbtn {
+        border: 1.5px solid #1f1627;
+        padding: 4px;
+    }
+
+    .merch-manualbtn {
+        border: 1.5px solid #1f1627;
+        padding: 3px;
+    }
+
+    #full-schedule, 
+    #full-shop {
+        font-size: 14px;
+    }
+
+    #schedule-date {
+        font-size: 16px;
+    }
+
+    .event-time {
+        font-size: 14px;
+    }
+
+    .event-name {
+        font-size: 12.5px;
+    }
+
+    .event-details {
+        font-size: 10.5px;
+        padding: 1.5% 0;
+    }
+
+    #merch-prev,
+    #merch-next {
+        top: 27%;
+    }
+}
+
+@media screen and (max-width: 812px) {
+    #intro {
+        padding: 8% 0 2% 0;
+    }
+
+    #hourglass-logo-landing {
+        width: 80px;
+    }
+
+    #neverland-title {
+        width: 300px;
+    }
+
+    #neverland-subtitle {
+        font-size: 18px;
+    }
+
+    #intro-scroll img {
+        width: 36px;
+    }
+
+    #activities-slideshow {
+        margin: 0 12.5%;
+    }
+
+    #schedule-proper {
+        width: 90%;
+        margin: auto;
+        grid-template-columns: 20% 80%;
+    }
+
+    #merch-slideshow {
+        margin: 0 2.5%;
+    }
+
+    main {
+        gap: 0;
+        grid-template-columns: 100vw;
+        grid-template-rows: 100vh 1fr 0.6fr 0.4fr 0.45fr 0.4fr;
+        margin-bottom: 0;
+    }
+
+    h2,
+    h3,
+    #ad h2,
+    #sponsors h3 {
+        margin: 2.5% 0;
+        font-size: 32px;
+    }
+    
+    #intro {
+        place-items: center;
+        grid-row: 1 / 2;
+        grid-column: 1 / -1;
+    }
+    
+    #activities,
+    #schedule,
+    #shop,
+    #ad,
+    #sponsors {
+        grid-column: 1 / 2;
+        margin: 0;
+        padding: 0 7.5%;
+    }
+
+    #activities {
+        padding-top: 2.5%;
+        grid-row: 2 / 3;
+    }
+
+    #activities-prev,
+    #activities-next {
+        top: 28%;
+        font-size: 60px;
+    }
+
+    .activity-caption {
+        font-size: 18px;
+    }
+
+    .activity-manualbtn,
+    .merch-manualbtn {
+        padding: 4.5px;
+    }
+    
+    #schedule {
+        grid-row: 3 / 4;
+    }
+
+    #schedule-date {
+        font-size: 22px;
+    }
+
+    .event {
+        padding: 1% 0;
+    }
+    
+    .event-time {
+        font-size: 17.5px;
+    }
+
+    .event-name {
+        font-size: 16px;
+    }
+
+    .event-details {
+        font-size: 14px;
+    }
+
+    #shop {
+        grid-row: 4 / 5;
+    }
+
+    #full-schedule, 
+    #full-shop {
+        font-size: 17px;
+    }
+
+    #merch-prev,
+    #merch-next {
+        position: absolute;
+        top: 33%;
+    }
+
+    #ad {
+        grid-row: 5 / 6;
+    }
+
+    #sponsors {
+        grid-row: 6 / 7;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #intro {
+        padding: 12% 0 2% 0;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    #neverland-title {
+        width: 275px;
+    }
+
+    #activities-prev,
+    #activities-next {
+        top: 24%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    main {
+        grid-template-rows: 100vh 1fr 0.65fr 0.4fr 0.45fr 0.4fr;
+    }
+
+    #hourglass-logo-landing {
+        width: 64px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        grid-template-rows: 100vh 1fr 0.8fr 0.4fr 0.45fr 0.4fr;
+    }
+    
+    #intro {
+        padding-top: 32%;
+        padding-bottom: 16%;
+    }
+
+    #neverland-title {
+        width: 375px;
+    }
+
+    #schedule-proper {
+        grid-template-columns: 28% 72%;
+    }
+
+    .event-name {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #neverland-title {
+        width: 350px;
+    }
+
+    #activities,
+    #schedule,
+    #shop,
+    #ad,
+    #sponsors {
+        padding: 0 4%;
+    }
+
+    #activities {
+        padding-top: 2.5%;
+    }
+
+    #activities-prev, 
+    #activities-next {
+        top: 25%;
+    }
+
+    #schedule-proper {
+        grid-template-rows: 0.6fr repeat(4, 0.9fr);
+    }
+
+    .event {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2% 0;
+    }
+
+    .event-name {
+        font-size: 16px;
+    }
+
+    .event-time {
+        font-size: 20px;
+    }
+
+    .event-details {
+        font-size: 15px;
+        padding: 0;
+        white-space: normal;
+        text-overflow: initial;
+    }
+
+    #full-schedule,
+    #full-shop {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #intro {
+        padding-top: 36%;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    main {
+        grid-template-rows: 100vh 1fr 1.1fr 0.4fr 0.4fr 0.4fr;
+    }
+
+    #neverland-title {
+        width: 325px;
+    }
+
+    #neverland-subtitle {
+        font-size: 26px;
+    }
+    
+    #schedule-proper {
+        padding: 2%;
+        grid-template-columns: 28% 72%;
+    }
+
+    #schedule-date {
+        font-size: 21px;
+    }
+
+    .event-time {
+        font-size: 18px;
+    }
+
+    .event-name {
+        font-size: 15.5px;
+    }
+
+    .event {
+        padding: 3% 0;
+    }
+
+    #activities-prev, 
+    #activities-next {
+        top: 20%;
+    }
+}
+
+@media screen and (max-width: 361px) {
+    #schedule-proper {
+        padding: 2.5%;
+    }
+
+    #schedule-date {
+        font-size: 20px;
+    }
+
+    .event-time {
+        font-size: 17px;
+    }
+
+    .event-name {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .event-details {
+        font-size: 14px;
+    }
+
+    .event-time {
+        font-size: 14px;
+    }
+
+    .merch-slide {
+        padding: 0.5% 0;
+    }
+
+    #activities-prev, 
+    #activities-next {
+        top: 16%;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    #activities-prev, 
+    #activities-next {
+        top: 14%;
+    }
+
+    #merch-next,
+    #merch-prev {
+        top: 10%;
+    }
+
+    .event {
+        padding: 2.5% 0;
+    }
+
+    .event-name {
+        font-size: 14px;
+    }
+
+    .event-time {
+        font-size: 13px;
+    }
+}
+
+/* HOMEPAGE RESPONSIVENESS: LARGER DEVICES */
+
+@media screen and (min-height: 1024px) and (min-width: 768px) {
+    #neverland-title {
+        width: 500px;
+    }
+
+    #neverland-subtitle {
+        font-size: 32px;
+    }
+
+    h2,
+    h3,
+    #ad h2,
+    #sponsors h3 {
+        font-size: 40px;
+    }
+
+    .activity-caption {
+        font-size: 22px;
+    }
+
+    .activity-manualbtn, 
+    .merch-manualbtn {
+        padding: 8px;
+    }
+
+    #schedule-date {
+        font-size: 28px;
+    }
+    
+    .event-time {
+        font-size: 22px;
+    }
+
+    .event-name {
+        font-size: 21px;
+    }
+
+    .event-details {
+        font-size: 18px;
+    }
+
+    #full-schedule,
+    #full-shop {
+        font-size: 22px;
+    }
+
+    #activities-prev, 
+    #activities-next,
+    #merch-prev, 
+    #merch-next {
+        font-size: 56px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (min-height: 1366px) {
+    #intro {
+        padding-top: 22%;
+    }
+
+    #neverland-title {
+        width: 650px;
+    }
+
+    #neverland-subtitle {
+        font-size: 40px;
+    }
+
+    #hourglass-logo-landing {
+        width: 192px;
+    }
+
+    main {
+        gap: 0;
+        grid-template-columns: 100vw;
+        grid-template-rows: 100vh 1fr 0.45fr 0.35fr 0.35fr 0.35fr;
+        margin-bottom: 0;
+    }
+
+    h2,
+    h3,
+    #ad h2,
+    #sponsors h3 {
+        margin: 2.5% 0;
+        font-size: 44px;
+    }
+    
+    #intro {
+        place-items: center;
+        padding-top: 18%;
+        grid-row: 1 / 2;
+        grid-column: 1 / -1;
+    }
+    
+    #activities,
+    #schedule,
+    #shop,
+    #ad,
+    #sponsors {
+        grid-column: 1 / 2;
+        margin: 0;
+        padding: 0 7.5%;
+    }
+
+    #activities {
+        padding-top: 2.5%;
+        grid-row: 2 / 3;
+    }
+
+    #activities-prev,
+    #activities-next {
+        top: 32%;
+    }
+
+    .activity-manualbtn,
+    .merch-manualbtn {
+        padding: 8px;
+    }
+    
+    #schedule {
+        grid-row: 3 / 4;
+    }
+
+    #schedule-proper {
+        width: 100%;
+        grid-template-columns: 20% 80%;
+    }
+
+    #shop {
+        grid-row: 4 / 5;
+    }
+
+    .activity-caption {
+        font-size: 24px;
+    }
+
+    #schedule-date {
+        font-size: 32px;
+    }
+    
+    .event-time {
+        font-size: 28px;
+    }
+
+    .event-name {
+        font-size: 24px;
+    }
+
+    .event-details {
+        font-size: 18px;
+    }
+
+    #full-schedule,
+    #full-shop {
+        font-size: 24px;
+    }
+
+    #ad {
+        grid-row: 5 / 6;
+    }
+
+    #sponsors {
+        grid-row: 6 / 7;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    #hourglass-logo-landing {
+        width: 192px;
+    }
+
+    #neverland-title {
+        width: 750px;
+    }
+
+    #neverland-subtitle {
+        font-size: 44px;
+    }
+
+    #intro-scroll img {
+        width: 80px;
+    }
+}
