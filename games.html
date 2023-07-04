@@ -1,0 +1,537 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+        http-equiv="Cache-Control"
+        content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Minigames</title>
+    <link rel="stylesheet" href="css/games.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link
+            rel="shortcut icon"
+            href="img/pixiedust.svg"
+            type="image/x-icon"
+        />
+        <script src="js/jquery.js"></script>
+        <script
+            async
+            src="https://cse.google.com/cse.js?cx=c9af3957017583ea0"
+        ></script>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper/swiper-bundle.min.css"
+        />
+</head>
+
+<body>
+    <header>
+        <a href="index.html"
+            ><div id="logo">
+                <img src="img/fair-logo-navbar.svg" alt="Website logo" />
+                <div id="site-name">
+                    <img
+                        src="img/neverland-header.png"
+                        alt="Neverland title"
+                    />
+                    <p id="subtitle">B2023 Fair</p>
+                </div>
+            </div></a
+        >
+        <div id="currency">
+            <div id="doubloons">
+                <img
+                    src="img/doubloon.svg"
+                    alt="Gold coin"
+                    id="doubloon-img"
+                />
+                <p id="doubloon-amt"></p>
+                <p class="tooltip">
+                    Doubloons—earn these randomly by exploring the site
+                    pages, or by visiting the site daily. Use them to play
+                    minigames!
+                </p>
+            </div>
+            <div id="pixiedust">
+                <img
+                    src="img/pixiedust.svg"
+                    alt="Pixie dust"
+                    id="pixiedust-img"
+                />
+                <p id="pixiedust-amt">2</p>
+                <p class="tooltip">
+                    Pixie Dust—earn these by playing minigames. Use it to
+                    unlock more content in the lore book!
+                </p>
+            </div>
+        </div>
+        <div id="stats" onclick="StatsPopupOpen(this, null)">
+            <p>Stats</p>
+        </div>
+
+        <div id="ProfilePopupContainer-PC" class="hidden">
+            <div id="LeftDivider">
+                <div id="ProfileArea">
+                    <h1>Stats</h1>
+                    <div class="MoneyDisplay">
+                        <img src="img/doubloon.svg" />
+                        <span id="DoubloonCount-PC"> 4 </span>
+                    </div>
+                    <div class="MoneyDisplay">
+                        <img src="img/pixiedust.svg" />
+                        <span id="PixieDustCount-PC"> 2 </span>
+                    </div>
+                    <div class="FlavorTextArea">
+                        <div id="FlavorText-PC" class="flavorText">
+                            This Flavor text will change every time you open
+                            the popup. Maybe a stat, a trivia, or a quote?
+                        </div>
+                        <div id="QuoteText-PC" class="quoteText">
+                            - If a Quote
+                        </div>
+                    </div>
+                </div>
+                <div id="WhiteLine"><div></div></div>
+                <div class="HighscoreArea">
+                    <h1>Highscores</h1>
+                    <div
+                        id="HighscoreContainer-PC"
+                        class="highscoreContainer"
+                    ></div>
+                </div>
+            </div>
+            <div id="GachaArea">
+                <h1>
+                    <div class="popup" id="popup">
+                        <img
+                            src="img/FAQ.png"
+                            alt="FAQ"
+                            class="FAQ"
+                            onclick="showPopup()"
+                        />
+                        <span class="popuptext" id="myPopup-PC">
+                            help help help help help help help help help
+                            help help help help help help help help help
+                            help help help help help help help help help
+                            help help help help help help help help help
+                            help help help help help help help help help
+                            help help help help
+                        </span>
+                    </div>
+                    Gachas
+                </h1>
+
+                <div class="background-container">
+                    <div class="custom_scroll_bar gallery-container">
+                        <div class="placeholder">
+                            <img
+                                src="img/prize.png"
+                                alt="img"
+                                id="prize"
+                                onclick="lock()"
+                                style="cursor: pointer"
+                            />
+                            <span class="popupName">name</span>
+                            <img
+                                src="img/padlock.png"
+                                alt="img"
+                                id="lock"
+                                class="lock"
+                                onclick="unlock()"
+                            />
+                        </div>
+                        <div class="placeholder">
+                            <img src="img/prize.png" alt="img" />
+                            <span class="popupName">name</span>
+                            <img src="img/padlock.png" alt="img" />
+                        </div>
+                        <div class="placeholder">
+                            <img src="img/prize.png" alt="img" />
+                            <span class="popupName">name</span>
+                            <img src="img/padlock.png" alt="img" />
+                        </div>
+                        <div class="placeholder">
+                            <img src="img/prize.png" alt="img" />
+                            <span class="popupName">name</span>
+                            <img src="img/padlock.png" alt="img" />
+                        </div>
+                        <div class="placeholder">
+                            <img src="img/prize.png" alt="img" />
+                            <span class="popupName">name</span>
+                            <img src="img/padlock.png" alt="img" />
+                        </div>
+                        <div class="placeholder">
+                            <img src="img/prize.png" alt="img" />
+                            <span class="popupName">name</span>
+                            <img src="img/padlock.png" alt="img" />
+                        </div>
+                        <div class="placeholder">
+                            <img src="img/prize.png" alt="img" />
+                            <span class="popupName">name</span>
+                            <img src="img/padlock.png" alt="img" />
+                        </div>
+                        <div class="placeholder">
+                            <img src="img/prize.png" alt="img" />
+                            <span class="popupName">name</span>
+                            <img src="img/padlock.png" alt="img" />
+                        </div>
+                        <div class="placeholder">
+                            <img src="img/prize.png" alt="img" />
+                            <span class="popupName">name</span>
+                            <img src="img/padlock.png" alt="img" />
+                        </div>
+                        <div class="placeholder">
+                            <img src="img/prize.png" alt="img" />
+                            <span class="popupName">name</span>
+                            <img src="img/padlock.png" alt="img" />
+                        </div>
+                        <div class="placeholder">
+                            <img src="img/prize.png" alt="img" />
+                            <span class="popupName">name</span>
+                            <img src="img/padlock.png" alt="img" />
+                        </div>
+                        <div class="placeholder">
+                            <img src="img/prize.png" alt="img" />
+                            <span class="popupName">name</span>
+                            <img src="img/padlock.png" alt="img" />
+                        </div>
+                        <div class="placeholder">
+                            <img src="img/prize.png" alt="img" />
+                            <span class="popupName">name</span>
+                            <img src="img/padlock.png" alt="img" />
+                        </div>
+                        <div class="placeholder">
+                            <img src="img/prize.png" alt="img" />
+                            <span class="popupName">name</span>
+                            <img src="img/padlock.png" alt="img" />
+                        </div>
+                        <div class="placeholder">
+                            <img src="img/prize.png" alt="img" />
+                            <span class="popupName">name</span>
+                            <img src="img/padlock.png" alt="img" />
+                        </div>
+                        <div class="placeholder">
+                            <img src="img/prize.png" alt="img" />
+                            <span class="popupName">name</span>
+                            <img src="img/padlock.png" alt="img" />
+                        </div>
+                        <div class="placeholder">
+                            <img src="img/prize.png" alt="img" />
+                            <span class="popupName">name</span>
+                            <img src="img/padlock.png" alt="img" />
+                        </div>
+                        <div class="placeholder">
+                            <img src="img/prize.png" alt="img" />
+                            <span class="popupName">name</span>
+                            <img src="img/padlock.png" alt="img" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div id="Exit">
+                    <img
+                        src="img/close.png"
+                        onclick="StatsPopupHide()"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <div id="ProfilePopupContainer-Mobile" class="hidden">
+            <div class="swiper-wrapper">
+                <div id="ProfileArea" class="swiper-slide">
+                    <h1>Stats</h1>
+                    <div class="MoneyDisplay">
+                        <img src="img/doubloon.svg" />
+                        <span id="DoubloonCount-Mobile"> 4 </span>
+                    </div>
+                    <div class="MoneyDisplay">
+                        <img src="img/pixiedust.svg" />
+                        <span id="PixieDustCount-Mobile"> 2 </span>
+                    </div>
+                    <div class="FlavorTextArea">
+                        <div id="FlavorText-Mobile" class="flavorText">
+                            This Flavor text will change every time you open
+                            the popup. Maybe a stat, a trivia, or a quote?
+                        </div>
+                        <div id="QuoteText-Mobile" class="quoteText">
+                            - If a Quote
+                        </div>
+                    </div>
+                </div>
+                <div class="HighscoreArea swiper-slide">
+                    <h1>Highscores</h1>
+                    <div
+                        id="HighscoreContainer-Mobile"
+                        class="highscoreContainer"
+                    ></div>
+                </div>
+                <div id="GachaArea" class="swiper-slide">
+                    <h1>
+                        <div class="popup" id="popup">
+                            <img
+                                src="img/FAQ.png"
+                                alt="FAQ"
+                                class="FAQ"
+                                onclick="showPopup()"
+                            />
+                            <span class="popuptext" id="myPopup-Mobile"
+                                >help help help help help help help help
+                                help help help help help help help help help
+                                help help help help help help help help help
+                                help help help help help help help help help
+                                help help help help help help help help help
+                                help help help help help
+                            </span>
+                        </div>
+                        Gachas
+                    </h1>
+
+                    <div class="background-container">
+                        <div class="custom_scroll_bar gallery-container">
+                            <div class="placeholder">
+                                <img
+                                    src="img/prize.png"
+                                    alt="img"
+                                    id="prize"
+                                    onclick="lock()"
+                                    style="cursor: pointer"
+                                />
+                                <span class="popupName">name</span>
+                                <img
+                                    src="img/padlock.png"
+                                    alt="img"
+                                    id="lock"
+                                    class="lock"
+                                    onclick="unlock()"
+                                />
+                            </div>
+                            <div class="placeholder">
+                                <img src="img/prize.png" alt="img" />
+                                <span class="popupName">name</span>
+                                <img src="img/padlock.png" alt="img" />
+                            </div>
+                            <div class="placeholder">
+                                <img src="img/prize.png" alt="img" />
+                                <span class="popupName">name</span>
+                                <img src="img/padlock.png" alt="img" />
+                            </div>
+                            <div class="placeholder">
+                                <img src="img/prize.png" alt="img" />
+                                <span class="popupName">name</span>
+                                <img src="img/padlock.png" alt="img" />
+                            </div>
+                            <div class="placeholder">
+                                <img src="img/prize.png" alt="img" />
+                                <span class="popupName">name</span>
+                                <img src="img/padlock.png" alt="img" />
+                            </div>
+                            <div class="placeholder">
+                                <img src="img/prize.png" alt="img" />
+                                <span class="popupName">name</span>
+                                <img src="img/padlock.png" alt="img" />
+                            </div>
+                            <div class="placeholder">
+                                <img src="img/prize.png" alt="img" />
+                                <span class="popupName">name</span>
+                                <img src="img/padlock.png" alt="img" />
+                            </div>
+                            <div class="placeholder">
+                                <img src="img/prize.png" alt="img" />
+                                <span class="popupName">name</span>
+                                <img src="img/padlock.png" alt="img" />
+                            </div>
+                            <div class="placeholder">
+                                <img src="img/prize.png" alt="img" />
+                                <span class="popupName">name</span>
+                                <img src="img/padlock.png" alt="img" />
+                            </div>
+                            <div class="placeholder">
+                                <img src="img/prize.png" alt="img" />
+                                <span class="popupName">name</span>
+                                <img src="img/padlock.png" alt="img" />
+                            </div>
+                            <div class="placeholder">
+                                <img src="img/prize.png" alt="img" />
+                                <span class="popupName">name</span>
+                                <img src="img/padlock.png" alt="img" />
+                            </div>
+                            <div class="placeholder">
+                                <img src="img/prize.png" alt="img" />
+                                <span class="popupName">name</span>
+                                <img src="img/padlock.png" alt="img" />
+                            </div>
+                            <div class="placeholder">
+                                <img src="img/prize.png" alt="img" />
+                                <span class="popupName">name</span>
+                                <img src="img/padlock.png" alt="img" />
+                            </div>
+                            <div class="placeholder">
+                                <img src="img/prize.png" alt="img" />
+                                <span class="popupName">name</span>
+                                <img src="img/padlock.png" alt="img" />
+                            </div>
+                            <div class="placeholder">
+                                <img src="img/prize.png" alt="img" />
+                                <span class="popupName">name</span>
+                                <img src="img/padlock.png" alt="img" />
+                            </div>
+                            <div class="placeholder">
+                                <img src="img/prize.png" alt="img" />
+                                <span class="popupName">name</span>
+                                <img src="img/padlock.png" alt="img" />
+                            </div>
+                            <div class="placeholder">
+                                <img src="img/prize.png" alt="img" />
+                                <span class="popupName">name</span>
+                                <img src="img/padlock.png" alt="img" />
+                            </div>
+                            <div class="placeholder">
+                                <img src="img/prize.png" alt="img" />
+                                <span class="popupName">name</span>
+                                <img src="img/padlock.png" alt="img" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="BlackBG" class="transparent"></div>
+
+        <nav class="site-nav">
+            <div id="hamburger-menu-btn">
+                <img
+                    id="hamburger-menu-icon"
+                    src="img/hamburger-menu.svg"
+                    alt="Hamburger menu"
+                />
+            </div>
+            <a
+                id="nav-stats-link"
+                href="#"
+                onclick="StatsPopupOpen(this, null)"
+                >View Stats</a
+            >
+            <a href="schedule.html">Schedule</a>
+            <a href="merch.html">Merch</a>
+            <a href="lore.html">Lore</a>
+            <a href="games.html">Games</a>
+            <a href="performances.html">Performances</a>
+            <a href="freedomwall.html">Freedom Wall</a>
+        </nav>
+
+        <img id="clock" src="img/semicircles.svg" alt="Clock" />
+
+        <img
+            id="search"
+            src="img/search.png"
+            alt="Search"
+            onclick="openSearch()"
+        />
+        <div class="search-box" id="search-box">
+            <img
+                id="cancelSearch"
+                src="img/arrow-right.png"
+                alt="cancel"
+                onclick="hide()"
+            />
+            <div class="holder" id="holder">
+                <div class="gcse-search"></div>
+            </div>
+        </div>
+    </header>
+        
+    <center><img src="img/Minigames_Title.png" alt="Website logo" id="Title"><center>
+    <!-- <h1 class="title">Minigame/s</h1> -->
+    <div class="row">
+        <div class="column left">
+            <h2>Minigame</h2>
+        </div>
+        <div class="column right">
+            <div class="instructions">
+                <h2>Instructions</h2>
+            </div>
+            <div class="gameSelect">
+                <h2>Game Select</h2>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1></h1>
+    </div>
+
+    <footer>
+        <div id="social-media">
+            <p>SocMed</p>
+            <a href="#"
+                ><img
+                    src="img/facebook.svg"
+                    alt="Facebook logo"
+                    id="fb-logo"
+            /></a>
+            <a href="#"
+                ><img
+                    src="img/twitter.svg"
+                    alt="Twitter logo"
+                    id="twt-logo"
+            /></a>
+        </div>
+        <div id="copyright">
+            <a href="credits.html">PSHS-MC B2023 Fair Committee</a>
+        </div>
+        <a class="back-to-top visible" href="#top">
+            <img
+                src="img/up-arrow.svg"
+                alt="Back to top of page button"
+            />
+        </a>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper("#ProfilePopupContainer-Mobile", {
+            centeredSlides: true,
+            centeredSlidesBounds: true,
+            spaceBetween: 20,
+            resistance: false,
+        });
+
+        swiper.on("setTranslate", function () {
+            if (
+                swiper.translate > 0 ||
+                swiper.translate < -(swiper.width * 2 + 40)
+            ) {
+                var x = 0;
+                y = 1;
+                if (swiper.translate < 0) {
+                    x = swiper.width * 2 + 40;
+                    y = -1;
+                }
+                document.getElementById("BlackBG").style.opacity =
+                    1 - ((swiper.translate + x) * y) / swiper.width - 0.5;
+            }
+        });
+
+        swiper.on("touchEnd", function () {
+            BlackBG.style.opacity = null;
+
+            if (
+                swiper.translate > swiper.width * 0.5 ||
+                swiper.translate < -(swiper.width * 2.5 + 40)
+            ) {
+                StatsPopupHide();
+            }
+        });
+    </script>
+
+    <script src="js/general.js"></script>
+</body>
+</html>

@@ -1,0 +1,747 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" class="MerchHTML">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+        />
+		<meta
+            http-equiv="Cache-Control"
+            content="no-cache, no-store, must-revalidate"
+        />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <title>Merch Gallery || Neverland 2021</title>
+        <link rel="stylesheet" href="css/general.css?version=1" />
+        <link rel="stylesheet" href="css/gacha.css?version=1" />
+        <link rel="stylesheet" href="css/stats.css?version=1" />
+        <link rel="stylesheet" href="css/merch.css?version=1" />
+        <link
+            rel="shortcut icon"
+            href="img/pixiedust.svg"
+            type="image/x-icon"
+        />
+		<script src="js/jquery.js"></script>
+        <script
+            async
+            src="https://cse.google.com/cse.js?cx=c9af3957017583ea0"
+        ></script>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+        />
+    </head>
+
+    <body class="MerchBody">
+        <audio id="audioplayer" autobuffer="" loop="true" preload="auto">
+            <source src="audio/trinkets.wav" type="audio/mpeg">
+          </audio>
+
+        <div id="overlay">
+            <div id="prizeAlert">You've got a prize!</div>
+            <div class="gachaContainer">
+                <img src="img/doll.png" alt="img" id="splash-art" />
+                <div id="gachaName">Doll</div>
+                <div id="gachaDescription">
+                    “​​Alright, here! It’s not dry yet, but a little doll of
+                    you, for good luck and protection”
+                </div>
+            </div>
+            <img
+                src="img/exit.png"
+                alt="img"
+                id="exit-button"
+                onclick="exit()"
+            />
+        </div>
+
+        <header>
+            <a href="index.html"
+                ><div id="logo">
+                    <img src="img/fair-logo-navbar.svg" alt="Website logo" />
+                    <div id="site-name">
+                        <img
+                            src="img/neverland-header.png"
+                            alt="Neverland title"
+                        />
+                        <p id="subtitle">PSHS-MC B2023 Fair</p>
+                    </div>
+                </div></a
+            >
+            <div id="currency">
+                <div id="pixiedust">
+                    <img
+                        src="img/neverland-pixiedust.png"
+                        alt="Pixie dust"
+                        id="pixiedust-img"
+                    />
+                    <p id="pixiedust-amt"></p>
+                    <p class="tooltip">
+                        Pixie Dust—earned randomly by exploring the site pages
+                        or by visiting the site daily. Use it to unlock lore
+                        side stories!
+                    </p>
+                </div>
+            </div>
+            <div id="stats" onclick="StatsPopupOpen(this, null)">
+                <p>Stats</p>
+            </div>
+
+            <div id="ProfilePopupContainer-PC" class="hidden">
+				<div id="LeftDivider">
+					<div id="ProfileArea">
+						<h1 style=><img src="img/stats-stats.png" class="RasterizedHeader"/></h1>
+						<div class="MoneyDisplay">
+							<p class="tooltip">
+								Pixie Dust—earned randomly by exploring the site pages
+								or by visiting the site daily. Use it to unlock lore
+								side stories!
+							</p>
+							<img src="img/neverland-pixiedust.png"/>
+							<span id="PixieDustCount-PC"> 2 </span>
+						</div>
+						<div class="FlavorTextArea">
+							<div id="FlavorText-PC" class="flavorText"> This Flavor text will change every time you open the popup. Maybe a stat, a trivia, or a quote?</div>
+							<div id="QuoteText-PC" class="quoteText"> - If a Quote </div>
+						</div>
+					</div>
+					<div id="WhiteLine"><div></div></div>
+				</div>
+				<div id="GachaArea">
+          <div class="row1">
+            <div class="item1" id="popup-PC">
+                  <img
+                    src="img/FAQ.png"
+                    alt="FAQ"
+                    class="FAQ"
+                    onclick="showPopup()"
+                  />
+                  <div class ="placeholderpop" id="placeholderpop-PC">
+                  <span class="popuptext " id="myPopup-PC">
+                    Log-in everyday to win one new gacha!
+                  </span></div>
+            </div>
+            <div class="item2">
+              <h1>
+              <img src="img/stats-gachas.png" class="RasterizedHeader" id = "statsGacha"/>
+              </h1>
+            </div>
+          </div>
+          <div class="row2">
+            <div class="item3">
+                <img src="img/Doll.png" alt="img" class = "gachaLarge">
+                <div class="gachaName" >Doll</div>
+                <div class="gachaDescription" >“​​Alright, here! It’s not dry yet, but a little doll of you, for good luck and protection”</div>
+            </div>
+            <div class="item4">
+                <div class="placeholder Doll">
+                  <img src="img/Doll.png" alt="img" onclick="enlargeGacha(0)" >
+                  <div class="popupName">Doll</div>
+                  <img src="img/padlock.png" alt="img" >
+                </div>
+                <div class="placeholder FlowerCrown">
+                  <img src="img/FlowerCrown.png" alt="img" onclick="enlargeGacha(1)"  >
+                  <div class="popupName">Flower Crown</div>
+                  <img src="img/padlock.png" alt="padlock">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Butterfly.png" alt="img" onclick="enlargeGacha(2)"  >
+                  <div class="popupName">Butterfly</div>
+                  <img src="img/padlock.png" alt="padlock">
+                </div>
+                <div class="placeholder">
+                  <img src="img/DollAndCarving.png" onclick="enlargeGacha(3)" alt="img" >
+                  <div class="popupName">Doll and Carving Knife</div>
+                  <img src="img/padlock.png" alt="padlock">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Wendy.png" alt="img" onclick="enlargeGacha(4)" >
+                  <div class="popupName">Wendy</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Peter.png" alt="img" onclick="enlargeGacha(5)" >
+                  <div class="popupName">Peter</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/March.png" alt="img" onclick="enlargeGacha(6)" >
+                  <div class="popupName">March</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Binoculars.png" alt="img" onclick="enlargeGacha(7)" >
+                  <div class="popupName">Binoculars</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Book.png" alt="img" onclick="enlargeGacha(8)" >
+                  <div class="popupName">Book</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Polaroid.png" alt="img" onclick="enlargeGacha(9)" >
+                  <div class="popupName">Camera</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Sam.png" alt="img" onclick="enlargeGacha(10)" >
+                  <div class="popupName">Sam</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Art.png" alt="img" onclick="enlargeGacha(11)" >
+                  <div class="popupName">Art</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder" >
+                  <img src="img/Sword.png" alt="img" onclick="enlargeGacha(12)" >
+                  <div class="popupName">Cardboard Sword</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/May.png" alt="img" onclick="enlargeGacha(13)" >
+                  <div class="popupName">May</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Scarf.png" alt="img" onclick="enlargeGacha(14)" >
+                  <div class="popupName">Scarf</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder" >
+                  <img src="img/Hourglass.png" alt="img" onclick="enlargeGacha(15)" >
+                  <div class="popupName">Hourglass</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+            </div>
+          </div>
+				</div>
+				<div>
+					<div id="Exit"  onclick="StatsPopupHide()"><img src="img/close.png"/></div>
+				</div>
+			</div>
+
+			<div id="ProfilePopupContainer-Mobile" class="hidden">
+			<div class="swiper-wrapper">
+				<div id="ProfileArea" class="swiper-slide">
+					<h1><img src="img/stats-stats.png" class="RasterizedHeader"/></h1>
+					<div class="MoneyDivider">
+						<div class="MoneyDisplay">
+						<p class="tooltip">
+									Pixie Dust—earn these by playing minigames. Use it tounlock more content in the lore book!
+							</p>
+							<img src="img/neverland-pixiedust.png"/>
+							<span id="PixieDustCount-Mobile"> 2 </span>
+						</div>
+					</div>
+					<div class="FlavorTextArea">
+						<div id="FlavorText-Mobile" class="flavorText"> This Flavor text will change every time you open the popup. Maybe a stat, a trivia, or a quote?</div>
+						<div id="QuoteText-Mobile" class="quoteText"> - If a Quote </div>
+					</div>
+				</div>
+        <div id="GachaArea" class="swiper-slide">
+            <div class="row1 row1-Mobile">
+              <div class="item1" id="popup-Mobile">
+                  <img
+                    src="img/FAQ.png"
+                    alt="FAQ"
+                    class="FAQ"
+                    onclick="showPopup()"
+                  />
+                  <div class ="placeholderpop" id="placeholderpop-Mobile">
+                    <span class="popuptext " id="myPopup-Mobile">
+                      Log-in everyday to win one new gacha!
+                    </span>
+                </div>
+              </div>
+              <div class="item2">
+                <h1>
+                <img src="img/stats-gachas.png" class="RasterizedHeader" id = "statsGacha"/>
+                </h1>
+              </div>
+            </div>
+            <div class="row2 row2-Mobile">
+              <div class="item3" id="item3-mobile">
+                <img src="img/Doll.png" alt="img" class = "gachaLarge" id = "gachaLargeImg">
+                <div class="gachaName" id="gachaLargeName" >Doll</div>
+                <div class="gachaDescription" id="gachaLargeDes">“​​Alright, here! It’s not dry yet, but a little doll of you, for good luck and protection”</div>
+              </div>
+              <div class="item4">
+                <div class="placeholder-Mobile Doll">
+      						<img src="img/Doll.png" alt="img" onclick="enlargeGacha(0)" >
+      						<div class="popupName-Mobile">Doll</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile FlowerCrown">
+      						<img src="img/FlowerCrown.png" alt="img" onclick="enlargeGacha(1)"  >
+      						<div class="popupName-Mobile">Flower Crown</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+                <div class="placeholder-Mobile Butterfly">
+      						<img src="img/Butterfly.png" alt="img" onclick="enlargeGacha(2)"  >
+      						<div class="popupName-Mobile">Butterfly</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+      						<img src="img/DollAndCarving.png" onclick="enlargeGacha(3)" alt="img" >
+      						<div class="popupName-Mobile">Doll and Carving Knife</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Wendy.png" alt="img" onclick="enlargeGacha(4)" >
+      						<div class="popupName-Mobile">Wendy</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Peter.png" alt="img" onclick="enlargeGacha(5)" >
+      						<div class="popupName-Mobile">Peter</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/March.png" alt="img" onclick="enlargeGacha(6)" >
+      						<div class="popupName-Mobile">March</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Binoculars.png" alt="img" onclick="enlargeGacha(7)" >
+      						<div class="popupName-Mobile">Binoculars</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Book.png" alt="img" onclick="enlargeGacha(8)" >
+      						<div class="popupName-Mobile">Book</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Polaroid.png" alt="img" onclick="enlargeGacha(9)" >
+      						<div class="popupName-Mobile">Camera</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Sam.png" alt="img" onclick="enlargeGacha(10)" >
+      						<div class="popupName-Mobile">Sam</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Art.png" alt="img" onclick="enlargeGacha(11)" >
+      						<div class="popupName-Mobile">Art</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile" >
+                  <img src="img/Sword.png" alt="img" onclick="enlargeGacha(12)" >
+      						<div class="popupName-Mobile">Cardboard Sword</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/May.png" alt="img" onclick="enlargeGacha(13)" >
+      						<div class="popupName-Mobile">May</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Scarf.png" alt="img" onclick="enlargeGacha(14)" >
+      						<div class="popupName-Mobile">Scarf</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile" >
+                  <img src="img/Hourglass.png" alt="img" onclick="enlargeGacha(15)" >
+      						<div class="popupName-Mobile">Hourglass</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+              </div>
+            </div>
+				</div>
+				</div>
+			</div>
+			<div id="BlackBG" class="transparent"></div>
+
+            <nav class="site-nav">
+                <div id="hamburger-menu-btn">
+                    <img
+                        id="hamburger-menu-icon"
+                        src="img/hamburger-menu.svg"
+                        alt="Hamburger menu"
+                    />
+                </div>
+                <a
+                    id="nav-stats-link"
+                    href="#"
+                    onclick="StatsPopupOpen(this, null)"
+                    >View Stats</a
+                >
+                <a href="schedule.html">Schedule</a>
+                <a href="merch.html">Merch</a>
+                <a href="lore.html">Lore</a>
+                <a href="performances.html">Performances</a>
+                <a href="freedomwall.html">Freedom Wall</a>
+            </nav>
+
+            <img
+                id="search"
+                src="img/search.png"
+                alt="Search"
+                onclick="openSearch()"
+            />
+            <div class="search-box" id="search-box">
+                <img
+                    id="cancelSearch"
+                    src="img/arrow-right.png"
+                    alt="cancel"
+                    onclick="hide()"
+                />
+
+                <div class="holder" id="holder">
+                    <div class="gcse-search"></div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!--<div>
+        <img  src="img/Trinkets.png" id="Trinkets" />
+    </div>  -->
+            <div id="MerchBody">
+                <div id="FilterBox">
+                    <div class="StickyFilter">
+                        <input type="text"
+                               placeholder="Search"
+                               id="merch-search"
+                               oninput="Search()" />
+
+                        <div id="GoTo">
+                            <text class="fheading">Go to Page: </text>
+                        </div>
+
+                        <div id="PageNav">
+                            <select name="pages"
+                                    id="ChoosePage"
+                                    onchange="var page = document.getElementById('ChoosePage').value; changePage(page)">
+                                <option value="Page 1" id="Page1">
+                                    Page 1
+                                </option>
+                                <option value="Page 2" id="Page2">
+                                    Page 2
+                                </option>
+                                <option value="Page 3" id="Page3">
+                                    Page 3
+                                </option>
+                                <option value="Page 4" id="Page4">
+                                    Page 4
+                                </option>
+                                <option value="Page 5" id="Page5">
+                                    Page 5
+                                </option>
+                            </select>
+                        </div>
+
+                        <div id="Filter">
+                            <text class="fheading">Filter By: </text>
+                        </div>
+
+                        <div class="FCategory" onclick="OpenCategory(1)">
+                            <text class="fcategory">Name </text>
+                            <img src="img/dropdown.png" class="dArrow" />
+                        </div>
+
+                        <div id="fname" class="FSort">
+                            <div onclick="CheckOne('A'); Filter()">
+                                <text class="fsort">A - Z </text>
+                                <input type="checkbox" id="AtoZ" />
+                            </div>
+
+                            <div onclick="CheckOne('Z'); Filter()">
+                                <text class="fsort">Z - A </text>
+                                <input type="checkbox" id="ZtoA" />
+                            </div>
+                        </div>
+
+                        <div class="FCategory" onclick="OpenCategory(2)">
+                            <text class="fcategory">Price </text>
+                            <img src="img/dropdown.png" class="dArrow" />
+                        </div>
+
+                        <div id="fprice" class="FSort">
+                            <div onclick="CheckOne('H'); Filter()">
+                                <text class="fsort">Decreasing </text>
+                                <input type="checkbox" id="HtoL" />
+                            </div>
+
+                            <div onclick="CheckOne('L'); Filter()">
+                                <text class="fsort">Increasing </text>
+                                <input type="checkbox" id="LtoH" />
+                            </div>
+                        </div>
+
+                        <div class="FCategory" onclick="OpenCategory(3)">
+                            <text class="fcategory">Category </text>
+                            <img src="img/dropdown.png" class="dArrow" />
+                        </div>
+
+                        <div id="fcategory" class="FSort">
+                            <div id="accessories">
+                                <text class="fsort">Accessories</text>
+                                <input type="checkbox"
+                                       name="accessories"
+                                       class="categories"
+                                       onclick="Filter()" />
+                            </div>
+
+                            <div id="deals">
+                                <text class="fsort">Bundles</text>
+                                <input type="checkbox"
+                                       name="deals"
+                                       class="categories"
+                                       onclick="Filter()" />
+                            </div>
+
+                            <div id="wearables">
+                                <text class="fsort">Wearables</text>
+                                <input type="checkbox"
+                                       name="wearables"
+                                       class="categories"
+                                       onclick="Filter()" />
+                            </div>
+
+                            <div id="art">
+                                <text class="fsort">Stickers & Prints</text>
+                                <input type="checkbox"
+                                       name="art"
+                                       class="categories"
+                                       onclick="Filter()" />
+                            </div>
+                        </div>
+
+                        <div id="ResetButton"
+                             onclick="const mediaQuery = window.matchMedia('(max-width: 768px)');
+                            ResetFilter();
+                            if (mediaQuery.matches) { AccessFilter();}">
+                            <text class="fcategory">RESET</text>
+                        </div>
+
+                        <div id="OrderFormButton"
+                             onclick="window.open('https://bit.ly/LostTrinkets', '_blank')">
+                            <text class="fcategory"> ORDER NOW </text>
+                        </div>
+
+                       <div id="OrderFormButton-Link"
+                             onclick="window.open('https://bit.ly/LostTrinkets', '_blank')">
+                            <text class="fcategory"> ORDER NOW </text>
+                        </div> 
+
+                        <div class="Filler"></div>
+                    </div>
+                </div>
+
+                <div id="BlackBG-Filter"
+                     class="transparent"
+                     onclick="AccessFilter()"></div>
+
+                <div>
+                    <div class="PageNavigation top">
+                        <text onclick="changePage('Previous')" class="Prev nav">
+                            <
+                        </text>
+                        <text class="MorePages1">
+                            ...
+                        </text>
+                        <text onclick="changePage('Page 1')" class="P1 nav">
+                            1
+                        </text>
+                        <text onclick="changePage('Page 2')" class="P2 nav">
+                            2
+                        </text>
+                        <text onclick="changePage('Page 3')" class="P3 nav">
+                            3
+                        </text>
+                        <text onclick="changePage('Page 4')" class="P4 nav">
+                            4
+                        </text>
+                        <text onclick="changePage('Page 5')" class="P5 nav">
+                            5
+                        </text>
+                        <text class="MorePages2">
+                            ...
+                        </text>
+                        <text onclick="changePage('Next')" class="Next nav">
+                            >
+                        </text>
+                        <img src="img/filter.svg"
+                             class="filterToggle"
+                             onclick="AccessFilter()" />
+                    </div>
+
+                    <div id="ProductBoxContainer">
+                        <div class="ProductBox hide" id="EnlargedProductBox">
+                            <div class="ImgGalleryContainer">
+                                <div class="arrowContainer">
+                                    <div class="arrow aLeft"
+                                         onclick="PreviousImg()">
+                                        <img src="img/dropdown.png" />
+                                    </div>
+                                    <div class="ProdImg swiper-wrapper"
+                                         id="ProdImg">
+                                        <img src="img/shirt.png"
+                                             class="prodimg swiper-slide"
+                                             id="EnlargedImage" />
+                                        <img src="img/shirt2.png"
+                                             class="prodimg swiper-slide"
+                                             id="EnlargedImage" />
+                                        <img src="img/shirt3.png"
+                                             class="prodimg swiper-slide"
+                                             id="EnlargedImage" />
+                                        <img src="img/shirt4.png"
+                                             class="prodimg swiper-slide"
+                                             id="EnlargedImage" />
+                                        <img src="img/shirt.png"
+                                             class="transitionimg"
+                                             id="TransitionImgPresent" />
+                                        <img src="img/shirt.png"
+                                             class="transitionimg"
+                                             id="TransitionImgFuture" />
+                                    </div>
+                                    <div class="arrow aRight"
+                                         onclick="NextImg()">
+                                        <img src="img/dropdown.png" />
+                                    </div>
+                                </div>
+
+                                <div id="OtherImages">
+                                    <img src="img/shirt.png"
+                                         onclick="EnlargeImg(1)" />
+                                    <img src="img/shirt2.png"
+                                         onclick="EnlargeImg(2)" />
+                                    <img src="img/shirt3.png"
+                                         onclick="EnlargeImg(3)" />
+                                    <img src="img/shirt4.png"
+                                         onclick="EnlargeImg(4)" />
+                                </div>
+                            </div>
+
+                            <div class="EnlargedProdDeets">
+                                <img src="img/close.png"
+                                     class="close"
+                                     onclick="EnlargedPBoxHide()" />
+                                <text id="EnlargedName">Name of Product</text>
+                                <text id="EnlargedDesc"> </text>
+                                <text id="EnlargedPrice">Php x.xx</text>
+                            </div>
+                        </div>
+
+                        <div class="OrderFormBox hide" id="EnlargedOrderForm">
+                            <img src="img/close.png"
+                                 class="close"
+                                 onclick="EnlargedOrderFormHide()" />
+                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeEnZ63_XC2Ot2vBt9GcmmOMsIVxUyLbwkt03nfEoMJEixMXQ/viewform?embedded=true"
+                                    width="80%"
+                                    height="100%"
+                                    frameborder="0"
+                                    marginheight="0"
+                                    marginwidth="0">
+                                Loading…
+                            </iframe>
+                        </div>
+                        <div id="BlackBG" class="transparent"></div>
+                    </div>
+
+                    <div class="PageNavigation bottom">
+                        <div onclick="changePage('Previous')" class="Prev nav">
+                            <
+                        </div>
+                        <text class="MorePages1">
+                            ...
+                        </text>
+                        <div onclick="changePage('Page 1')" class="P1 nav">
+                            1
+                        </div>
+                        <div onclick="changePage('Page 2')" class="P2 nav">
+                            2
+                        </div>
+                        <div onclick="changePage('Page 3')" class="P3 nav">
+                            3
+                        </div>
+                        <div onclick="changePage('Page 4')" class="P4 nav">
+                            4
+                        </div>
+                        <div onclick="changePage('Page 5')" class="P5 nav">
+                            5
+                        </div>
+                        <text class="MorePages2">
+                            ...
+                        </text>
+                        <div onclick="changePage('Next')" class="Next nav">
+                            >
+                        </div>
+                        <img src="img/filter.svg"
+                             class="filterToggle"
+                             onclick="AccessFilter()" />
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div id="social-media">
+                <p>#NeverendingDaydream</p>
+                <a
+                    href="https://www.facebook.com/Neverland-2021-106825301759343"
+                    target="_blank"
+                    ><img
+                        src="img/facebook.svg"
+                        alt="Facebook logo"
+                        id="fb-logo"
+                /></a>
+                <a href="https://twitter.com/neverland21_" target="_blank"
+                    ><img
+                        src="img/twitter.svg"
+                        alt="Twitter logo"
+                        id="twt-logo"
+                /></a>
+            </div>
+            <div id="copyright">
+                <a href="credits.html">PSHS-MC B2023 Fair Committee</a>
+            </div>
+            <a class="back-to-top visible" href="#top">
+                <img src="img/up-arrow.svg" alt="Back to top of page button" />
+            </a>
+        </footer>
+
+        <script src="js/general.js?version=1"></script>
+        <script src="js/gacha.js?version=2"></script>
+        <script src="js/stats.js?version=1"></script>
+        <script src="js/merch.js?version=1"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script>
+            const swiper = new Swiper("#ProfilePopupContainer-Mobile", {
+                centeredSlides: true,
+                centeredSlidesBounds: true,
+                spaceBetween: 20,
+                resistance: false,
+            });
+
+            swiper.on('setTranslate', function () {
+				if(swiper.translate > 0 || swiper.translate < -(swiper.width * 1 +40)) {
+					var x = 0; y = 1;
+					if(swiper.translate < 0) {
+						x = swiper.width * 1 +40;
+						y = -1;
+					}
+					document.getElementById("BlackBG").style.opacity = (1 - ((swiper.translate + x) * y / swiper.width) - 0.5);
+				}
+			});
+
+			swiper.on('touchEnd', function () {
+				BlackBG.style.opacity = null;
+
+				if(swiper.translate > (swiper.width * 0.5) || swiper.translate < -(swiper.width * 1.5 +40)) {
+					StatsPopupHide();
+				}
+			});
+        </script>
+        
+        <script>
+            var swiperMerch = new Swiper(".arrowContainer", { effect: "flip" });
+        </script>
+    </body>
+</html>

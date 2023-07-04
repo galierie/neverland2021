@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <title>Profile Popup || Neverland 2021</title>
+		<link rel="stylesheet" href="css/general.css" />
+        <link rel="stylesheet" href="css/stats.css" />
+        <link
+            rel="shortcut icon"
+            href="img/pixiedust.svg"
+            type="image/x-icon"
+        />
+		<script src="js/jquery.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/swiper/swiper-bundle.min.css"
+		/>
+    </head>
+
+    <body>
+
+		<main>
+			<!-- No need to add this -->
+			<button id="b1" onclick="StatsPopupOpen(this)"> ௹ open stats ௹ </button>
+			<button id="b2" onclick="incrementCurrency()"> ௹ add some currency ௹</button>
+			<button id="b3" onclick="addHighscore()"> ௹ add highscore ௹</button>
+			<!-- No need to add this -->
+
+			<div id="ProfilePopupContainer-PC" class="hidden">
+				<div id="LeftDivider">
+					<div id="ProfileArea">
+						<h1 style=><img src="img/stats-stats.png" class="RasterizedHeader"/></h1>
+						<div class="MoneyDisplay">
+							<p class="tooltip">
+								Pixie Dust—earn these by playing minigames. Use it tounlock more content in the lore book!
+							</p>
+							<img src="img/neverland-pixiedust.png"/>
+							<span id="PixieDustCount-PC"> 2 </span>
+						</div>
+						<div class="FlavorTextArea">
+							<div id="FlavorText-PC" class="flavorText"> This Flavor text will change every time you open the popup. Maybe a stat, a trivia, or a quote?</div>
+							<div id="QuoteText-PC" class="quoteText"> - If a Quote </div>
+						</div>
+					</div>
+					<div id="WhiteLine"><div></div></div>
+					<div class="HighscoreArea">
+						<h1><img src="img/stats-highscores.png" class="RasterizedHeader"/></h1>
+						<div id="HighscoreContainer-PC" class="highscoreContainer">
+
+						</div>
+					</div>
+				</div>
+				<div id="GachaArea">
+          <div class="row1">
+            <div class="item1" id="popup-PC">
+                  <img
+                    src="img/FAQ.png"
+                    alt="FAQ"
+                    class="FAQ"
+                    onclick="showPopup()"
+                  />
+                  <div class ="placeholderpop" id="placeholderpop-PC">
+                  <span class="popuptext " id="myPopup-PC">
+                    Log-in everyday to win one new gacha!
+                  </span></div>
+            </div>
+            <div class="item2">
+              <h1>
+              <img src="img/stats-gachas.png" class="RasterizedHeader" id = "statsGacha"/>
+              </h1>
+            </div>
+          </div>
+          <div class="row2">
+            <div class="item3">
+                <img src="img/Doll.png" alt="img" class = "gachaLarge">
+                <div class="gachaName" >Doll</div>
+                <div class="gachaDescription" >“​​Alright, here! It’s not dry yet, but a little doll of you, for good luck and protection”</div>
+            </div>
+            <div class="item4">
+                <div class="placeholder Doll">
+                  <img src="img/Doll.png" alt="img" onclick="enlargeGacha(0)" >
+                  <div class="popupName">Doll</div>
+                  <img src="img/padlock.png" alt="img" >
+                </div>
+                <div class="placeholder FlowerCrown">
+                  <img src="img/FlowerCrown.png" alt="img" onclick="enlargeGacha(1)"  >
+                  <div class="popupName">Flower Crown</div>
+                  <img src="img/padlock.png" alt="padlock">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Butterfly.png" alt="img" onclick="enlargeGacha(2)"  >
+                  <div class="popupName">Butterfly</div>
+                  <img src="img/padlock.png" alt="padlock">
+                </div>
+                <div class="placeholder">
+                  <img src="img/DollAndCarving.png" onclick="enlargeGacha(3)" alt="img" >
+                  <div class="popupName">Doll and Carving Knife</div>
+                  <img src="img/padlock.png" alt="padlock">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Wendy.png" alt="img" onclick="enlargeGacha(4)" >
+                  <div class="popupName">Wendy</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Peter.png" alt="img" onclick="enlargeGacha(5)" >
+                  <div class="popupName">Peter</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/March.png" alt="img" onclick="enlargeGacha(6)" >
+                  <div class="popupName">March</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Binoculars.png" alt="img" onclick="enlargeGacha(7)" >
+                  <div class="popupName">Binoculars</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Book.png" alt="img" onclick="enlargeGacha(8)" >
+                  <div class="popupName">Book</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Polaroid.png" alt="img" onclick="enlargeGacha(9)" >
+                  <div class="popupName">Camera</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Sam.png" alt="img" onclick="enlargeGacha(10)" >
+                  <div class="popupName">Sam</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Art.png" alt="img" onclick="enlargeGacha(11)" >
+                  <div class="popupName">Art</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder" >
+                  <img src="img/Sword.png" alt="img" onclick="enlargeGacha(12)" >
+                  <div class="popupName">Cardboard Sword</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/May.png" alt="img" onclick="enlargeGacha(13)" >
+                  <div class="popupName">May</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Scarf.png" alt="img" onclick="enlargeGacha(14)" >
+                  <div class="popupName">Scarf</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder" >
+                  <img src="img/Hourglass.png" alt="img" onclick="enlargeGacha(15)" >
+                  <div class="popupName">Hourglass</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+            </div>
+          </div>
+				</div>
+				<div>
+					<div id="Exit"  onclick="StatsPopupHide()"><img src="img/close.png"/></div>
+				</div>
+			</div>
+
+			<div id="ProfilePopupContainer-Mobile" class="hidden">
+			<div class="swiper-wrapper">
+				<div id="ProfileArea" class="swiper-slide">
+					<h1><img src="img/stats-stats.png" class="RasterizedHeader"/></h1>
+					<div class="MoneyDivider">
+						<div class="MoneyDisplay">
+							<p class="tooltip">
+									Pixie Dust—earn these by playing minigames. Use it tounlock more content in the lore book!
+							</p>
+							<img src="img/neverland-pixiedust.png"/>
+							<span id="PixieDustCount-Mobile"> 2 </span>
+						</div>
+					</div>
+					<div class="FlavorTextArea">
+						<div id="FlavorText-Mobile" class="flavorText"> This Flavor text will change every time you open the popup. Maybe a stat, a trivia, or a quote?</div>
+						<div id="QuoteText-Mobile" class="quoteText"> - If a Quote </div>
+					</div>
+				</div>
+        <div id="GachaArea" class="swiper-slide">
+            <div class="row1 row1-Mobile">
+              <div class="item1" id="popup-Mobile">
+                  <img
+                    src="img/FAQ.png"
+                    alt="FAQ"
+                    class="FAQ"
+                    onclick="showPopup()"
+                  />
+                  <div class ="placeholderpop" id="placeholderpop-Mobile">
+                    <span class="popuptext " id="myPopup-Mobile">
+                      Log-in everyday to win one new gacha!
+                    </span>
+                </div>
+              </div>
+              <div class="item2">
+                <h1>
+                <img src="img/stats-gachas.png" class="RasterizedHeader" id = "statsGacha"/>
+                </h1>
+              </div>
+            </div>
+            <div class="row2 row2-Mobile">
+              <div class="item3" id="item3-mobile">
+                <img src="img/Doll.png" alt="img" class = "gachaLarge" id = "gachaLargeImg">
+                <div class="gachaName" id="gachaLargeName" >Doll</div>
+                <div class="gachaDescription" id="gachaLargeDes">“​​Alright, here! It’s not dry yet, but a little doll of you, for good luck and protection”</div>
+              </div>
+              <div class="item4">
+                <div class="placeholder-Mobile Doll">
+      						<img src="img/Doll.png" alt="img" onclick="enlargeGacha(0)" >
+      						<div class="popupName-Mobile">Doll</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile FlowerCrown">
+      						<img src="img/FlowerCrown.png" alt="img" onclick="enlargeGacha(1)"  >
+      						<div class="popupName-Mobile">Flower Crown</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+                <div class="placeholder-Mobile Butterfly">
+      						<img src="img/Butterfly.png" alt="img" onclick="enlargeGacha(2)"  >
+      						<div class="popupName-Mobile">Butterfly</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+      						<img src="img/DollAndCarving.png" onclick="enlargeGacha(3)" alt="img" >
+      						<div class="popupName-Mobile">Doll and Carving Knife</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Wendy.png" alt="img" onclick="enlargeGacha(4)" >
+      						<div class="popupName-Mobile">Wendy</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Peter.png" alt="img" onclick="enlargeGacha(5)" >
+      						<div class="popupName-Mobile">Peter</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/March.png" alt="img" onclick="enlargeGacha(6)" >
+      						<div class="popupName-Mobile">March</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Binoculars.png" alt="img" onclick="enlargeGacha(7)" >
+      						<div class="popupName-Mobile">Binoculars</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Book.png" alt="img" onclick="enlargeGacha(8)" >
+      						<div class="popupName-Mobile">Book</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Polaroid.png" alt="img" onclick="enlargeGacha(9)" >
+      						<div class="popupName-Mobile">Camera</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Sam.png" alt="img" onclick="enlargeGacha(10)" >
+      						<div class="popupName-Mobile">Sam</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Art.png" alt="img" onclick="enlargeGacha(11)" >
+      						<div class="popupName-Mobile">Art</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile" >
+                  <img src="img/Sword.png" alt="img" onclick="enlargeGacha(12)" >
+      						<div class="popupName-Mobile">Cardboard Sword</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/May.png" alt="img" onclick="enlargeGacha(13)" >
+      						<div class="popupName-Mobile">May</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Scarf.png" alt="img" onclick="enlargeGacha(14)" >
+      						<div class="popupName-Mobile">Scarf</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile" >
+                  <img src="img/Hourglass.png" alt="img" onclick="enlargeGacha(15)" >
+      						<div class="popupName-Mobile">Hourglass</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+              </div>
+            </div>
+				<!--	<h1>
+					<div class="popup" id="popup-Mobile">
+							<img
+								src="img/FAQ.png"
+								alt="FAQ"
+								class="FAQ"
+								onclick="showPopup()"
+							/>
+							<span class="popuptext" id="myPopup-Mobile">
+                Log-in everyday to win one new gacha!!!
+							</span>
+					</div>
+					<img src="img/stats-gachas.png" class="RasterizedHeader" id = "statsGacha"/>
+					</h1>
+          <div class = "gachaProfile ">
+            <img src="img/Doll.png" alt="img" class = "gachaLarge">
+            <div class="gachaName" >Doll</div>
+            <div class="gachaDescription" >“​​Alright, here! It’s not dry yet, but a little doll of you, for good luck and protection”</div>
+          </div>
+					<div class="gallery-container">
+            <div class="placeholder Doll">
+  						<img src="img/Doll.png" alt="img" onclick="enlargeGacha(0)" >
+  						<div class="popupName">Doll</div>
+  						<img src="img/padlock.png" alt="img" >
+					  </div>
+					  <div class="placeholder FlowerCrown">
+  						<img src="img/FlowerCrown.png" alt="img" onclick="enlargeGacha(1)"  >
+  						<div class="popupName">Flower Crown</div>
+  						<img src="img/padlock.png" alt="padlock">
+					  </div>
+            <div class="placeholder Butterfly">
+  						<img src="img/Butterfly.png" alt="img" onclick="enlargeGacha(2)"  >
+  						<div class="popupName">Butterfly</div>
+  						<img src="img/padlock.png" alt="padlock">
+					  </div>
+					  <div class="placeholder">
+  						<img src="img/DollAndCarving.png" onclick="enlargeGacha(3)" alt="img" >
+  						<div class="popupName">Doll and Carving Knife</div>
+  						<img src="img/padlock.png" alt="padlock">
+					  </div>
+					  <div class="placeholder">
+              <img src="img/Wendy.png" alt="img" onclick="enlargeGacha(4)" >
+  						<div class="popupName">Wendy</div>
+  						<img src="img/padlock.png" alt="img">
+					  </div>
+					  <div class="placeholder">
+              <img src="img/Peter.png" alt="img" onclick="enlargeGacha(5)" >
+  						<div class="popupName">Peter</div>
+  						<img src="img/padlock.png" alt="img">
+					  </div>
+					  <div class="placeholder">
+              <img src="img/March.png" alt="img" onclick="enlargeGacha(6)" >
+  						<div class="popupName">March</div>
+  						<img src="img/padlock.png" alt="img">
+					  </div>
+					  <div class="placeholder">
+              <img src="img/Binoculars.png" alt="img" onclick="enlargeGacha(7)" >
+  						<div class="popupName">Binoculars</div>
+  						<img src="img/padlock.png" alt="img">
+					  </div>
+					  <div class="placeholder">
+              <img src="img/Book.png" alt="img" onclick="enlargeGacha(8)" >
+  						<div class="popupName">Book</div>
+  						<img src="img/padlock.png" alt="img">
+					  </div>
+					  <div class="placeholder">
+              <img src="img/Polaroid.png" alt="img" onclick="enlargeGacha(9)" >
+  						<div class="popupName">Camera</div>
+  						<img src="img/padlock.png" alt="img">
+					  </div>
+					  <div class="placeholder">
+              <img src="img/Sam.png" alt="img" onclick="enlargeGacha(10)" >
+  						<div class="popupName">Sam</div>
+  						<img src="img/padlock.png" alt="img">
+					  </div>
+					  <div class="placeholder">
+              <img src="img/Art.png" alt="img" onclick="enlargeGacha(11)" >
+  						<div class="popupName">Art</div>
+  						<img src="img/padlock.png" alt="img">
+					  </div>
+					  <div class="placeholder" >
+              <img src="img/Sword.png" alt="img" onclick="enlargeGacha(12)" >
+  						<div class="popupName">Cardboard Sword</div>
+  						<img src="img/padlock.png" alt="img">
+					  </div>
+					  <div class="placeholder">
+              <img src="img/May.png" alt="img" onclick="enlargeGacha(13)" >
+  						<div class="popupName">May</div>
+  						<img src="img/padlock.png" alt="img">
+					  </div>
+					  <div class="placeholder">
+              <img src="img/Scarf.png" alt="img" onclick="enlargeGacha(14)" >
+  						<div class="popupName">Scarf</div>
+  						<img src="img/padlock.png" alt="img">
+					  </div>
+					  <div class="placeholder" >
+              <img src="img/Hourglass.png" alt="img" onclick="enlargeGacha(15)" >
+  						<div class="popupName">Hourglass</div>
+  						<img src="img/padlock.png" alt="img">
+					  </div>
+					</div> -->
+				</div>
+				</div>
+			</div>
+
+			<div id="BlackBG" class="transparent"></div>
+
+		</main>
+
+      <script src="js/stats.js"></script>
+		<script src="js/gacha.js"></script>
+		<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+		<script>
+			const swiper = new Swiper("#ProfilePopupContainer-Mobile", {
+			centeredSlides: true, centeredSlidesBounds: true, spaceBetween: 20, resistance: false,
+
+			});
+
+			swiper.on('setTranslate', function () {
+				if(swiper.translate > 0 || swiper.translate < -(swiper.width * 1 +40)) {
+					var x = 0; y = 1;
+					if(swiper.translate < 0) {
+						x = swiper.width * 1 +40;
+						y = -1;
+					}
+					document.getElementById("BlackBG").style.opacity = (1 - ((swiper.translate + x) * y / swiper.width) - 0.5);
+				}
+			});
+
+			swiper.on('touchEnd', function () {
+				BlackBG.style.opacity = null;
+
+				if(swiper.translate > (swiper.width * 0.5) || swiper.translate < -(swiper.width * 1.5 +40)) {
+					StatsPopupHide();
+				}
+			});
+		</script>
+    </body>
+</html>

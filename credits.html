@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+        <title>Credits || Neverland 2021</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="css/general.css?version=1" />
+		<link rel="stylesheet" href="css/gacha.css?version=1" />
+        <link rel="stylesheet" href="css/stats.css?version=1" />
+        <link rel="stylesheet" href="css/credits.css?version=1" />
+        <link
+            rel="shortcut icon"
+            href="img/pixiedust.svg"
+            type="image/x-icon"
+        />
+		<script src="js/jquery.js"></script>
+        <script
+            async
+            src="https://cse.google.com/cse.js?cx=c9af3957017583ea0"
+        ></script>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper/swiper-bundle.min.css"
+        />
+    </head>
+    <body>
+		<audio id="audioplayer" autobuffer="" loop="true" preload="auto">
+            <source src="audio/trinkets.wav" type="audio/mpeg">
+          </audio>
+		
+		<div id="overlay">
+            <div id="prizeAlert">You've got a prize!</div>
+            <div class="gachaContainer">
+                <img src="img/doll.png" alt="img" id="splash-art" />
+                <div id="gachaName">Doll</div>
+                <div id="gachaDescription">
+                    “​​Alright, here! It’s not dry yet, but a little doll of
+                    you, for good luck and protection”
+                </div>
+            </div>
+            <img
+                src="img/exit.png"
+                alt="img"
+                id="exit-button"
+                onclick="exit()"
+            />
+        </div>
+
+    	<header>
+            <a href="index.html"
+                ><div id="logo">
+                    <img src="img/fair-logo-navbar.svg" alt="Website logo" />
+                    <div id="site-name">
+                        <img
+                            src="img/neverland-header.png"
+                            alt="Neverland title"
+                        />
+                        <p id="subtitle">PSHS-MC B2023 Fair</p>
+                    </div>
+                </div></a
+            >
+            <div id="currency">
+                <div id="pixiedust">
+                    <img
+                        src="img/neverland-pixiedust.png"
+                        alt="Pixie dust"
+                        id="pixiedust-img"
+                    />
+                    <p id="pixiedust-amt"></p>
+                    <p class="tooltip">
+                        Pixie Dust—earned randomly by exploring the site pages
+                        or by visiting the site daily. Use it to unlock lore
+                        side stories!
+                    </p>
+                </div>
+            </div>
+            <div id="stats" onclick="StatsPopupOpen(this, null)">
+                <p>Stats</p>
+            </div>
+
+            <div id="ProfilePopupContainer-PC" class="hidden">
+				<div id="LeftDivider">
+					<div id="ProfileArea">
+						<h1 style=><img src="img/stats-stats.png" class="RasterizedHeader"/></h1>
+						<div class="MoneyDisplay">
+							<p class="tooltip">
+								Pixie Dust—earned randomly by exploring the site pages
+								or by visiting the site daily. Use it to unlock lore
+								side stories!
+							</p>
+							<img src="img/neverland-pixiedust.png"/>
+							<span id="PixieDustCount-PC"> 2 </span>
+						</div>
+						<div class="FlavorTextArea">
+							<div id="FlavorText-PC" class="flavorText"> This Flavor text will change every time you open the popup. Maybe a stat, a trivia, or a quote?</div>
+							<div id="QuoteText-PC" class="quoteText"> - If a Quote </div>
+						</div>
+					</div>
+					<div id="WhiteLine"><div></div></div>
+				</div>
+				<div id="GachaArea">
+          <div class="row1">
+            <div class="item1" id="popup-PC">
+                  <img
+                    src="img/FAQ.png"
+                    alt="FAQ"
+                    class="FAQ"
+                    onclick="showPopup()"
+                  />
+                  <div class ="placeholderpop" id="placeholderpop-PC">
+                  <span class="popuptext " id="myPopup-PC">
+                    Log-in everyday to win one new gacha!
+                  </span></div>
+            </div>
+            <div class="item2">
+              <h1>
+              <img src="img/stats-gachas.png" class="RasterizedHeader" id = "statsGacha"/>
+              </h1>
+            </div>
+          </div>
+          <div class="row2">
+            <div class="item3">
+                <img src="img/Doll.png" alt="img" class = "gachaLarge">
+                <div class="gachaName" >Doll</div>
+                <div class="gachaDescription" >“​​Alright, here! It’s not dry yet, but a little doll of you, for good luck and protection”</div>
+            </div>
+            <div class="item4">
+                <div class="placeholder Doll">
+                  <img src="img/Doll.png" alt="img" onclick="enlargeGacha(0)" >
+                  <div class="popupName">Doll</div>
+                  <img src="img/padlock.png" alt="img" >
+                </div>
+                <div class="placeholder FlowerCrown">
+                  <img src="img/FlowerCrown.png" alt="img" onclick="enlargeGacha(1)"  >
+                  <div class="popupName">Flower Crown</div>
+                  <img src="img/padlock.png" alt="padlock">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Butterfly.png" alt="img" onclick="enlargeGacha(2)"  >
+                  <div class="popupName">Butterfly</div>
+                  <img src="img/padlock.png" alt="padlock">
+                </div>
+                <div class="placeholder">
+                  <img src="img/DollAndCarving.png" onclick="enlargeGacha(3)" alt="img" >
+                  <div class="popupName">Doll and Carving Knife</div>
+                  <img src="img/padlock.png" alt="padlock">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Wendy.png" alt="img" onclick="enlargeGacha(4)" >
+                  <div class="popupName">Wendy</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Peter.png" alt="img" onclick="enlargeGacha(5)" >
+                  <div class="popupName">Peter</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/March.png" alt="img" onclick="enlargeGacha(6)" >
+                  <div class="popupName">March</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Binoculars.png" alt="img" onclick="enlargeGacha(7)" >
+                  <div class="popupName">Binoculars</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Book.png" alt="img" onclick="enlargeGacha(8)" >
+                  <div class="popupName">Book</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Polaroid.png" alt="img" onclick="enlargeGacha(9)" >
+                  <div class="popupName">Camera</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Sam.png" alt="img" onclick="enlargeGacha(10)" >
+                  <div class="popupName">Sam</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Art.png" alt="img" onclick="enlargeGacha(11)" >
+                  <div class="popupName">Art</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder" >
+                  <img src="img/Sword.png" alt="img" onclick="enlargeGacha(12)" >
+                  <div class="popupName">Cardboard Sword</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/May.png" alt="img" onclick="enlargeGacha(13)" >
+                  <div class="popupName">May</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder">
+                  <img src="img/Scarf.png" alt="img" onclick="enlargeGacha(14)" >
+                  <div class="popupName">Scarf</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+                <div class="placeholder" >
+                  <img src="img/Hourglass.png" alt="img" onclick="enlargeGacha(15)" >
+                  <div class="popupName">Hourglass</div>
+                  <img src="img/padlock.png" alt="img">
+                </div>
+            </div>
+          </div>
+				</div>
+				<div>
+					<div id="Exit"  onclick="StatsPopupHide()"><img src="img/close.png"/></div>
+				</div>
+			</div>
+
+			<div id="ProfilePopupContainer-Mobile" class="hidden">
+			<div class="swiper-wrapper">
+				<div id="ProfileArea" class="swiper-slide">
+					<h1><img src="img/stats-stats.png" class="RasterizedHeader"/></h1>
+					<div class="MoneyDivider">
+						<div class="MoneyDisplay">
+						<p class="tooltip">
+									Pixie Dust—earn these by playing minigames. Use it tounlock more content in the lore book!
+							</p>
+							<img src="img/neverland-pixiedust.png"/>
+							<span id="PixieDustCount-Mobile"> 2 </span>
+						</div>
+					</div>
+					<div class="FlavorTextArea">
+						<div id="FlavorText-Mobile" class="flavorText"> This Flavor text will change every time you open the popup. Maybe a stat, a trivia, or a quote?</div>
+						<div id="QuoteText-Mobile" class="quoteText"> - If a Quote </div>
+					</div>
+				</div>
+        <div id="GachaArea" class="swiper-slide">
+            <div class="row1 row1-Mobile">
+              <div class="item1" id="popup-Mobile">
+                  <img
+                    src="img/FAQ.png"
+                    alt="FAQ"
+                    class="FAQ"
+                    onclick="showPopup()"
+                  />
+                  <div class ="placeholderpop" id="placeholderpop-Mobile">
+                    <span class="popuptext " id="myPopup-Mobile">
+                      Log-in everyday to win one new gacha!
+                    </span>
+                </div>
+              </div>
+              <div class="item2">
+                <h1>
+                <img src="img/stats-gachas.png" class="RasterizedHeader" id = "statsGacha"/>
+                </h1>
+              </div>
+            </div>
+            <div class="row2 row2-Mobile">
+              <div class="item3" id="item3-mobile">
+                <img src="img/Doll.png" alt="img" class = "gachaLarge" id = "gachaLargeImg">
+                <div class="gachaName" id="gachaLargeName" >Doll</div>
+                <div class="gachaDescription" id="gachaLargeDes">“​​Alright, here! It’s not dry yet, but a little doll of you, for good luck and protection”</div>
+              </div>
+              <div class="item4">
+                <div class="placeholder-Mobile Doll">
+      						<img src="img/Doll.png" alt="img" onclick="enlargeGacha(0)" >
+      						<div class="popupName-Mobile">Doll</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile FlowerCrown">
+      						<img src="img/FlowerCrown.png" alt="img" onclick="enlargeGacha(1)"  >
+      						<div class="popupName-Mobile">Flower Crown</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+                <div class="placeholder-Mobile Butterfly">
+      						<img src="img/Butterfly.png" alt="img" onclick="enlargeGacha(2)"  >
+      						<div class="popupName-Mobile">Butterfly</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+      						<img src="img/DollAndCarving.png" onclick="enlargeGacha(3)" alt="img" >
+      						<div class="popupName-Mobile">Doll and Carving Knife</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Wendy.png" alt="img" onclick="enlargeGacha(4)" >
+      						<div class="popupName-Mobile">Wendy</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Peter.png" alt="img" onclick="enlargeGacha(5)" >
+      						<div class="popupName-Mobile">Peter</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/March.png" alt="img" onclick="enlargeGacha(6)" >
+      						<div class="popupName-Mobile">March</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Binoculars.png" alt="img" onclick="enlargeGacha(7)" >
+      						<div class="popupName-Mobile">Binoculars</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Book.png" alt="img" onclick="enlargeGacha(8)" >
+      						<div class="popupName-Mobile">Book</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Polaroid.png" alt="img" onclick="enlargeGacha(9)" >
+      						<div class="popupName-Mobile">Camera</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Sam.png" alt="img" onclick="enlargeGacha(10)" >
+      						<div class="popupName-Mobile">Sam</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Art.png" alt="img" onclick="enlargeGacha(11)" >
+      						<div class="popupName-Mobile">Art</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile" >
+                  <img src="img/Sword.png" alt="img" onclick="enlargeGacha(12)" >
+      						<div class="popupName-Mobile">Cardboard Sword</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/May.png" alt="img" onclick="enlargeGacha(13)" >
+      						<div class="popupName-Mobile">May</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile">
+                  <img src="img/Scarf.png" alt="img" onclick="enlargeGacha(14)" >
+      						<div class="popupName-Mobile">Scarf</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+    					  <div class="placeholder-Mobile" >
+                  <img src="img/Hourglass.png" alt="img" onclick="enlargeGacha(15)" >
+      						<div class="popupName-Mobile">Hourglass</div>
+                  <img src="img/padlock.png" alt="padlock">
+    					  </div>
+              </div>
+            </div>
+				</div>
+				</div>
+			</div>
+			<div id="BlackBG" class="transparent"></div>
+
+            <nav class="site-nav">
+                <div id="hamburger-menu-btn">
+                    <img
+                        id="hamburger-menu-icon"
+                        src="img/hamburger-menu.svg"
+                        alt="Hamburger menu"
+                    />
+                </div>
+                <a
+                    id="nav-stats-link"
+                    href="#"
+                    onclick="StatsPopupOpen(this, null)"
+                    >View Stats</a
+                >
+                <a href="schedule.html">Schedule</a>
+                <a href="merch.html">Merch</a>
+                <a href="lore.html">Lore</a>
+                <a href="performances.html">Performances</a>
+                <a href="freedomwall.html">Freedom Wall</a>
+            </nav>
+
+            <img
+                id="search"
+                src="img/search.png"
+                alt="Search"
+                onclick="openSearch()"
+            />
+            <div class="search-box" id="search-box">
+                <img
+                    id="cancelSearch"
+                    src="img/arrow-right.png"
+                    alt="cancel"
+                    onclick="hide()"
+                />
+
+                <div class="holder" id="holder">
+                    <div class="gcse-search"></div>
+                </div>
+            </div>
+        </header>
+	
+	<img id=title src="img/credits/fairCommTitle.png">
+	<!-- <h2 id=credsSub>something cheesy abt hardwork</h2> -->
+	
+	<div id=navButtons>
+		<div class="dropdown">
+			<button onclick="changeDisplay('fairComm')" class="dropbtn navBtn">Fair Committee</button>
+			
+			<button id="fairDropdown"class="dropbtn navBtn" onclick="myFunction()" style="float:right;"> <i class="fa fa-angle-down"></i></button>
+ 
+			<div id="myDropdown" class="dropdown-content">
+				<a onclick="filter('exec')">Executive Committee</a>
+				<a onclick="filter('events')">Events Committee</a>
+				<a onclick="filter('design')">Design Committee</a>
+				<a onclick="filter('finance')">Finance Committee</a>
+				<a onclick="filter('intAff')">Internal Affairs Committee</a>
+				<a onclick="filter('extAff')">External Affairs Committee</a>
+				<a onclick="filter('jailers')">Jailers Committee</a>
+			</div>
+		</div>
+		<button class=navBtn onclick="changeDisplay('sponsors')">Sponsors</button>
+		<button class=navBtn onclick="changeDisplay('ambas')">Ambassadors</button>
+		<button class=navBtn onclick="changeDisplay('resources')">Resources</button>
+	</div>
+		
+	<h2 id="subDesc" style="text-align:center;">Committee and Subcommittee Heads</h2>
+	<div id="fairComm">
+
+	<div class="exec credCard">
+		<img class="person" src="img/credits/rysa.png">
+		<p>Rysa Ang</p>
+		<p class="position"> Executive </p>
+		<p class="position"> Fair Head </p>
+	</div>
+	
+	<div class="exec events credCard">
+		<img class="person" src="img/credits/joelle.png">
+		<p>Joelle Oribiana</p>
+		<p class="position"> Executive </p>
+		<p class="position"> Point Person - Events </p>
+	</div>
+	
+	<div class="exec extAff credCard">
+		<img class="person" src="img/credits/celver.png">
+		<p>Celver Zitro Huerte Ortiz</p>
+		<p class="position"> Executive </p>
+		<p class="position"> Point Person - External Affairs </p>
+	</div>
+	
+	<div class="exec intAff credCard">
+		<img class="person" src="img/credits/oneil.png">
+		<p>O'neil Del Rosario</p>
+		<p class="position"> Executive </p>
+		<p class="position"> Point Person - Internal Affairs </p>
+	</div>
+
+	<div class="exec finance credCard">
+		<img class="person" src="img/credits/angel.png">
+		<p>Angel Manansala</p>
+		<p class="position"> Executive </p>
+		<p class="position"> Point Person - Finance </p>
+	</div>
+	
+	<div class="exec design credCard">
+		<img class="person" src="img/credits/carlos.png">
+		<p>Carlos Salazar</p>
+		<p class="position"> Executive </p>
+		<p class="position"> Point Person - Design </p>
+	</div>
+	
+	<div class="exec jailers credCard">
+		<img class="person" src="img/credits/vincent.png">
+		<p>Vincent :))</p>
+		<p class="position"> Executive </p>
+		<p class="position"> Point Person - Jailers </p>
+	</div>
+	
+	<div class="extAff credCard">
+		<img class="person" src="img/credits/anika.png">
+		<p>Anika Bonifacio</p>
+		<p class="position"> External Affairs </p>
+		<p class="position"> Committee Head </p>
+	</div>
+	
+	<div class="events credCard">
+		<img class="person" src="img/credits/mg.png">
+		<p>Mary Grace Larisca</p>
+		<p class="position"> Events </p>
+		<p class="position"> Committee Head </p>
+	</div>
+	
+	<div class="events credCard">
+		<img class="person" src="img/credits/gab.png">
+		<p>Gabriel Zara</p>
+		<p class="position"> Events </p>
+		<p class="position"> Committee Head </p>
+	</div>
+	
+	<div class="jailers credCard">
+		<img class="person" src="img/credits/gian.png">
+		<p>Gianni Tabaloc</p>
+		<p class="position"> Jailers </p>
+		<p class="position"> Committee Head </p>
+	</div>
+	
+	<div class="intAff credCard">
+		<img class="person" src="img/credits/reign.png">
+		<p>Reign</p>
+		<p class="position"> Internal Affairs </p>
+		<p class="position"> Committee Head </p>
+	</div>
+	
+	<div class="finance credCard">
+		<img class="person" src="img/credits/filbert.png">
+		<p>Filbert Ubanos</p>
+		<p class="position"> Finance </p>
+		<p class="position"> Committee Head </p>
+	</div>	
+	
+	<div class="design credCard">
+		<img class="person" src="img/credits/merien.png">
+		<p>merien</p>
+		<p class="position"> Design </p>
+		<p class="position"> Committee Head </p>
+	</div>
+	
+	<div class="intAff credCard">
+		<img class="person" src="img/credits/sidney.png">
+		<p>Sidney Fernando</p>
+		<p class="position"> Internal Affairs </p>
+		<p class="position"> Web Development Head </p>
+	</div>
+
+	<div class="intAff credCard">
+		<img class="person" src="img/credits/yenyen.png">
+		<p>Eriene Galinato</p>
+		<p class="position"> Internal Affairs </p>
+		<p class="position"> Web Development Head </p>
+	</div>
+	
+	<div class="design credCard">
+		<img class="person" src="img/credits/rain.png">
+		<p> Rain Santos </p>
+		<p class="position"> Design </p>
+		<p class="position"> Promotionals Head </p>
+	</div>
+	
+	<div class="design credCard">
+		<img class="person" src="img/credits/inez.png">
+		<p>Inez</p>
+		<p class="position"> Design </p>
+		<p class="position"> Lore Head</p>
+	</div>
+	
+	<div class="design credCard">
+		<img class="person" src="img/credits/jez.png">
+		<p>Jezreel Belda</p>
+		<p class="position"> Design </p>
+		<p class="position"> Merch Design Head </p>
+	</div>
+	</div>
+	
+	<div style="text-align:center;">
+	<div class="memberList events">
+		<p>Members</p>
+		<table class=members>
+			<tr>
+				<th>Competitions</th>
+				<th>Shows</th>
+			</tr>
+			<tr>
+				<td>Dylan Dalida</td>
+				<td>Mikaela Bermudez</td>	
+			</tr>
+			<tr>
+				<td>Josh Nabur</td>
+				<td>Rain Lee</td>	
+			</tr>
+			<tr>
+				<td>Troy</td>
+				<td>Marcus Torres</td>	
+			</tr>
+			<tr>
+				<td>Carlyne Consebido</td>
+				<td>Keona Malaya 🍰</td>	
+			</tr>
+			<tr>
+				<td>Jeannel Damian</td>
+				<td>Gus Africa</td>	
+			</tr>
+			<tr>
+				<td>James Ko</td>
+				<td>amiel.</td>	
+			</tr>
+			<tr>
+				<td>Lorraine Fabregas</td>
+				<td>Neil Naorbe</td>	
+			</tr>
+			<tr>
+				<td></td>
+				<td>Runa</td>	
+			</tr>
+			<tr>
+				<td></td>
+				<td>Josh Nabur</td>	
+			</tr>
+			<tr>
+				<td></td>
+				<td>Danni Santos</td>	
+			</tr>
+			<tr>
+				<td></td>
+				<td>Yani Padilla</td>	
+			</tr>
+			<tr>
+				<td></td>
+				<td>Gianni Tabaloc</td>	
+			</tr>
+			<tr>
+				<td></td>
+				<td>Lei Toma Cruz</td>	
+			</tr>
+			<tr>
+				<td></td>
+				<td>bekelbanana</td>	
+			</tr>
+		</table>		
+	</div>	
+	
+	<div class="memberList design">
+		<p>Members</p>
+		<table class=members>
+			<tr>
+				<th>Merch Design</th>
+				<th>Lore</th>
+				<th>Promotionals</th>
+			</tr>
+			<tr>
+				<td>mils</td>
+				<td>Jann Jemuel Impas</td>	
+				<td>Raiden Celestino</td>	
+			</tr>
+			<tr>
+				<td>ella b. </td>
+				<td>Paul Necasio</td>	
+				<td>Mi Jung Pak</td>	
+			</tr>
+			<tr>
+				<td>Raiden Celestino</td>
+				<td>Mari Eliseo</td>	
+				<td>Kitkat</td>	
+			</tr>
+			<tr>
+				<td>Phoebe Moraca</td>
+				<td>Inez</td>	
+				<td>Rain Santos</td>	
+			</tr>
+			<tr>
+				<td>Karol Carreon</td>
+				<td>Troy</td>	
+				<td>Gallen Musa</td>	
+			</tr>
+			<tr>
+				<td>mayari</td>
+				<td></td>	
+				<td>Hayyel</td>	
+			</tr>
+			<tr>
+				<td>Kitkat</td>
+				<td></td>	
+				<td>Reign</td>	
+			</tr>
+			<tr>
+				<td>Jezreel Belda</td>
+				<td></td>	
+				<td></td>	
+			</tr>
+			<tr>
+				<td>Francis Cruz</td>
+				<td></td>	
+				<td></td>	
+			</tr>
+			<tr>
+				<td>Emma</td>
+				<td></td>	
+				<td></td>	
+			</tr>
+		</table>		
+	</div>	
+	
+	<div class="memberList finance">
+		<p>Members</p>
+		<table class=members>
+			<tr>
+				<th> </th>
+				<th> </th>
+			</tr>
+			<tr>
+				<td>Elian</td>
+				<td>Keona Malaya 🍰</td>	
+			</tr>
+			<tr>
+				<td>Jamiah Nolasco</td>
+				<td>Gus Africa</td>	
+			</tr>
+			<tr>
+				<td>Gelo Nalica</td>
+				<td>Carl San Juan</td>	
+			</tr>
+			<tr>
+				<td>Francis Cruz</td>
+				<td>Yani Padilla</td>	
+			</tr>
+			<tr>
+				<td>Mikaela Bermudez</td>
+				<td>Carlyne Consebido</td>	
+			</tr>
+			<tr>
+				<td>James Ko</td>
+				<td>Carl Dalumpines</td>	
+			</tr>
+			<tr>
+				<td>Benj</td>
+				<td>MJ Real</td>	
+			</tr>
+			<tr>
+				<td>Dirk Tardecilla</td>
+				<td></td>	
+			</tr>
+		</table>	
+	</div>	
+	
+	<div class="memberList intAff">
+		<p>Members</p>
+		<table class=members>
+			<tr>
+				<th>Web Development</th>
+				<th>Technicals</th>
+			</tr>
+			<tr>
+				<td>Adviser: Sir Paolo Santos</td>
+				<td>Cellin Cheng</td>	
+			</tr>
+			<tr>
+				<td>Jerome Estrella</td>
+				<td>Anela Maree Jardin</td>	
+			</tr>
+			<tr>
+				<td>Cellin Cheng</td>
+				<td>Ainsley Lo</td>	
+			</tr>
+			<tr>
+				<td>Jeremie Keon T. Torralba</td>
+				<td>Zachary Pialago</td>	
+			</tr>
+			<tr>
+				<td>Paul Necasio</td>
+				<td>Elijah Protasio</td>	
+			</tr>
+			<tr>
+				<td>Glenn Paragas</td>
+				<td>Gelo Nalica</td>	
+			</tr>
+			<tr>
+				<td>Vaughn</td>
+				<td>Paul Rigos</td>	
+			</tr>
+			<tr>
+				<td>Job Trocino</td>
+				<td>Carl San Juan</td>	
+			</tr>
+			<tr>
+				<td>Eriene Galinato</td>
+				<td>Lorraine Fabregas</td>	
+			</tr>
+			<tr>
+				<td>Sidney Fernando</td>
+				<td>Allan Aban</td>	
+			</tr>
+			<tr>
+				<td>Benj</td>
+				<td>mitsue</td>	
+			</tr>
+			<tr>
+				<td>MJ Real</td>
+				<td>Jude Cereno</td>	
+			</tr>
+			<tr>
+				<td></td>
+				<td>bree</td>	
+			</tr>
+			<tr>
+				<td></td>
+				<td>Carl Dalumpines</td>	
+			</tr>
+			<tr>
+				<td>Special Thanks:</td>
+				<td>Lei Toma Cruz</td>	
+			</tr>
+			<tr>
+				<td>Zio Vela</td>
+				<td>Franzesca De Leon</td>	
+			</tr>
+			<tr>
+				<td>Gaby</td>
+				<td>Karl</td>	
+			</tr>
+		</table>	
+	</div>	
+	
+	<div class="memberList extAff">
+		<p>Members</p>
+		<table class=members>
+			<tr>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr>
+				<td>Mikey</td>
+				<td>Marcus Torres</td>	
+			</tr>
+			<tr>
+				<td>Jamiah Nolasco</td>
+				<td>Vivien Ercia</td>	
+			</tr>
+			<tr>
+				<td>Jeannel Damian</td>
+				<td>Sidney Fernando</td>	
+			</tr>
+			<tr>
+				<td>Benj</td>
+				<td>Airon</td>	
+			</tr>
+			<tr>
+				<td>Danni Santos</td>
+				<td></td>	
+			</tr>
+		</table>	
+	</div>	
+	
+	<div class="memberList jailers">
+		<p>Members</p>
+		<table class=members>
+			<tr>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+			<tr>
+				<td>Vyan Abella</td>
+				<td>Gabe Azañes</td>
+				<td>Persus Atienza</td>
+			</tr>
+			<tr>
+				<td>Mikey</td>
+				<td>Hero Padron</td>
+				<td>Alejandro Torres B)</td>
+			</tr>
+			<tr>
+				<td>Anela Maree Jardin</td>
+				<td>Zachary Pialago</td>
+				<td>Ali Quintanilla</td>
+			</tr>
+			<tr>
+				<td>Earvin Guerra </td>
+				<td>Gus Africa</td>
+				<td>Aaron Gavino</td>
+			</tr>
+			<tr>
+				<td>Airon</td>
+				<td>Mi Jung Pak</td>
+				<td>Jaime Palma</td>
+			</tr>
+			<tr>
+				<td>Paul Rigos</td>
+				<td>Jen Ranielle S. Santos</td>
+				<td>Lucas Agcaoili</td>
+			</tr>
+			<tr>
+				<td>Hanz</td>
+				<td>Benj</td>
+				<td>Eron Martin</td>
+			</tr>
+			<tr>
+				<td>Josh Nabur</td>
+				<td>Yani Padilla</td>
+				<td>Jabez Ronda</td>
+			</tr>
+			<tr>
+				<td>Allex Baluyot</td>
+				<td>David Belisario</td>
+				<td>Inez</td>
+			</tr>
+			<tr>
+				<td>Vivien Ercia</td>
+				<td>astellar</td>
+				<td>MJ Real</td>
+			</tr>
+			<tr>
+				<td>Von Sese</td>
+				<td>Marcus Torres</td>
+				<td>Job Trocino</td>
+			</tr>
+			<tr>
+				<td>Chris Balanga</td>
+				<td>Carlyne Consebido</td>
+				<td>Sidney Fernando</td>
+			</tr>
+			<tr>
+				<td>Waco Maristela</td>
+				<td>Joshua Viloria</td>
+				<td>Kikoy Dungca</td>				
+			</tr>
+			<tr>
+				<td>Andrei</td>
+				<td>Migs Angeles</td>
+				<td>Jamie Esguerra</td>
+			</tr>
+			<tr>
+				<td>Marcus Pascual</td>
+				<td>Corvin Casas</td>
+				<td>Mira</td>
+			</tr>
+			<tr>
+				<td>Peale Bondoc</td>						
+				<td>Vaness Judel M. Salanga</td>
+			</tr>
+			
+		</table>	
+	</div>
+	</div>
+	
+	<div id="sponsors">
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/SMART (Pixie).png">
+		<div class="spontitle">
+		<p>Smart</p>
+		<p class="pixiedustspon"><b>PIXIE DUST</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/merry mart pixie.jpg">
+		<div class="spontitle">
+		<p>Merrymart</p>
+		<p class="pixiedustspon"><b>PIXIE DUST</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/Bordado (PIXIE).png">
+		<div class="spontitle">
+		<p>Vernon Bordado</p>
+		<p class="pixiedustspon"><b>PIXIE DUST</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/Winford Manila Resort Casino Logo (PIXIE).png">
+		<div class="spontitle">
+		<p>Winford Resorts</p>
+		<p class="pixiedustspon"><b>PIXIE DUST</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/ProduceCo Logo (Pixie).jpg">
+		<div class="spontitle">
+		<p>ProduceCo Inc.</p>
+		<p class="pixiedustspon"><b>PIXIE DUST</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/11b.png">
+		<div class="spontitle">
+		<p>Block 11B Parents</p>
+		<p class="pixiedustspon"><b>PIXIE DUST</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/11e.png">
+		<div class="spontitle">
+		<p>Block 11E Parents</p>
+		<p class="pixiedustspon"><b>PIXIE DUST</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/11h.png">
+		<div class="spontitle">
+		<p>Block 11H Parents</p>
+		<p class="pixiedustspon"><b>PIXIE DUST</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/OBEI (Gold).jpg">
+		<div class="spontitle">
+		<p>Outbound Education and Internships</p>
+		<p class="goldspon"><b>GOLD</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/11c.png">
+		<div class="spontitle">
+		<p>Block 11C Parents</p>
+		<p class="goldspon"><b>GOLD</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/11d.png">
+		<div class="spontitle">
+		<p>Block 11D Parents</p>
+		<p class="goldspon"><b>GOLD</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/11f.png">
+		<div class="spontitle">
+		<p>Block 11F Parents</p>
+		<p class="goldspon"><b>GOLD</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/Quasset_Logo (Silver).jpg">
+		<div class="spontitle">
+		<p>Quasset/Tjibbe Bouma</p>
+		<p class="goldspon"><b>GOLD</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/11a.png">
+		<div class="spontitle">
+		<p>Block 11A Parents</p>
+		<p class="silverspon"><b>SILVER</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/11g.png">
+		<div class="spontitle">
+		<p>Block 11G Parents</p>
+		<p class="silverspon"><b>SILVER</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/Phinma (Bronze).png">
+		<div class="spontitle">
+		<p>PHINMA Properties</p>
+		<p class="bronzespon"><b>BRONZE</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/Diamed logo wo backdrop.png">
+		<div class="spontitle">
+		<p>Diamed</p>
+		<p class="bronzespon"><b>BRONZE</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/jpg.png">
+		<div class="spontitle">
+		<p>Jean Paul Gines</p>
+		<p class="bronzespon"><b>BRONZE</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/The Skin Suite Center For Dermatology, Lasers _ Aesthetic Medicine (Bronze).jpg">
+		<div class="spontitle">
+		<p>The Skin Suite</p>
+		<p class="bronzespon"><b>BRONZE</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/Rain or Shine Paints (Bronze).jpg">
+		<div class="spontitle">
+		<p>Rain or Shine Paints</p>
+		<p class="bronzespon"><b>BRONZE</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/Arty Ferrocast (Bronze.jfif">
+		<div class="spontitle">
+		<p>Arty Ferrocast</p>
+		<p class="bronzespon"><b>BRONZE</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/asian coatings phils (bronze).jfif">
+		<div class="spontitle">
+		<p>Asian Coatings Phils</p>
+		<p class="bronzespon"><b>BRONZE</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/Comida China de Manila (Bronze).jpg">
+		<div class="spontitle">
+		<p>Comida China de Manila</p>
+		<p class="bronzespon"><b>BRONZE</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/Systemantech (Bronze).png">
+		<div class="spontitle">
+		<p>Systemantech</p>
+		<p class="bronzespon"><b>BRONZE</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/ni.png">
+		<div class="spontitle">
+		<p>Neal Imperial</p>
+		<p class="bronzespon"><b>BRONZE</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/rp.png">
+		<div class="spontitle">
+		<p>REIGN PEÑA</p>
+		<p class="bronzespon"><b>BRONZE</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/int flag house (bronze).png">
+		<div class="spontitle">
+		<p>International Flag House</p>
+		<p class="bronzespon"><b>BRONZE</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/flags all nations (bronze).png">
+		<div class="spontitle">
+		<p>Flags of All Nations</p>
+		<p class="bronzespon"><b>BRONZE</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/rang ay bronze.jpg">
+		<div class="spontitle">
+		<p>Rang-Ay Leasing</p>
+		<p class="bronzespon"><b>BRONZE</b></p>
+		</div>
+		</div>
+	
+		<div class="sponCard">
+		<img class="sponsor" src="img/credits/Logos/RUsi bronze.png">
+		<div class="spontitle">
+		<p>RUSI Motors</p>
+		<p class="bronzespon"><b>BRONZE</b></p>
+		</div>
+		</div>
+
+	</div>
+	
+	<div id="ambas">
+		
+		<div class="ambaCard">
+		<img class=amba src = "img/credits/Logos/ambas/[PSHS-CMC] Supreme Council of Scholars.jpg">
+		<div class="ambatitle">
+			<p>PSHS-CMC Supreme Council of Scholars</p>
+		</div>
+		</div>
+		
+		<div class="ambaCard">
+		<img class=amba src="img/credits/Logos/ambas/[PSHS-SRC] Student Alliance.jpg" >
+		<div class="ambatitle">
+			<p>PSHS-SRC Student Alliance</p>
+		</div>
+		</div>
+		
+		<div class="ambaCard">
+		<img class=amba src="img/credits/Logos/ambas/[PSHS-BRC] Supreme Student Government.png" >
+		<div class="ambatitle">
+			<p>PSHS-BRC Supreme Student Government</p>
+		</div>
+		</div>
+		
+		<div class="ambaCard">
+		<img class=amba src="img/credits/Logos/ambas/[PSHS-CRC] Student Council.PNG" >
+		<div class="ambatitle">
+			<p>PSHS-CRC Student Council</p>
+		</div>
+		</div>
+		
+		<div class="ambaCard">
+		<img class=amba src="img/credits/Logos/ambas/[PSHS-CLC] Sangguniang Mag-aaral.png" >
+		<div class="ambatitle">
+			<p>PSHS-CLC Sangguniang Mag-aaral</p>
+		</div>
+		</div>
+		
+		<div class="ambaCard">
+		<img class=amba src="img/credits/Logos/ambas/[PSHS-WVC] Student Alliance.png" >
+		<div class="ambatitle">
+			<p>PSHS-WVC Student Alliance</p>
+		</div>
+		</div>
+		
+		<div class="ambaCard">
+		<img class=amba src="img/credits/Logos/ambas/[PSHS-EVC] Student Alliance.png" >
+		<div class="ambatitle">
+			<p>PSHS-EVC Student Alliance</p>
+		</div>
+		</div>
+		
+		<div class="ambaCard">
+		<img class=amba src="img/credits/Logos/ambas/[PSHS-CVisC] Alliance of Future Scientists-SSG.png" >
+		<div class="ambatitle">
+			<p>PSHS-CVisC Alliance of Future Scientists-SSG</p>
+		</div>
+		</div>
+		
+	</div>
+	
+	<div id="resources">
+		<div class="resCard">
+			<p>Icons made by <a target="_blank" href="https://www.freepik.com">Freepik</a> from <a target="_blank" href="http://www.flaticon.com">www.flaticon.com</a></p>
+		</div>
+		<div class="resCard">
+			<p>Icons made by <a target="_blank" href="https://www.flaticon.com/authors/google">Google</a> from <a target="_blank" href="https://www.flaticon.com/">www.flaticon.com</a></p>
+		</div>
+		<div class="resCard">
+			<p>Icons made by <a target="_blank" href="https://www.alfredocreates.com">Alfredo Hernandez</a> from <a target="_blank" href="http://www.flaticon.com">www.flaticon.com</a></p>
+		</div>
+		<div class="resCard">
+			<p>Icons made by <a target="_blank" href="https://www.flaticon.com/authors/smashicons">Smashicons</a> from <a target="_blank" href="http://www.flaticon.com">www.flaticon.com</a></p>
+		</div>
+		<div class="resCard">
+			<p>Code snippets and guides from <a target="_blank" href="w3schools.com/">W3Schools</a></p>			
+		</div>
+
+	</div>
+	<div id=separator></div>
+	
+	<footer>
+		<div id="social-media">
+			<p>#NeverendingDaydream</p>
+			<a
+				href="https://www.facebook.com/Neverland-2021-106825301759343"
+				target="_blank"
+				><img
+					src="img/facebook.svg"
+					alt="Facebook logo"
+					id="fb-logo"
+			/></a>
+			<a href="https://twitter.com/neverland21_" target="_blank"
+				><img
+					src="img/twitter.svg"
+					alt="Twitter logo"
+					id="twt-logo"
+			/></a>
+		</div>
+		<div id="copyright">
+			<a href="credits.html">PSHS-MC B2023 Fair Committee</a>
+		</div>
+		<a class="back-to-top visible" href="#top">
+			<img src="img/up-arrow.svg" alt="Back to top of page button" />
+		</a>
+	</footer>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script>
+            const swiper = new Swiper("#ProfilePopupContainer-Mobile", {
+                centeredSlides: true,
+                centeredSlidesBounds: true,
+                spaceBetween: 20,
+                resistance: false,
+            });
+
+            swiper.on('setTranslate', function () {
+				if(swiper.translate > 0 || swiper.translate < -(swiper.width * 1 +40)) {
+					var x = 0; y = 1;
+					if(swiper.translate < 0) {
+						x = swiper.width * 1 +40;
+						y = -1;
+					}
+					document.getElementById("BlackBG").style.opacity = (1 - ((swiper.translate + x) * y / swiper.width) - 0.5);
+				}
+			});
+
+			swiper.on('touchEnd', function () {
+				BlackBG.style.opacity = null;
+
+				if(swiper.translate > (swiper.width * 0.5) || swiper.translate < -(swiper.width * 1.5 +40)) {
+					StatsPopupHide();
+				}
+			});
+        </script>
+
+		<script src="js/general.js?version=1"></script>
+        <script src="js/gacha.js?version=2"></script>
+        <script src="js/stats.js?version=1"></script>
+		<script src="js/credits.js?version=1"></script>
+    </body>
+</html>

@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js demo-2">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Lore Book || Neverland 2021</title>
+    <meta name="keywords" content="3d transforms, css3 3d, book, jquery, open book, css transitions" />
+    <link rel="stylesheet" href="css/general.css?version=5" />
+    <link rel="stylesheet" href="css/gacha.css?version=5" />
+    <link rel="stylesheet" href="css/stats.css?version=5" />
+    <link rel="stylesheet" href="css/lore.css?version=5" />
+    <link rel="stylesheet" type="text/css" media="(min-width: 800px)" href="css/book-default.css?version=8" />
+    <link rel="stylesheet" type="text/css" media="(min-width: 800px)" href="css/book.css?version=9" />
+    <link rel="stylesheet" type="text/css" media="(max-width: 800px)" href="css/book-default-mobile.css?version=8" />
+    <link rel="stylesheet" type="text/css" media="(max-width: 800px)" href="css/book-mobile.css?version=8" />
+    <link rel="shortcut icon" href="img/pixiedust.svg" type="image/x-icon" />
+    <script src="js/jquery.js"></script>
+    <script async src="https://cse.google.com/cse.js?cx=c9af3957017583ea0"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="js/modernizr.custom.js"></script>
+</head>
+<body id="background">
+    <audio id="audioplayer" autobuffer="" loop="true" preload="auto">
+        <source src="audio/homecoming.wav" type="audio/mpeg">
+    </audio>
+
+    <div id="overlay">
+        <div id="prizeAlert">You've got a prize!</div>
+        <div class="gachaContainer">
+            <img src="img/doll.png" alt="img" id="splash-art" />
+            <div id="gachaName">Doll</div>
+            <div id="gachaDescription">
+                “​​Alright, here! It’s not dry yet, but a little doll of
+                you, for good luck and protection”
+            </div>
+        </div>
+        <img src="img/exit.png" alt="img" id="exit-button" onclick="exit()" />
+    </div>
+
+    <header>
+        <a href="index.html"
+            ><div id="logo">
+                <img src="img/fair-logo-navbar.svg" alt="Website logo" />
+                <div id="site-name">
+                    <img
+                        src="img/neverland-header.png"
+                        alt="Neverland title"
+                    />
+                    <p id="subtitle">PSHS-MC B2023 Fair</p>
+                </div>
+            </div></a
+        >
+        <div id="currency">
+            <div id="pixiedust">
+                <img
+                    src="img/neverland-pixiedust.png"
+                    alt="Pixie dust"
+                    id="pixiedust-img"
+                />
+                <p id="pixiedust-amt"></p>
+                <p class="tooltip">
+                    Pixie Dust—earned randomly by exploring the site pages
+                    or by visiting the site daily. Use it to unlock lore
+                    side stories!
+                </p>
+            </div>
+        </div>
+        <div id="stats" onclick="StatsPopupOpen(this, null)">
+            <p>Stats</p>
+        </div>
+
+        <div id="ProfilePopupContainer-PC" class="hidden">
+            <div id="LeftDivider">
+                <div id="ProfileArea">
+                    <h1 style=><img src="img/stats-stats.png" class="RasterizedHeader"/></h1>
+                    <div class="MoneyDisplay">
+                        <p class="tooltip">
+                            Pixie Dust—earned randomly by exploring the site pages
+                            or by visiting the site daily. Use it to unlock lore
+                            side stories!
+                        </p>
+                        <img src="img/neverland-pixiedust.png"/>
+                        <span id="PixieDustCount-PC"> 2 </span>
+                    </div>
+                    <div class="FlavorTextArea">
+                        <div id="FlavorText-PC" class="flavorText"> This Flavor text will change every time you open the popup. Maybe a stat, a trivia, or a quote?</div>
+                        <div id="QuoteText-PC" class="quoteText"> - If a Quote </div>
+                    </div>
+                </div>
+                <div id="WhiteLine"><div></div></div>
+            </div>
+            <div id="GachaArea">
+        <div class="row1">
+        <div class="item1" id="popup-PC">
+                <img
+                src="img/FAQ.png"
+                alt="FAQ"
+                class="FAQ"
+                onclick="showPopup()"
+                />
+                <div class ="placeholderpop" id="placeholderpop-PC">
+                <span class="popuptext " id="myPopup-PC">
+                Log-in everyday to win one new gacha!
+                </span></div>
+        </div>
+        <div class="item2">
+            <h1>
+            <img src="img/stats-gachas.png" class="RasterizedHeader" id = "statsGacha"/>
+            </h1>
+        </div>
+        </div>
+        <div class="row2">
+        <div class="item3">
+            <img src="img/Doll.png" alt="img" class = "gachaLarge">
+            <div class="gachaName" >Doll</div>
+            <div class="gachaDescription" >“​​Alright, here! It’s not dry yet, but a little doll of you, for good luck and protection”</div>
+        </div>
+        <div class="item4">
+            <div class="placeholder Doll">
+                <img src="img/Doll.png" alt="img" onclick="enlargeGacha(0)" >
+                <div class="popupName">Doll</div>
+                <img src="img/padlock.png" alt="img" >
+            </div>
+            <div class="placeholder FlowerCrown">
+                <img src="img/FlowerCrown.png" alt="img" onclick="enlargeGacha(1)"  >
+                <div class="popupName">Flower Crown</div>
+                <img src="img/padlock.png" alt="padlock">
+            </div>
+            <div class="placeholder">
+                <img src="img/Butterfly.png" alt="img" onclick="enlargeGacha(2)"  >
+                <div class="popupName">Butterfly</div>
+                <img src="img/padlock.png" alt="padlock">
+            </div>
+            <div class="placeholder">
+                <img src="img/DollAndCarving.png" onclick="enlargeGacha(3)" alt="img" >
+                <div class="popupName">Doll and Carving Knife</div>
+                <img src="img/padlock.png" alt="padlock">
+            </div>
+            <div class="placeholder">
+                <img src="img/Wendy.png" alt="img" onclick="enlargeGacha(4)" >
+                <div class="popupName">Wendy</div>
+                <img src="img/padlock.png" alt="img">
+            </div>
+            <div class="placeholder">
+                <img src="img/Peter.png" alt="img" onclick="enlargeGacha(5)" >
+                <div class="popupName">Peter</div>
+                <img src="img/padlock.png" alt="img">
+            </div>
+            <div class="placeholder">
+                <img src="img/March.png" alt="img" onclick="enlargeGacha(6)" >
+                <div class="popupName">March</div>
+                <img src="img/padlock.png" alt="img">
+            </div>
+            <div class="placeholder">
+                <img src="img/Binoculars.png" alt="img" onclick="enlargeGacha(7)" >
+                <div class="popupName">Binoculars</div>
+                <img src="img/padlock.png" alt="img">
+            </div>
+            <div class="placeholder">
+                <img src="img/Book.png" alt="img" onclick="enlargeGacha(8)" >
+                <div class="popupName">Book</div>
+                <img src="img/padlock.png" alt="img">
+            </div>
+            <div class="placeholder">
+                <img src="img/Polaroid.png" alt="img" onclick="enlargeGacha(9)" >
+                <div class="popupName">Camera</div>
+                <img src="img/padlock.png" alt="img">
+            </div>
+            <div class="placeholder">
+                <img src="img/Sam.png" alt="img" onclick="enlargeGacha(10)" >
+                <div class="popupName">Sam</div>
+                <img src="img/padlock.png" alt="img">
+            </div>
+            <div class="placeholder">
+                <img src="img/Art.png" alt="img" onclick="enlargeGacha(11)" >
+                <div class="popupName">Art</div>
+                <img src="img/padlock.png" alt="img">
+            </div>
+            <div class="placeholder" >
+                <img src="img/Sword.png" alt="img" onclick="enlargeGacha(12)" >
+                <div class="popupName">Cardboard Sword</div>
+                <img src="img/padlock.png" alt="img">
+            </div>
+            <div class="placeholder">
+                <img src="img/May.png" alt="img" onclick="enlargeGacha(13)" >
+                <div class="popupName">May</div>
+                <img src="img/padlock.png" alt="img">
+            </div>
+            <div class="placeholder">
+                <img src="img/Scarf.png" alt="img" onclick="enlargeGacha(14)" >
+                <div class="popupName">Scarf</div>
+                <img src="img/padlock.png" alt="img">
+            </div>
+            <div class="placeholder" >
+                <img src="img/Hourglass.png" alt="img" onclick="enlargeGacha(15)" >
+                <div class="popupName">Hourglass</div>
+                <img src="img/padlock.png" alt="img">
+            </div>
+        </div>
+        </div>
+            </div>
+            <div>
+                <div id="Exit"  onclick="StatsPopupHide()"><img src="img/close.png"/></div>
+            </div>
+        </div>
+
+        <div id="ProfilePopupContainer-Mobile" class="hidden">
+        <div class="swiper-wrapper">
+            <div id="ProfileArea" class="swiper-slide">
+                <h1><img src="img/stats-stats.png" class="RasterizedHeader"/></h1>
+                <div class="MoneyDivider">
+                    <div class="MoneyDisplay">
+                    <p class="tooltip">
+                                Pixie Dust—earn these by playing minigames. Use it tounlock more content in the lore book!
+                        </p>
+                        <img src="img/neverland-pixiedust.png"/>
+                        <span id="PixieDustCount-Mobile"> 2 </span>
+                    </div>
+                </div>
+                <div class="FlavorTextArea">
+                    <div id="FlavorText-Mobile" class="flavorText"> This Flavor text will change every time you open the popup. Maybe a stat, a trivia, or a quote?</div>
+                    <div id="QuoteText-Mobile" class="quoteText"> - If a Quote </div>
+                </div>
+            </div>
+    <div id="GachaArea" class="swiper-slide">
+        <div class="row1 row1-Mobile">
+            <div class="item1" id="popup-Mobile">
+                <img
+                src="img/FAQ.png"
+                alt="FAQ"
+                class="FAQ"
+                onclick="showPopup()"
+                />
+                <div class ="placeholderpop" id="placeholderpop-Mobile">
+                <span class="popuptext " id="myPopup-Mobile">
+                    Log-in everyday to win one new gacha!
+                </span>
+            </div>
+            </div>
+            <div class="item2">
+            <h1>
+            <img src="img/stats-gachas.png" class="RasterizedHeader" id = "statsGacha"/>
+            </h1>
+            </div>
+        </div>
+        <div class="row2 row2-Mobile">
+            <div class="item3" id="item3-mobile">
+            <img src="img/Doll.png" alt="img" class = "gachaLarge" id = "gachaLargeImg">
+            <div class="gachaName" id="gachaLargeName" >Doll</div>
+            <div class="gachaDescription" id="gachaLargeDes">“​​Alright, here! It’s not dry yet, but a little doll of you, for good luck and protection”</div>
+            </div>
+            <div class="item4">
+            <div class="placeholder-Mobile Doll">
+                        <img src="img/Doll.png" alt="img" onclick="enlargeGacha(0)" >
+                        <div class="popupName-Mobile">Doll</div>
+                <img src="img/padlock.png" alt="padlock">
+                        </div>
+                        <div class="placeholder-Mobile FlowerCrown">
+                        <img src="img/FlowerCrown.png" alt="img" onclick="enlargeGacha(1)"  >
+                        <div class="popupName-Mobile">Flower Crown</div>
+                <img src="img/padlock.png" alt="padlock">
+                        </div>
+            <div class="placeholder-Mobile Butterfly">
+                        <img src="img/Butterfly.png" alt="img" onclick="enlargeGacha(2)"  >
+                        <div class="popupName-Mobile">Butterfly</div>
+                <img src="img/padlock.png" alt="padlock">
+                        </div>
+                        <div class="placeholder-Mobile">
+                        <img src="img/DollAndCarving.png" onclick="enlargeGacha(3)" alt="img" >
+                        <div class="popupName-Mobile">Doll and Carving Knife</div>
+                <img src="img/padlock.png" alt="padlock">
+                        </div>
+                        <div class="placeholder-Mobile">
+                <img src="img/Wendy.png" alt="img" onclick="enlargeGacha(4)" >
+                        <div class="popupName-Mobile">Wendy</div>
+                <img src="img/padlock.png" alt="padlock">
+                        </div>
+                        <div class="placeholder-Mobile">
+                <img src="img/Peter.png" alt="img" onclick="enlargeGacha(5)" >
+                        <div class="popupName-Mobile">Peter</div>
+                <img src="img/padlock.png" alt="padlock">
+                        </div>
+                        <div class="placeholder-Mobile">
+                <img src="img/March.png" alt="img" onclick="enlargeGacha(6)" >
+                        <div class="popupName-Mobile">March</div>
+                <img src="img/padlock.png" alt="padlock">
+                        </div>
+                        <div class="placeholder-Mobile">
+                <img src="img/Binoculars.png" alt="img" onclick="enlargeGacha(7)" >
+                        <div class="popupName-Mobile">Binoculars</div>
+                <img src="img/padlock.png" alt="padlock">
+                        </div>
+                        <div class="placeholder-Mobile">
+                <img src="img/Book.png" alt="img" onclick="enlargeGacha(8)" >
+                        <div class="popupName-Mobile">Book</div>
+                <img src="img/padlock.png" alt="padlock">
+                        </div>
+                        <div class="placeholder-Mobile">
+                <img src="img/Polaroid.png" alt="img" onclick="enlargeGacha(9)" >
+                        <div class="popupName-Mobile">Camera</div>
+                <img src="img/padlock.png" alt="padlock">
+                        </div>
+                        <div class="placeholder-Mobile">
+                <img src="img/Sam.png" alt="img" onclick="enlargeGacha(10)" >
+                        <div class="popupName-Mobile">Sam</div>
+                <img src="img/padlock.png" alt="padlock">
+                        </div>
+                        <div class="placeholder-Mobile">
+                <img src="img/Art.png" alt="img" onclick="enlargeGacha(11)" >
+                        <div class="popupName-Mobile">Art</div>
+                <img src="img/padlock.png" alt="padlock">
+                        </div>
+                        <div class="placeholder-Mobile" >
+                <img src="img/Sword.png" alt="img" onclick="enlargeGacha(12)" >
+                        <div class="popupName-Mobile">Cardboard Sword</div>
+                <img src="img/padlock.png" alt="padlock">
+                        </div>
+                        <div class="placeholder-Mobile">
+                <img src="img/May.png" alt="img" onclick="enlargeGacha(13)" >
+                        <div class="popupName-Mobile">May</div>
+                <img src="img/padlock.png" alt="padlock">
+                        </div>
+                        <div class="placeholder-Mobile">
+                <img src="img/Scarf.png" alt="img" onclick="enlargeGacha(14)" >
+                        <div class="popupName-Mobile">Scarf</div>
+                <img src="img/padlock.png" alt="padlock">
+                        </div>
+                        <div class="placeholder-Mobile" >
+                <img src="img/Hourglass.png" alt="img" onclick="enlargeGacha(15)" >
+                        <div class="popupName-Mobile">Hourglass</div>
+                <img src="img/padlock.png" alt="padlock">
+                        </div>
+            </div>
+        </div>
+            </div>
+            </div>
+        </div>
+        <div id="BlackBG" class="transparent"></div>
+
+        <nav class="site-nav">
+            <div id="hamburger-menu-btn">
+                <img
+                    id="hamburger-menu-icon"
+                    src="img/hamburger-menu.svg"
+                    alt="Hamburger menu"
+                />
+            </div>
+            <a
+                id="nav-stats-link"
+                href="#"
+                onclick="StatsPopupOpen(this, null)"
+                >View Stats</a
+            >
+            <a href="schedule.html">Schedule</a>
+            <a href="merch.html">Merch</a>
+            <a href="lore.html">Lore</a>
+            <a href="performances.html">Performances</a>
+            <a href="freedomwall.html">Freedom Wall</a>
+        </nav>
+
+        <img
+            id="search"
+            src="img/search.png"
+            alt="Search"
+            onclick="openSearch()"
+        />
+        <div class="search-box" id="search-box">
+            <img
+                id="cancelSearch"
+                src="img/arrow-right.png"
+                alt="cancel"
+                onclick="hide()"
+            />
+
+            <div class="holder" id="holder">
+                <div class="gcse-search"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- CONTAINER FOR PC -->
+        <div class="container">
+            <div class="main">
+                <ul id="bk-list" class="bk-list clearfix">
+                    <!-- atlas book -->
+                    <li>
+                        <div class="bk-book book-1">
+                            <div class="bk-front">
+                                <div class="bk-cover-back"></div>
+                                <div class="bk-cover">
+                                </div>
+                            </div>
+                            <div class="bk-page">
+                                <div class="bk-content bk-content-current">
+                                    <p> Transcend time and imagination as we come to a place of stars, hope and euphoria—a <a href="https://twitter.com/hashtag/NeverendingDaydream"> never-ending daydream. </a> </p>
+                                    <a href="map.html">
+                                        <button class="open-btn no-lock">
+                                            OPEN MAP
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="bk-back">
+                            </div>
+                            <div class="bk-right"></div>
+                            <div class="bk-left"></div>
+                            <div class="bk-top"></div>
+                            <div class="bk-bottom"></div>
+                        </div>
+                    </li>
+                    <!-- main book -->
+                    <li>
+                        <div class="bk-book book-1">
+                            <div class="bk-front">
+                                <div class="bk-cover-back"></div>
+                                <div class="bk-cover">
+                                </div>
+                            </div>
+                            <div class="bk-page">
+                                <div class="bk-content bk-content-current">
+                                    <p> To those that wonder with the shadows of their mind. A haven of the Lost lies within a stead. Soon meet the stories of these friends. </p>
+                                    <a href="Visual Novels/neverland-act1/index.html" target="_blank">
+                                        <button class="open-btn no-lock">
+                                            OPEN ACT 1
+                                        </button>
+                                    </a>
+                                    <a href="Visual Novels/neverland-act2/index.html" target="_blank">
+                                        <button class="open-btn no-lock">
+                                            OPEN ACT 2
+                                        </button>
+                                    </a>
+                                    <a href="Visual Novels/neverland-act3/index.html" target="_blank">
+                                        <button class="open-btn no-lock">
+                                            OPEN ACT 3
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="bk-back">
+                            </div>
+                            <div class="bk-right"></div>
+                            <div class="bk-left"></div>
+                            <div class="bk-top"></div>
+                            <div class="bk-bottom"></div>
+                        </div>
+                    </li>
+                    <!-- art's book -->
+                    <li>
+                        <div class="bk-book book-1">
+                            <div class="bk-front">
+                                <div class="bk-cover-back"></div>
+                                <div class="bk-cover"></div>
+                            </div>
+                            <div class="bk-page">
+                                <div class="bk-content bk-content-current">
+                                    <p>
+                                        Do you need any help? We can use my
+                                        sword. The other kids made it for me.
+                                        With its power, sure1y you can count on
+                                        me! Anyway, my Name's Art. What's yours?
+                                    </p>
+
+                                    <p class="amount-info-art">
+                                        Requires 3
+                                        <img src="img/neverland-pixiedust.png" />
+                                        pixie dust
+                                    </p>
+                                    <a href="#" id="open-btn-art1">
+                                        <button class="open-btn locked locked1" id="needs-unlocked-art1">
+                                            <img src="img/padlock-white.png" id="lock-img-art1" />
+                                        </button>
+                                    </a>
+                                    <p class="hide amount-message" id="amount-message-art1">
+                                        Not enough pixie dust!
+                                    </p>
+                                    <p class="amount-info-art">
+                                        Requires 5
+                                        <img src="img/neverland-pixiedust.png" />
+                                        pixie dust
+                                    </p>
+                                    <a href="#" id="open-btn-art2">
+                                        <button class="open-btn locked locked2" id="needs-unlocked-art2">
+                                            <img src="img/padlock-white.png" id="lock-img-art2" />
+                                        </button>
+                                    </a>
+                                    <p class="hide amount-message" id="amount-message-art2">
+                                        Not enough pixie dust!
+                                    </p>
+                                    <p class="amount-info-art">
+                                        Requires 7
+                                        <img src="img/neverland-pixiedust.png" />
+                                        pixie dust
+                                    </p>
+                                    <a href="#" id="open-btn-art3">
+                                        <button class="open-btn locked locked3" id="needs-unlocked-art3">
+                                            <img src="img/padlock-white.png" id="lock-img-art3" />
+                                        </button>
+                                    </a>
+                                    <p class="hide amount-message" id="amount-message-art3">
+                                        Not enough pixie dust!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bk-back"></div>
+                            <div class="bk-right"></div>
+                            <div class="bk-left"></div>
+                            <div class="bk-top"></div>
+                            <div class="bk-bottom"></div>
+                        </div>
+                    </li>
+                    <!-- doll's book -->
+                    <li>
+                        <div class="bk-book book-1">
+                            <div class="bk-front">
+                                <div class="bk-cover-back"></div>
+                                <div class="bk-cover"></div>
+                            </div>
+                            <div class="bk-page">
+                                <div class="bk-content bk-content-current">
+                                    <p>
+                                        What was that? Oh, you must be hearing
+                                        things! Could it be... my spirit
+                                        friends, perhaps? Just kidding! I'm
+                                        Doll, how'd ya do?
+                                    </p>
+
+                                    <p class="amount-info-doll">
+                                        Requires 3
+                                        <img src="img/neverland-pixiedust.png" />
+                                        pixie dust
+                                    </p>
+                                    <a href="#" id="open-btn-doll1">
+                                        <button class="open-btn locked locked1" id="needs-unlocked-doll1">
+                                            <img src="img/padlock-white.png" id="lock-img-doll1" />
+                                        </button>
+                                    </a>
+                                    <p class="hide amount-message" id="amount-message-doll1">
+                                        Not enough pixie dust!
+                                    </p>
+                                    <p class="amount-info-doll">
+                                        Requires 5
+                                        <img src="img/neverland-pixiedust.png" />
+                                        pixie dust
+                                    </p>
+                                    <a href="#" id="open-btn-doll2">
+                                        <button class="open-btn locked locked2" id="needs-unlocked-doll2">
+                                            <img src="img/padlock-white.png" id="lock-img-doll2" />
+                                        </button>
+                                    </a>
+                                    <p class="hide amount-message" id="amount-message-doll2">
+                                        Not enough pixie dust!
+                                    </p>
+                                    <p class="amount-info-doll">
+                                        Requires 7
+                                        <img src="img/neverland-pixiedust.png" />
+                                        pixie dust
+                                    </p>
+                                    <a href="#" id="open-btn-doll3">
+                                        <button class="open-btn locked locked3" id="needs-unlocked-doll3">
+                                            <img src="img/padlock-white.png" id="lock-img-doll3" />
+                                        </button>
+                                    </a>
+                                    <p class="hide amount-message" id="amount-message-doll3">
+                                        Not enough pixie dust!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bk-back"></div>
+                            <div class="bk-right"></div>
+                            <div class="bk-left"></div>
+                            <div class="bk-top"></div>
+                            <div class="bk-bottom"></div>
+                        </div>
+                    </li>
+                    <!-- march's book -->
+                    <li>
+                        <div class="bk-book book-1">
+                            <div class="bk-front">
+                                <div class="bk-cover-back"></div>
+                                <div class="bk-cover"></div>
+                            </div>
+                            <div class="bk-page">
+                                <div class="bk-content bk-content-current">
+                                    <p>
+                                        Wait! You’ll get lost if you go that
+                                        way! Follow me instead. I’m March. I
+                                        know the way around here like the back
+                                        of my hand!
+                                    </p>
+
+                                    <p class="amount-info-march">
+                                        Requires 3
+                                        <img src="img/neverland-pixiedust.png" />
+                                        pixie dust
+                                    </p>
+                                    <a href="#" id="open-btn-march1">
+                                        <button class="open-btn locked locked1" id="needs-unlocked-march1">
+                                            <img src="img/padlock-white.png" id="lock-img-march1" />
+                                        </button>
+                                    </a>
+                                    <p class="hide amount-message" id="amount-message-march1">
+                                        Not enough pixie dust!
+                                    </p>
+                                    <p class="amount-info-march">
+                                        Requires 5
+                                        <img src="img/neverland-pixiedust.png" />
+                                        pixie dust
+                                    </p>
+                                    <a href="#" id="open-btn-march2">
+                                        <button class="open-btn locked locked2" id="needs-unlocked-march2">
+                                            <img src="img/padlock-white.png" id="lock-img-march2" />
+                                        </button>
+                                    </a>
+                                    <p class="hide amount-message" id="amount-message-march2">
+                                        Not enough pixie dust!
+                                    </p>
+                                    <p class="amount-info-march">
+                                        Requires 7
+                                        <img src="img/neverland-pixiedust.png" />
+                                        pixie dust
+                                    </p>
+                                    <a href="#" id="open-btn-march3">
+                                        <button class="open-btn locked locked3" id="needs-unlocked-march3">
+                                            <img src="img/padlock-white.png" id="lock-img-march3" />
+                                        </button>
+                                    </a>
+                                    <p class="hide amount-message" id="amount-message-march3">
+                                        Not enough pixie dust!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bk-back"></div>
+                            <div class="bk-right"></div>
+                            <div class="bk-left"></div>
+                            <div class="bk-top"></div>
+                            <div class="bk-bottom"></div>
+                        </div>
+                    </li>
+                    <!-- may's book -->
+                    <li>
+                        <div class="bk-book book-1">
+                            <div class="bk-front">
+                                <div class="bk-cover-back"></div>
+                                <div class="bk-cover"></div>
+                            </div>
+                            <div class="bk-page">
+                                <div class="bk-content bk-content-current">
+                                    <p>
+                                        Hi, I'm May... Nice to meet you. Would
+                                        you like to walk around with me? Oh, you
+                                        do? Let's go watch the butterflies!
+                                    </p>
+
+                                    <p class="amount-info-may">
+                                        Requires 3
+                                        <img src="img/neverland-pixiedust.png" />
+                                        pixie dust
+                                    </p>
+                                    <a href="#" id="open-btn-may1">
+                                        <button class="open-btn locked locked1" id="needs-unlocked-may1">
+                                            <img src="img/padlock-white.png" id="lock-img-may1" />
+                                        </button>
+                                    </a>
+                                    <p class="hide amount-message" id="amount-message-may1">
+                                        Not enough pixie dust!
+                                    </p>
+                                    <p class="amount-info-may">
+                                        Requires 5
+                                        <img src="img/neverland-pixiedust.png" />
+                                        pixie dust
+                                    </p>
+                                    <a href="#" id="open-btn-may2">
+                                        <button class="open-btn locked locked2" id="needs-unlocked-may2">
+                                            <img src="img/padlock-white.png" id="lock-img-may2" />
+                                        </button>
+                                    </a>
+                                    <p class="hide amount-message" id="amount-message-may2">
+                                        Not enough pixie dust!
+                                    </p>
+                                    <p class="amount-info-may">
+                                        Requires 7
+                                        <img src="img/neverland-pixiedust.png" />
+                                        pixie dust
+                                    </p>
+                                    <a href="#" id="open-btn-may3">
+                                        <button class="open-btn locked locked3" id="needs-unlocked-may3">
+                                            <img src="img/padlock-white.png" id="lock-img-may3" />
+                                        </button>
+                                    </a>
+                                    <p class="hide amount-message" id="amount-message-may3">
+                                        Not enough pixie dust!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bk-back"></div>
+                            <div class="bk-right"></div>
+                            <div class="bk-left"></div>
+                            <div class="bk-top"></div>
+                            <div class="bk-bottom"></div>
+                        </div>
+                    </li>
+                    <!-- sam's book -->
+                    <li>
+                        <div class="bk-book book-1">
+                            <div class="bk-front">
+                                <div class="bk-cover-back"></div>
+                                <div class="bk-cover"></div>
+                            </div>
+                            <div class="bk-page">
+                                <div class="bk-content bk-content-current">
+                                    <p>
+                                        Here you go! Make sure to wear this for
+                                        me, okay? I worked hard to make this
+                                        extra specia1 and enchanted to keep you
+                                        safe! Oh right, I almost forgot. I'm
+                                        Sam!
+                                    </p>
+
+                                    <p class="amount-info-sam">
+                                        Requires 3
+                                        <img src="img/neverland-pixiedust.png" />
+                                        pixie dust
+                                    </p>
+                                    <a href="#" id="open-btn-sam1">
+                                        <button class="open-btn locked locked1" id="needs-unlocked-sam1">
+                                            <img src="img/padlock-white.png" id="lock-img-sam1" />
+                                        </button>
+                                    </a>
+                                    <p class="hide amount-message" id="amount-message-sam1">
+                                        Not enough pixie dust!
+                                    </p>
+                                    <p class="amount-info-sam">
+                                        Requires 5
+                                        <img src="img/neverland-pixiedust.png" />
+                                        pixie dust
+                                    </p>
+                                    <a href="#" id="open-btn-sam2">
+                                        <button class="open-btn locked locked2" id="needs-unlocked-sam2">
+                                            <img src="img/padlock-white.png" id="lock-img-sam2" />
+                                        </button>
+                                    </a>
+                                    <p class="hide amount-message" id="amount-message-sam2">
+                                        Not enough pixie dust!
+                                    </p>
+                                    <p class="amount-info-sam">
+                                        Requires 7
+                                        <img src="img/neverland-pixiedust.png" />
+                                        pixie dust
+                                    </p>
+                                    <a href="#" id="open-btn-sam3">
+                                        <button class="open-btn locked locked3" id="needs-unlocked-sam3">
+                                            <img src="img/padlock-white.png" id="lock-img-sam3" />
+                                        </button>
+                                    </a>
+                                    <p class="hide amount-message" id="amount-message-sam3">
+                                        Not enough pixie dust!
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bk-back"></div>
+                            <div class="bk-right"></div>
+                            <div class="bk-left"></div>
+                            <div class="bk-top"></div>
+                            <div class="bk-bottom"></div>
+                        </div>
+                    </li>
+                    <!-- memorabilia book -->
+                    <li>
+                        <div class="bk-book book-1">
+                            <div class="bk-front">
+                                <div class="bk-cover-back"></div>
+                                <div class="bk-cover"></div>
+                            </div>
+                            <div class="bk-page">
+                                <div class="bk-content bk-content-current">
+                                    <p>
+                                        Magic existed within every living thing
+                                        here. Its beauty: unparalleled and
+                                        unprecedented. Surely, I can stay here
+                                        forever. There's nothing I'd trade for
+                                        this, right?
+                                    </p>
+                                    <a href="https://twitter.com/neverland21_/status/1453285339347529730?s=21"
+                                        target="_blank">
+                                        <button class="open-btn no-lock">
+                                            OPEN MEMORY 1
+                                        </button>
+                                    </a>
+                                    <a href="https://twitter.com/neverland21_/status/1453285590875602944?s=21"
+                                        target="_blank">
+                                        <button class="open-btn no-lock">
+                                            OPEN MEMORY 2
+                                        </button>
+                                    </a>
+                                    <a href="https://twitter.com/neverland21_/status/1453285842743558144?s=21"
+                                        target="_blank">
+                                        <button class="open-btn no-lock">
+                                            OPEN MEMORY 3
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="bk-back"></div>
+                            <div class="bk-right"></div>
+                            <div class="bk-left"></div>
+                            <div class="bk-top"></div>
+                            <div class="bk-bottom"></div>
+                        </div>
+                    </li>
+                    <!-- comic book -->
+                    <li>
+                        <div class="bk-book book-1">
+                            <div class="bk-front">
+                                <div class="bk-cover-back"></div>
+                                <div class="bk-cover"></div>
+                            </div>
+                            <div class="bk-page">
+                                <div class="bk-content bk-content-current">
+                                    <p>
+                                        May we, mere wanderers, reach a land of
+                                        possible impossibles
+                                    </p>
+                                    <a href="https://twitter.com/neverland21_/status/1452983382997012481?s=21" target="_blank">
+                                        <button class="open-btn no-lock">
+                                            OPEN COMICS
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="bk-back"></div>
+                            <div class="bk-right"></div>
+                            <div class="bk-left"></div>
+                            <div class="bk-top"></div>
+                            <div class="bk-bottom"></div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="bookshelf"></div>
+            </div>
+        </div>
+        <!-- /container -->
+
+        <!-- CONTAINER FOR MOBILE -->
+        <div class="container-mobile">
+            <div class="main">
+                <ul id="bk-list" class="bk-list-mobile clearfix">
+                    <!-- atlas book -->
+                    <li>
+                        <div class="bk-book book-1 bk-bookdefault">
+                            <div class="bk-front">
+                                <div class="bk-cover-back"></div>
+                                <div class="bk-cover">
+                                </div>
+                            </div>
+                            <div class="bk-page">
+                            </div>
+                            <div class="bk-back"></div>
+                            <div class="bk-right"></div>
+                            <div class="bk-left">
+                            </div>
+                            <div class="bk-top"></div>
+                            <div class="bk-bottom"></div>
+                        </div>
+                        <div class="bk-info">
+                            <h3>
+                                <span>Neverland</span>
+                                <span>The World Atlas</span>
+                            </h3>
+                            <p class="info-no-lock">Transcend time and imagination as we come to a place of stars, hope and euphoria—a <a href="https://twitter.com/hashtag/NeverendingDaydream"> never-ending daydream.</a></p>
+                            <p> <a href="map.html">
+                                    <button class="open-btn no-lock">
+                                        OPEN MAP
+                                    </button>
+                                </a> </p>
+                        </div>
+                    </li>
+
+                    <!-- main book -->
+                    <li>
+                        <div class="bk-book book-2 bk-bookdefault">
+                            <div class="bk-front">
+                                <div class="bk-cover-back"></div>
+                                <div class="bk-cover">
+                                </div>
+                            </div>
+                            <div class="bk-page">
+                            </div>
+                            <div class="bk-back"></div>
+                            <div class="bk-right"></div>
+                            <div class="bk-left">
+                            </div>
+                            <div class="bk-top"></div>
+                            <div class="bk-bottom"></div>
+                        </div>
+                        <div class="bk-info">
+                            <h3>
+                                <span>Neverland</span>
+                                <span>The Lore: Complete Collection</span>
+                            </h3>
+                            <p class="info-no-lock">To those that wonder with the shadows of their mind. A haven of the Lost lies within a stead. Soon meet the stories of these friends. </p>
+                            <p> <a href="Visual Novels/neverland-act1/index.html" target="_blank">
+                                    <button class="open-btn no-lock">
+                                        OPEN ACT 1
+                                    </button>
+                                </a> </p>
+                            <p> <a href="Visual Novels/neverland-act2/index.html" target="_blank">
+                                <button class="open-btn no-lock">
+                                    OPEN ACT 2
+                                </button>
+                            </a> </p>
+                            <p> <a href="Visual Novels/neverland-act3/index.html" target="_blank">
+                                <button class="open-btn no-lock">
+                                    OPEN ACT 3
+                                </button>
+                            </a> </p>
+                        </div>
+                    </li>
+
+                    <!-- art's book -->
+                    <li>
+                        <div class="bk-book book-3 bk-bookdefault">
+                            <div class="bk-front">
+                                <div class="bk-cover-back"></div>
+                                <div class="bk-cover"></div>
+                            </div>
+                            <div class="bk-page"></div>
+                            <div class="bk-back"></div>
+                            <div class="bk-right"></div>
+                            <div class="bk-left"></div>
+                            <div class="bk-top"></div>
+                            <div class="bk-bottom"></div>
+                        </div>
+                        <div class="bk-info">
+                            <h3>
+                                <span>The Lost</span>
+                                <span>Art</span>
+                            </h3>
+                            <p>
+                                Do you need any help? We can use my sword. The
+                                other kids made it for me. With its power,
+                                sure1y you can count on me! Anyway, my Name's
+                                Art. What's yours?
+                            </p>
+                            <p class="amount-info-art-mobile">
+                                Requires 3
+                                <img src="img/neverland-pixiedust.png" /> pixie
+                                dust
+                            </p>
+                            <p>
+                                <a href="#" id="open-btn-art-mobile1">
+                                    <button class="open-btn locked locked1" id="needs-unlocked-art-mobile1">
+                                        <img src="img/padlock-white.png" id="lock-img-art-mobile1" />
+                                    </button>
+                                </a>
+                            </p>
+                            <p class="hide amount-message-mobile" id="amount-message-art-mobile1">
+                                Not enough pixie dust!
+                            </p>
+                            <p class="amount-info-art-mobile">
+                                Requires 5
+                                <img src="img/neverland-pixiedust.png" /> pixie
+                                dust
+                            </p>
+                            <p>
+                                <a href="#" id="open-btn-art-mobile2">
+                                    <button class="open-btn locked locked2" id="needs-unlocked-art-mobile2">
+                                        <img src="img/padlock-white.png" id="lock-img-art-mobile2" />
+                                    </button>
+                                </a>
+                            </p>
+                            <p class="hide amount-message-mobile" id="amount-message-art-mobile2">
+                                Not enough pixie dust!
+                            </p>
+                            <p class="amount-info-art-mobile">
+                                Requires 7
+                                <img src="img/neverland-pixiedust.png" /> pixie
+                                dust
+                            </p>
+                            <p>
+                                <a href="#" id="open-btn-art-mobile3">
+                                    <button class="open-btn locked locked3" id="needs-unlocked-art-mobile3">
+                                        <img src="img/padlock-white.png" id="lock-img-art-mobile3" />
+                                    </button>
+                                </a>
+                            </p>
+                            <p class="hide amount-message-mobile" id="amount-message-art-mobile3">
+                                Not enough pixie dust!
+                            </p>
+                        </div>
+                    </li>
+
+                    <!-- doll's book -->
+                    <li>
+                        <div class="bk-book book-3 bk-bookdefault">
+                            <div class="bk-front">
+                                <div class="bk-cover-back"></div>
+                                <div class="bk-cover"></div>
+                            </div>
+                            <div class="bk-page">
+                                <div class="bk-content bk-content-current"></div>
+                            </div>
+                            <div class="bk-back"></div>
+                            <div class="bk-right"></div>
+                            <div class="bk-left"></div>
+                            <div class="bk-top"></div>
+                            <div class="bk-bottom"></div>
+                        </div>
+                        <div class="bk-info">
+                            <h3>
+                                <span>The Lost</span>
+                                <span>Doll</span>
+                            </h3>
+                            <p>
+                                What was that? Oh, you must be hearing things!
+                                Could it be... my spirit friends, perhaps? Just
+                                kidding! I'm Doll, how'd ya do?
+                            </p>
+                            <p class="amount-info-doll-mobile">
+                                Requires 3
+                                <img src="img/neverland-pixiedust.png" /> pixie
+                                dust
+                            </p>
+                            <p>
+                                <a href="#" id="open-btn-doll-mobile1">
+                                    <button class="open-btn locked locked1" id="needs-unlocked-doll-mobile1">
+                                        <img src="img/padlock-white.png" id="lock-img-doll-mobile1" />
+                                    </button>
+                                </a>
+                            </p>
+                            <p class="hide amount-message-mobile" id="amount-message-doll-mobile1">
+                                Not enough pixie dust!
+                            </p>
+                            <p class="amount-info-doll-mobile">
+                                Requires 5
+                                <img src="img/neverland-pixiedust.png" /> pixie
+                                dust
+                            </p>
+                            <p>
+                                <a href="#" id="open-btn-doll-mobile2">
+                                    <button class="open-btn locked locked2" id="needs-unlocked-doll-mobile2">
+                                        <img src="img/padlock-white.png" id="lock-img-doll-mobile2" />
+                                    </button>
+                                </a>
+                            </p>
+                            <p class="hide amount-message-mobile" id="amount-message-doll-mobile2">
+                                Not enough pixie dust!
+                            </p>
+                            <p class="amount-info-doll-mobile">
+                                Requires 7
+                                <img src="img/neverland-pixiedust.png" /> pixie
+                                dust
+                            </p>
+                            <p>
+                                <a href="#" id="open-btn-doll-mobile3">
+                                    <button class="open-btn locked locked3" id="needs-unlocked-doll-mobile3">
+                                        <img src="img/padlock-white.png" id="lock-img-doll-mobile3" />
+                                    </button>
+                                </a>
+                            </p>
+                            <p class="hide amount-message-mobile" id="amount-message-doll-mobile3">
+                                Not enough pixie dust!
+                            </p>
+                        </div>
+                    </li>
+
+                    <!-- march's book -->
+                    <li>
+                        <div class="bk-book book-3 bk-bookdefault">
+                            <div class="bk-front">
+                                <div class="bk-cover-back"></div>
+                                <div class="bk-cover"></div>
+                            </div>
+                            <div class="bk-page">
+                                <div class="bk-content bk-content-current"></div>
+                            </div>
+                            <div class="bk-back"></div>
+                            <div class="bk-right"></div>
+                            <div class="bk-left"></div>
+                            <div class="bk-top"></div>
+                            <div class="bk-bottom"></div>
+                        </div>
+                        <div class="bk-info">
+                            <h3>
+                                <span>The Lost</span>
+                                <span>March</span>
+                            </h3>
+                            <p>
+                                Wait! You’ll get lost if you go that way! Follow
+                                me instead. I’m March. I know the way around
+                                here like the back of my hand!
+                            </p>
+                            <p class="amount-info-march-mobile">
+                                Requires 3
+                                <img src="img/neverland-pixiedust.png" /> pixie
+                                dust
+                            </p>
+                            <p>
+                                <a href="#" id="open-btn-march-mobile1">
+                                    <button class="open-btn locked locked1" id="needs-unlocked-march-mobile1">
+                                        <img src="img/padlock-white.png" id="lock-img-march-mobile1" />
+                                    </button>
+                                </a>
+                            </p>
+                            <p class="hide amount-message-mobile" id="amount-message-march-mobile1">
+                                Not enough pixie dust!
+                            </p>
+                            <p class="amount-info-march-mobile">
+                                Requires 5
+                                <img src="img/neverland-pixiedust.png" /> pixie
+                                dust
+                            </p>
+                            <p>
+                                <a href="#" id="open-btn-march-mobile2">
+                                    <button class="open-btn locked locked2" id="needs-unlocked-march-mobile2">
+                                        <img src="img/padlock-white.png" id="lock-img-march-mobile2" />
+                                    </button>
+                                </a>
+                            </p>
+                            <p class="hide amount-message-mobile" id="amount-message-march-mobile2">
+                                Not enough pixie dust!
+                            </p>
+                            <p class="amount-info-march-mobile">
+                                Requires 7
+                                <img src="img/neverland-pixiedust.png" /> pixie
+                                dust
+                            </p>
+                            <p>
+                                <a href="#" id="open-btn-march-mobile3">
+                                    <button class="open-btn locked locked3" id="needs-unlocked-march-mobile3">
+                                        <img src="img/padlock-white.png" id="lock-img-march-mobile3" />
+                                    </button>
+                                </a>
+                            </p>
+                            <p class="hide amount-message-mobile" id="amount-message-march-mobile3">
+                                Not enough pixie dust!
+                            </p>
+                        </div>
+                    </li>
+
+                    <!-- may's book -->
+                    <li>
+                        <div class="bk-book book-3 bk-bookdefault">
+                            <div class="bk-front">
+                                <div class="bk-cover-back"></div>
+                                <div class="bk-cover"></div>
+                            </div>
+                            <div class="bk-page"></div>
+                            <div class="bk-back"></div>
+                            <div class="bk-right"></div>
+                            <div class="bk-left"></div>
+                            <div class="bk-top"></div>
+                            <div class="bk-bottom"></div>
+                        </div>
+                        <div class="bk-info">
+                            <h3>
+                                <span>The Lost</span>
+                                <span>May</span>
+                            </h3>
+                            <p>
+                                Hi, I'm May... Nice to meet you. Would you like
+                                to walk around with me? Oh, you do? Let's go
+                                watch the butterflies!
+                            </p>
+                            <p class="amount-info-may-mobile">
+                                Requires 3
+                                <img src="img/neverland-pixiedust.png" /> pixie
+                                dust
+                            </p>
+                            <p>
+                                <a href="#" id="open-btn-may-mobile1">
+                                    <button class="open-btn locked locked1" id="needs-unlocked-may-mobile1">
+                                        <img src="img/padlock-white.png" id="lock-img-may-mobile1" />
+                                    </button>
+                                </a>
+                            </p>
+                            <p class="hide amount-message-mobile" id="amount-message-may-mobile1">
+                                Not enough pixie dust!
+                            </p>
+                            <p class="amount-info-may-mobile">
+                                Requires 5
+                                <img src="img/neverland-pixiedust.png" /> pixie
+                                dust
+                            </p>
+                            <p>
+                                <a href="#" id="open-btn-may-mobile2">
+                                    <button class="open-btn locked locked2" id="needs-unlocked-may-mobile2">
+                                        <img src="img/padlock-white.png" id="lock-img-may-mobile2" />
+                                    </button>
+                                </a>
+                            </p>
+                            <p class="hide amount-message-mobile" id="amount-message-may-mobile2">
+                                Not enough pixie dust!
+                            </p>
+                            <p class="amount-info-may-mobile">
+                                Requires 7
+                                <img src="img/neverland-pixiedust.png" /> pixie
+                                dust
+                            </p>
+                            <p>
+                                <a href="#" id="open-btn-may-mobile3">
+                                    <button class="open-btn locked locked3" id="needs-unlocked-may-mobile3">
+                                        <img src="img/padlock-white.png" id="lock-img-may-mobile3" />
+                                    </button>
+                                </a>
+                            </p>
+                            <p class="hide amount-message-mobile" id="amount-message-may-mobile3">
+                                Not enough pixie dust!
+                            </p>
+                        </div>
+                    </li>
+
+                    <!-- sam's book -->
+                    <li>
+                        <div class="bk-book book-3 bk-bookdefault">
+                            <div class="bk-front">
+                                <div class="bk-cover-back"></div>
+                                <div class="bk-cover"></div>
+                            </div>
+                            <div class="bk-page"></div>
+                            <div class="bk-back"></div>
+                            <div class="bk-right"></div>
+                            <div class="bk-left"></div>
+                            <div class="bk-top"></div>
+                            <div class="bk-bottom"></div>
+                        </div>
+                        <div class="bk-info">
+                            <h3>
+                                <span>The Lost</span>
+                                <span>Sam</span>
+                            </h3>
+                            <p>
+                                Here you go! Make sure to wear this for me,
+                                okay? I worked hard to make this extra specia1
+                                and enchanted to keep you safe! Oh right, I
+                                almost forgot. I'm Sam!
+                            </p>
+                            <p class="amount-info-sam-mobile">
+                                Requires 3
+                                <img src="img/neverland-pixiedust.png" /> pixie
+                                dust
+                            </p>
+                            <p>
+                                <a href="#" id="open-btn-sam-mobile1">
+                                    <button class="open-btn locked locked1" id="needs-unlocked-sam-mobile1">
+                                        <img src="img/padlock-white.png" id="lock-img-sam-mobile1" />
+                                    </button>
+                                </a>
+                            </p>
+                            <p class="hide amount-message-mobile" id="amount-message-sam-mobile1">
+                                Not enough pixie dust!
+                            </p>
+                            <p class="amount-info-sam-mobile">
+                                Requires 5
+                                <img src="img/neverland-pixiedust.png" /> pixie
+                                dust
+                            </p>
+                            <p>
+                                <a href="#" id="open-btn-sam-mobile2">
+                                    <button class="open-btn locked locked2" id="needs-unlocked-sam-mobile2">
+                                        <img src="img/padlock-white.png" id="lock-img-sam-mobile2" />
+                                    </button>
+                                </a>
+                            </p>
+                            <p class="hide amount-message-mobile" id="amount-message-sam-mobile2">
+                                Not enough pixie dust!
+                            </p>
+                            <p class="amount-info-sam-mobile">
+                                Requires 7
+                                <img src="img/neverland-pixiedust.png" /> pixie
+                                dust
+                            </p>
+                            <p>
+                                <a href="#" id="open-btn-sam-mobile3">
+                                    <button class="open-btn locked locked3" id="needs-unlocked-sam-mobile3">
+                                        <img src="img/padlock-white.png" id="lock-img-sam-mobile3" />
+                                    </button>
+                                </a>
+                            </p>
+                            <p class="hide amount-message-mobile" id="amount-message-sam-mobile3">
+                                Not enough pixie dust!
+                            </p>
+                        </div>
+                    </li>
+
+                    <!-- memorabilia book -->
+                    <li>
+                        <div class="bk-book book-3 bk-bookdefault">
+                            <div class="bk-front">
+                                <div class="bk-cover-back"></div>
+                                <div class="bk-cover"></div>
+                            </div>
+                            <div class="bk-page"></div>
+                            <div class="bk-back"></div>
+                            <div class="bk-right"></div>
+                            <div class="bk-left"></div>
+                            <div class="bk-top"></div>
+                            <div class="bk-bottom"></div>
+                        </div>
+                        <div class="bk-info">
+                            <h3>
+                                <span>Neverland</span>
+                                <span>Memorabilias</span>
+                            </h3>
+                            <p class="info-no-lock">
+                                Magic existed within every living thing here.
+                                Its beauty: unparalleled and unprecedented.
+                                Surely, I can stay here forever. There's nothing
+                                I'd trade for this, right?
+                            </p>
+                            <p>
+                                <a href="https://twitter.com/neverland21_/status/1453285339347529730?s=21">
+                                    <button class="open-btn no-lock">
+                                        OPEN MEMORY 1
+                                    </button>
+                                </a>
+                                <a href="https://twitter.com/neverland21_/status/1453285590875602944?s=21">
+                                    <button class="open-btn no-lock">
+                                        OPEN MEMORY 2
+                                    </button>
+                                </a>
+                                <a href="https://twitter.com/neverland21_/status/1453285842743558144?s=21">
+                                    <button class="open-btn no-lock">
+                                        OPEN MEMORY 3
+                                    </button>
+                                </a>
+                            </p>
+                        </div>
+                    </li>
+
+                    <!-- comic book -->
+                    <li>
+                        <div class="bk-book book-3 bk-bookdefault">
+                            <div class="bk-front">
+                                <div class="bk-cover-back"></div>
+                                <div class="bk-cover"></div>
+                            </div>
+                            <div class="bk-page"></div>
+                            <div class="bk-back"></div>
+                            <div class="bk-right"></div>
+                            <div class="bk-left"></div>
+                            <div class="bk-top"></div>
+                            <div class="bk-bottom"></div>
+                        </div>
+                        <div class="bk-info">
+                            <h3>
+                                <span>Neverland</span>
+                                <span>The Comic Book</span>
+                            </h3>
+                            <p class="info-no-lock">
+                                May we, mere wanderers, reach a land of possible
+                                impossibles
+                            </p>
+                            <p>
+                                <a href="https://twitter.com/neverland21_/status/1452983382997012481?s=21">
+                                    <button class="open-btn no-lock">
+                                        OPEN COMICS
+                                    </button>
+                                </a>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div id="social-media">
+            <p>#NeverendingDaydream</p>
+            <a
+                href="https://www.facebook.com/Neverland-2021-106825301759343"
+                target="_blank"
+                ><img
+                    src="img/facebook.svg"
+                    alt="Facebook logo"
+                    id="fb-logo"
+            /></a>
+            <a href="https://twitter.com/neverland21_" target="_blank"
+                ><img
+                    src="img/twitter.svg"
+                    alt="Twitter logo"
+                    id="twt-logo"
+            /></a>
+        </div>
+        <div id="copyright">
+            <a href="credits.html">PSHS-MC B2023 Fair Committee</a>
+        </div>
+    </footer>
+
+    <script src="js/general.js?version=5"></script>
+    <script src="js/gacha.js?version=6"></script>
+    <script src="js/stats.js?version=5"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="js/lore.js?version=8"></script>
+    <script>
+        $(function () {
+            Books.init();
+        });
+    </script>
+    <script>
+        const swiper = new Swiper("#ProfilePopupContainer-Mobile", {
+            centeredSlides: true,
+            centeredSlidesBounds: true,
+            spaceBetween: 20,
+            resistance: false,
+        });
+
+        swiper.on("setTranslate", function () {
+            if (
+                    swiper.translate > 0 ||
+                    swiper.translate < -(swiper.width * 2 + 40)
+                    ) {
+                var x = 0;
+                y = 1;
+                if (swiper.translate < 0) {
+                    x = swiper.width * 2 + 40;
+                    y = -1;
+                }
+                document.getElementById("BlackBG").style.opacity =
+                        1 - ((swiper.translate + x) * y) / swiper.width - 0.5;
+            }
+        });
+
+        swiper.on("touchEnd", function () {
+            BlackBG.style.opacity = null;
+
+            if (
+                    swiper.translate > swiper.width * 0.5 ||
+                    swiper.translate < -(swiper.width * 2.5 + 40)
+                    ) {
+                StatsPopupHide();
+            }
+        });
+    </script>
+    <script>
+        if (screen && screen.width >= 800) {
+            document.write(
+                '<script type="text/javascript" src="js/books.js?version=8"><\/script>'
+            );
+        } else {
+            document.write(
+                '<script type="text/javascript" src="js/books-mobile.js?version=8"><\/script>'
+            );
+        }
+    </script>
+</body>
+</html>
